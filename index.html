@@ -9,10 +9,82 @@
     <h1>Flashcards v1</h1>
 
     <script type="text/javascript">
+      let data;
 
+      let currentSet;
+      let previousCardIndex;
+
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+
+      function randomAnswer(){
+        return Math.random() >= 0.5;
+      }
+
+      // should this be async? how?
       fetch('data.json')
-      .then( response => response.json() )
-      .then( data => console.log(data) )
+        .then( response => response.json() )
+        .then( responseData => {
+          data = responseData
+          console.log(data)
+        })
+        .then( () => {
+            pickSet(0)
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+            pickCardRandom()
+          }
+        )
+
+      function pickSet(index) {
+        console.log( data )
+        currentSet = data.sets[index]
+      }
+
+      function checkNextCard(index, currentCard) {
+        let cardValid = index !== previousCardIndex && currentCard.memoryRate !== 3
+        console.log("Card: ", currentCard.front, cardValid)
+        return cardValid
+      }
+      
+      function pickCardRandom() {
+        let cards = currentSet.cards
+
+        //generate random number in array length
+        let randomCardIndex = getRandomInt(cards.length)
+        let currentCard = cards[randomCardIndex]
+
+        if (checkNextCard(randomCardIndex, currentCard)) {
+          console.log(currentCard.front)
+          previousCardIndex = randomCardIndex
+          
+          console.log("Correct answer is: ", currentCard.back)
+          console.log("Did you know this?")
+          currentCard.memoryRate = currentCard.memoryRate || 0
+          if (randomAnswer()){
+            console.log("YES")
+            currentCard.memoryRate += 1
+          } else {
+            console.log("NO")
+            currentCard.memoryRate -= 1
+          }
+          console.log("MemoryRate is: ", currentCard.memoryRate)
+        } else {
+          pickCardRandom()
+        }
+      }
+
     </script>
   </body>
 </html>
