@@ -9,21 +9,21 @@
                     "frontDescription": "desk",
                     "back": "der",
                     "backDescription": "der Schreibtisch {m}",
-                    "memoryRate": 3
+                    "memoryRate": 5
                 },
                 {
                     "front": "Schreibtischlampe",
                     "frontDescription": "desk lamp",
                     "back": "die",
                     "backDescription": "die Schreibtischlampe {f}",
-                    "memoryRate": 3
+                    "memoryRate": 5
                 },
                 {
                     "front": "Tastatur",
                     "frontDescription": "keyboard",
                     "back": "die",
                     "backDescription": "die Tastatur {f}",
-                    "memoryRate": 3
+                    "memoryRate": 5
                 },
                 {
                     "front": "Telefon",
