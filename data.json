@@ -1,0 +1,34 @@
+{
+    "sets": [
+        {
+            "name": "Articles for German nouns",
+            "description": "Learn the correct article for German nouns.",
+            "cards": [
+                {
+                    "front": "Schreibtisch",
+                    "frontDescription": "desk",
+                    "back": "der",
+                    "backDescription": "der Schreibtisch {m}"
+                },
+                {
+                    "front": "Schreibtischlampe",
+                    "frontDescription": "desk lamp",
+                    "back": "die",
+                    "backDescription": "die Schreibtischlampe {f}"
+                },
+                {
+                    "front": "Tastatur",
+                    "frontDescription": "keyboard",
+                    "back": "die",
+                    "backDescription": "die Tastatur {f}"
+                },
+                {
+                    "front": "Telefon",
+                    "frontDescription": "telefone",
+                    "back": "das",
+                    "backDescription": "das Telefon {n}"
+                }
+            ]
+        }
+    ]
+}

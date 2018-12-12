@@ -9,7 +9,10 @@
     <h1>Flashcards v1</h1>
 
     <script type="text/javascript">
-      setTimeout(function(){ alert("Hello"); }, 2000);
+
+      fetch('data.json')
+      .then( response => response.json())
+      .then( data => console.log(data))
     </script>
   </body>
 </html>
