@@ -15,6 +15,25 @@ A basic first implementation of the flashcards app.
 - Lightweight
 - (Mobile first design)
 
+### Algorithm
+
+memoryRate: the number of times that user said they know the correct answer
+
+Picking
+- Pick random card
+- Check if card is not the same as previous (safe previous)
+- Check if memoryRate less than 3
+
+Show Card
+- Flip and decide if you knew it 
+- Yes: memoryRate + 1
+- No: memoryRate - 1
+
+Cases
+- All words are known: delete memoryRate and start again
+- One card left? Show other known ones in between. Put cards into buckets: Known and Unknown
+
+
 ### Sample JSON vocabulary set
 
 ```
