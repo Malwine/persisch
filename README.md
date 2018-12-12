@@ -4,7 +4,7 @@ A basic first implementation of the flashcards app.
 
 ### What will the app do?
 - Users choose a vocabulary set
-- Once selected the user is presented one vocabulary pair. (word & solution)
+- Once selected the user is presented one vocabulary pair. (front & solution)
 - They can see one side.
 - User can swipe/click to see the solution
 - User chooses option if they knew the solution
@@ -21,42 +21,33 @@ A basic first implementation of the flashcards app.
 {
   sets: [
     {
-      id: 1,
-      setName: "Articles for German nouns",
-      SetDescription: "Learn the correct article for German nouns. Office vocabulary."
-      vocabulary: [
+      name: "Articles for German nouns",
+      description: "Learn the correct article for German nouns."
+      cards: [
         {
-          id: 1,
-          word: "Schreibtisch",
-          wordDescription: "desk"
-          flipSide: "der",
-          flipSideDescription: "der Schreibtisch {m}"
-          memoryRate: 0
+          front: "Schreibtisch",
+          frontDescription: "desk"
+          back: "der",
+          backDescription: "der Schreibtisch {m}"
         },
         {
-          id: 2,
-          word: "Schreibtischlampe",
-          wordDescription: "desk lamp"
-          flipSide: "die",
-          flipSideDescription: "die Schreibtischlampe {f}"
-          memoryRate: 0
+          front: "Schreibtischlampe",
+          frontDescription: "desk lamp"
+          back: "die",
+          backDescription: "die Schreibtischlampe {f}"
         },
         {
-          id: 3,
-          word: "Tastatur",
-          wordDescription: "keyboard"
-          flipSide: "die",
-          flipSideDescription: "die Tastatur {f}"
-          memoryRate: 0
+          front: "Tastatur",
+          frontDescription: "keyboard"
+          back: "die",
+          backDescription: "die Tastatur {f}"
         },
         {
-          id: 4,
-          word: "Telefon",
-          wordDescription: "telefone"
-          flipSide: "das",
-          flipSideDescription: "das Telefon {n}"
-          memoryRate: 0
-        },
+          front: "Telefon",
+          frontDescription: "telefone"
+          back: "das",
+          backDescription: "das Telefon {n}"
+        }
       ]
     }
   ]
