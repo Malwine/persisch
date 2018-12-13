@@ -17,7 +17,6 @@ fetch('data.json')
   .then(response => response.json())
   .then(responseData => {
     data = responseData
-    console.log(data)
   })
   .then(() => {
     pickSet(0)
@@ -26,7 +25,6 @@ fetch('data.json')
   )
 
 function pickSet(index) {
-  console.log(data)
   currentSet = data.sets[index]
 }
 
