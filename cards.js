@@ -12,7 +12,6 @@ function randomAnswer() {
   return Math.random() >= 0.2;
 }
 
-// should this be async? how?
 fetch('data.json')
   .then(response => response.json())
   .then(responseData => {
