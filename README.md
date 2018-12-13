@@ -33,6 +33,9 @@ Cases
 - All words are known: delete memoryRate and start again
 - One card left? Show other known ones in between. Put cards into buckets: Known and Unknown
 
+### Start server
+
+`php -S "0.0.0.0:8080"`
 
 ### Sample JSON vocabulary set
 
