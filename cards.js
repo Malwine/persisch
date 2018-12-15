@@ -38,6 +38,16 @@ function checkNextCard(index, currentCard) {
   return cardValid
 }
 
+function processAnswer(card) {
+  if (randomAnswer()) {
+    console.log("Did you know this?: YES")
+    card.memoryRate += 1
+  } else {
+    console.log("Did you know this?: NO")
+    card.memoryRate -= 1
+  }
+}
+
 function pickCardRandom() {
   let cards = currentSet.cards
 
@@ -49,13 +59,9 @@ function pickCardRandom() {
     previousCardIndex = randomCardIndex
 
     currentCard.memoryRate = currentCard.memoryRate || 0
-    if (randomAnswer()) {
-      console.log("Did you know this?: YES")
-      currentCard.memoryRate += 1
-    } else {
-      console.log("Did you know this?: NO")
-      currentCard.memoryRate -= 1
-    }
+    
+    processAnswer(currentCard)
+
     console.log(currentCard.front, "MemoryRate is: ", currentCard.memoryRate)
     //reset maxMemoryRate to enable last card to be chosen
     maxMemoryRate = 3
