@@ -17,11 +17,12 @@ fetch('data.json')
   .then(responseData => {
     data = responseData
   })
-  .then(() => {
-    pickSet(0)
-    pickCardRandom()
-  }
-  )
+  .then(() => { start() })
+
+function start() {
+  pickSet(0)
+  pickCardRandom()
+}
 
 function pickSet(index) {
   currentSet = data.sets[index]
