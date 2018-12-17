@@ -106,16 +106,21 @@ function checkRemainingCards(cards) {
   } else {
     // case 2: no cards left
     if (confirm("You learned everything? Do you want to reset your progress to start again?")) {
-      currentSet.cards = cards.map(card => {
-        card.memoryRate = 0
-        return card
-      })
-      previousCardIndex = undefined
-      maxMemoryRate = 3
-      console.log("All reset! Let's go!")
-      pickCardRandom()
+      reset(cards)
     } else {
       console.log("Ok, see you another time!")
     }
   }
+}
+
+function reset(cards) {
+  currentSet.cards = cards.map(card => {
+    card.memoryRate = 0
+    return card
+  })
+  previousCardIndex = undefined
+  maxMemoryRate = 3
+
+  console.log("All reset! Let's go!")
+  pickCardRandom()
 }
