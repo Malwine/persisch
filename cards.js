@@ -97,14 +97,14 @@ function checkRemainingCards(cards) {
       let memoryRates = remainingCards.map(card => {
         return card.memoryRate
       })
-      var max = Math.min.apply(null, memoryRates)
+      let max = Math.min.apply(null, memoryRates)
 
       maxMemoryRate = max + 1
       console.log("The new maxMemoryRate is: ", maxMemoryRate)
     }
     pickCardRandom()
   } else {
-    // case 2: no cards left
+    // Case 2: no cards left, user may reset
     if (confirm("You learned everything? Do you want to reset your progress to start again?")) {
       reset(cards)
     } else {
