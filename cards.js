@@ -41,7 +41,7 @@ function checkPreviousAndMemoryRate(index, currentCard) {
   return cardValid
 }
 
-function processAnswer(card) {
+function processAnswer(card, remainingCards) {
   if (randomAnswer()) {
     console.log("Did you know this?: YES")
     card.memoryRate += 1
@@ -49,6 +49,7 @@ function processAnswer(card) {
     console.log("Did you know this?: NO")
     card.memoryRate -= 1
   }
+  checkRemainingCards(remainingCards)
 }
 
 function pickCardRandom() {
@@ -65,10 +66,7 @@ function pickCardRandom() {
     // Assign memoryRate 0 if there is no memoryRate yet
     currentCard.memoryRate = currentCard.memoryRate || 0
     
-    processAnswer(currentCard)
-
-    checkRemainingCards(cards)
-
+    processAnswer(currentCard, cards)
   } else {
     // Pick another card if not valid
     pickCardRandom()
