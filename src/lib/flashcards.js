@@ -13,14 +13,18 @@ export function restoreState(currentSetIndex, currentCardIndex, currentData) {
 }
 
 export function saveProgress() {
-  localStorage.setItem('progress', JSON.stringify(data))
+  if(typeof window !== "undefined" && window.localStorage){
+    localStorage.setItem('progress', JSON.stringify(data))
+  }
 }
 
 export function restoreProgress(defaultData) {
-  if(localStorage.getItem('progress')) {
-    return JSON.parse(localStorage.getItem('progress'))
-  } else {
-    return defaultData
+  if(typeof window !== "undefined" && window.localStorage){
+    if(localStorage.getItem('progress')) {
+      return JSON.parse(localStorage.getItem('progress'))
+    } else {
+      return defaultData
+    }
   }
 }
 
