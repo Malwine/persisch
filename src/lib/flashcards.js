@@ -6,6 +6,24 @@ let previousCardIndex;
 let randomCardIndex;
 let maxMemoryRate = 3;
 
+export function restoreState(currentSetIndex, currentCardIndex, currentData) {
+  data = currentData;
+  currentSet = data.sets[currentSetIndex];
+  currentCard = currentSet.cards[currentCardIndex];
+}
+
+export function saveProgress() {
+  localStorage.setItem('progress', JSON.stringify(data))
+}
+
+export function restoreProgress(defaultData) {
+  if(localStorage.getItem('progress')) {
+    return JSON.parse(localStorage.getItem('progress'))
+  } else {
+    return defaultData
+  }
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -15,16 +33,10 @@ function randomAnswer() {
   return Math.random() >= 0.2;
 }
 
-fetch('data.json')
-  .then(response => response.json())
-  .then(responseData => { data = responseData })
-  .then(() => { 
-    start() // TODO: get the actual set from user input and start with it
-  })
-
-function start() {
-  pickSet(0)
-  pickCardRandom()
+export function start(responseData, setIndex) {
+  data = responseData
+  pickSet(setIndex)
+  return pickCardRandom()
 }
 
 function pickSet(index) {
@@ -41,15 +53,9 @@ function checkPreviousAndMemoryRate(index, currentCard) {
   return cardValid
 }
 
-function processAnswer(card, remainingCards) {
-  if (randomAnswer()) {
-    console.log("Did you know this?: YES")
-    card.memoryRate += 1
-  } else {
-    console.log("Did you know this?: NO")
-    card.memoryRate -= 1
-  }
-  checkRemainingCards(remainingCards)
+export function processAnswer(answer, card, allCards) {
+  card.memoryRate += answer
+  return checkRemainingCards(allCards)
 }
 
 function pickCardRandom() {
@@ -65,16 +71,18 @@ function pickCardRandom() {
 
     // Assign memoryRate 0 if there is no memoryRate yet
     currentCard.memoryRate = currentCard.memoryRate || 0
-    
+    return randomCardIndex
+
     //show back and answer buttons
-    processAnswer(currentCard, cards)
+    //processAnswer(currentCard, cards)
   } else {
     // Pick another card if not valid
-    pickCardRandom()
+    return pickCardRandom()
   }
 }
 
 function checkRemainingCards(cards) {
+  console.log(cards)
   console.log(currentCard.front, "MemoryRate is: ", currentCard.memoryRate)
 
   // Reset maxMemoryRate to enable last card to be chosen
@@ -86,7 +94,7 @@ function checkRemainingCards(cards) {
 
   if (cardsLeft.length > 1) {
     // Case 0: more then one valid card is left
-    pickCardRandom()
+    return pickCardRandom()
   } else if (cardsLeft.length === 1) {
     // Case 1: exactly 1 card left
     if (cardsLeft[0] === currentCard) {
@@ -101,11 +109,11 @@ function checkRemainingCards(cards) {
       maxMemoryRate = max + 1
       console.log("The new maxMemoryRate is: ", maxMemoryRate)
     }
-    pickCardRandom()
+    return pickCardRandom()
   } else {
     // Case 2: no cards left, user may reset
     if (confirm("You learned everything? Do you want to reset your progress to start again?")) {
-      reset(cards)
+      return reset(cards)
     } else {
       console.log("Ok, see you another time!")
     }
@@ -121,5 +129,5 @@ function reset(cards) {
   maxMemoryRate = 3
 
   console.log("All reset! Let's go!")
-  pickCardRandom()
+  return pickCardRandom()
 }
