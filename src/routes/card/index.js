@@ -5,6 +5,10 @@ import { route } from 'preact-router'
 
 export default class Card extends Component {
 
+	state = {
+		flipped: false
+	};
+
 	componentDidMount() {
 		restoreState(this.props.set, this.props.card, this.props.data)
 	}
@@ -25,6 +29,7 @@ export default class Card extends Component {
 		} else {
 			route(`/sets/${this.props.set}/cards/${nextCardIndex}`)
 		}
+		this.setState({ flipped: false });
 	}
 
 	handleKnownClick = () => {
@@ -35,17 +40,34 @@ export default class Card extends Component {
 		this.handleClick(-1)
 	}
 
+	handleTurn = () => {
+		this.setState({ flipped: true });
+	}
+
 	render({ data, set: setIndex, card: cardIndex  }) {
-		return (
-			<div class={style.profile}>
+		const flipped = this.state.flipped;
+		const front = data.sets[setIndex].cards[cardIndex].front
+		const back = data.sets[setIndex].cards[cardIndex].back
 
-				<h1>{data.sets[setIndex].cards[cardIndex].front}</h1>
-				<p>{data.sets[setIndex].cards[cardIndex].back}</p>
-
-				<p>Did you know it?</p>
-				<button onClick={ this.handleKnownClick }>YES</button>
-				<button onClick={ this.handleNotKnowClick }>No</button>
-			</div>
-		);
+		if (flipped) {
+			return (
+				<div class={style.profile}>
+	
+					<h1>{ back }</h1>
+					<p>{ front }</p>
+	
+					<p>Did you know it?</p>
+					<button onClick={ this.handleKnownClick }>YES</button>
+					<button onClick={ this.handleNotKnowClick }>No</button>
+				</div>
+			)
+		} else {
+			return (
+				<div class={style.profile}>
+					<h1>{ front }</h1>
+					<button onClick={ this.handleTurn }>Turn card!</button>
+				</div>
+			)
+		}
 	}
 }
