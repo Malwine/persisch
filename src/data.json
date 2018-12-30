@@ -29,6 +29,72 @@
                     "backDescription": "das Telefon {n}"
                 }
             ]
+        },
+        {
+            "name": "Persian numbers 1 - 10",
+            "description": "Learn counting to 10 in Persian.",
+            "cards": [
+                {
+                    "front": "eins",
+                    "frontDescription": "",
+                    "back": "yek",
+                    "backDescription": ""
+                },
+                {
+                    "front": "zwei",
+                    "frontDescription": "",
+                    "back": "do",
+                    "backDescription": ""
+                },
+                {
+                    "front": "drei",
+                    "frontDescription": "",
+                    "back": "se",
+                    "backDescription": ""
+                },
+                {
+                    "front": "vier",
+                    "frontDescription": "",
+                    "back": "shahar",
+                    "backDescription": ""
+                },
+                {
+                    "front": "fünf",
+                    "frontDescription": "",
+                    "back": "panj",
+                    "backDescription": ""
+                },
+                {
+                    "front": "sechs",
+                    "frontDescription": "",
+                    "back": "shesh",
+                    "backDescription": ""
+                },
+                {
+                    "front": "sieben",
+                    "frontDescription": "",
+                    "back": "haft",
+                    "backDescription": ""
+                },
+                {
+                    "front": "acht",
+                    "frontDescription": "",
+                    "back": "hasht",
+                    "backDescription": ""
+                },
+                {
+                    "front": "neun",
+                    "frontDescription": "",
+                    "back": "noh",
+                    "backDescription": ""
+                },
+                {
+                    "front": "zehn",
+                    "frontDescription": "",
+                    "back": "dah",
+                    "backDescription": ""
+                }
+            ]
         }
     ]
 }
