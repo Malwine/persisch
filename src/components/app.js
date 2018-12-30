@@ -9,6 +9,7 @@ import Learn from '../routes/learn';
 import Sets from '../routes/sets';
 import Set from '../routes/set';
 import Card from '../routes/card';
+import Home from '../routes/home';
 
 import data from '../data.json'
 
@@ -31,6 +32,7 @@ export default class App extends Component {
 			<div id="app">
 				<Header />
 				<Router onChange={this.handleRoute}>
+          			<Home path="/" />
 					<Learn path="/learn" />
 					<Sets path="/sets" data={ state.data } />
 					<Set path="/sets/:set" data={ state.data } />

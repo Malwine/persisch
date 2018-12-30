@@ -1,27 +1,20 @@
 import { h, Component } from 'preact';
 import style from './style';
+import SetBox from '../../components/setBox'
 
 export default class Sets extends Component {
+
 	render({ data }) {
-		console.log(data)
 		return (
 			<div class={style.profile}>
 				<h1>Sets</h1>
-
-				<ul>
-					
+				<ul class={style.list}>	
 				{ data.sets.map((set, index) => {
 					return (
-						<li>
-							<a href={`/sets/${index}`}>{ set.name }</a>
-							<p>{set.description}</p>
-						</li>
+						<SetBox setLink={`/sets/${index}`} setName={set.name} setDesc={set.description}/>
 					)
 				})}
 				</ul>
-				
-
-
 			</div>
 		);
 	}
