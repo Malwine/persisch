@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import style from './style';
-import SetBox from '../../components/setBox'
+import Box from '../../components/box'
 
 export default class Sets extends Component {
 
@@ -11,7 +11,7 @@ export default class Sets extends Component {
 				<ul class={style.list}>	
 				{ data.sets.map((set, index) => {
 					return (
-						<SetBox setLink={`/sets/${index}`} setName={set.name} setDesc={set.description}/>
+						<Box setLink={`/sets/${index}`} setName={set.name} setDesc={set.description}/>
 					)
 				})}
 				</ul>
