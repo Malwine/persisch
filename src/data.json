@@ -119,6 +119,204 @@
                     "backDescription": "(۱۰) dah"
                 }
             ]
+        },
+        {
+            "name": "Persisch A1 Vokabeln",
+            "description": "Die ersten Vokablen für Persisch A1.1 mit wissenschaftlicher Umschrift.",
+            "cards": [
+                {
+                    "front": "Hallo",
+                    "frontDescription": "",
+                    "back": "سلام",
+                    "backDescription": "Salam."
+                },
+                {
+                    "front": "Ich bin ...",
+                    "frontDescription": "",
+                    "back": "من ... هستم",
+                    "backDescription": "Man ... hastam."
+                },
+                {
+                    "front": "Wer bist du?",
+                    "frontDescription": "",
+                    "back": "تو کی هستی؟",
+                    "backDescription": "To kī hasti?"
+                },
+                {
+                    "front": "Wer sind Sie?",
+                    "frontDescription": "",
+                    "back": "شما کی هستید؟",
+                    "backDescription": "Šoma ki hastīd?"
+                },
+                {
+                    "front": "Freut mich!",
+                    "frontDescription": "",
+                    "back": "خوشوَقتَم",
+                    "backDescription": "Xošwaġtam."
+                },
+                {
+                    "front": "Wie geht's dir?",
+                    "frontDescription": "",
+                    "back": "چطوری؟",
+                    "backDescription": "Četorī?"
+                },
+                {
+                    "front": "Es geht mir gut.",
+                    "frontDescription": "",
+                    "back": "من خوب هستم",
+                    "backDescription": "Man xub hastam."
+                }
+            ]
+        },
+        {
+            "name": "Persisch A1 Verben",
+            "description": "Die Verben \"sein\", \"haben\" und ihre Verneinung mit wissenschaftlicher Umschrift.",
+            "cards": [
+                {
+                    "front": "ich bin",
+                    "frontDescription": "",
+                    "back": "من هستم",
+                    "backDescription": "man hastam"
+                },
+                {
+                    "front": "du bist",
+                    "frontDescription": "",
+                    "back": "تو هستی",
+                    "backDescription": "to hasti"
+                },
+                {
+                    "front": "er/sie ist",
+                    "frontDescription": "",
+                    "back": "او هست",
+                    "backDescription": "u ast"
+                },
+                {
+                    "front": "wir sind",
+                    "frontDescription": "",
+                    "back": "ما هستیم",
+                    "backDescription": "mā hastīm"
+                },
+                {
+                    "front": "ihr seid",
+                    "frontDescription": "(auch höflich: \"Sie sind\")",
+                    "back": "شما هستید",
+                    "backDescription": "šomā hastīd"
+                },
+                {
+                    "front": "sie sind",
+                    "frontDescription": "plural",
+                    "back": "آنها هستند",
+                    "backDescription": "ānhā(unā) hastand"
+                },
+                {
+                    "front": "ich habe",
+                    "frontDescription": "",
+                    "back": "من دارم",
+                    "backDescription": "man dāram"
+                },
+                {
+                    "front": "du hast",
+                    "frontDescription": "",
+                    "back": "تو داری",
+                    "backDescription": "to dārī"
+                },
+                {
+                    "front": "er/sie hat",
+                    "frontDescription": "",
+                    "back": "او دارد",
+                    "backDescription": "u dārad (/ u dāre)"
+                },
+                {
+                    "front": "wir haben",
+                    "frontDescription": "",
+                    "back": "ما داریم",
+                    "backDescription": "mā dārīm"
+                },
+                {
+                    "front": "ihr habt",
+                    "frontDescription": "(auch höflich: \"Sie haben\")",
+                    "back": "شما دارید",
+                    "backDescription": "šomā dārīd"
+                },
+                {
+                    "front": "sie haben",
+                    "frontDescription": "plural",
+                    "back": "دارند آنها",
+                    "backDescription": "ānhā/unā dārand"
+                },
+                {
+                    "front": "ich bin nicht",
+                    "frontDescription": "",
+                    "back": "من نیستم",
+                    "backDescription": "man nistam"
+                },
+                {
+                    "front": "du bist nicht",
+                    "frontDescription": "",
+                    "back": "تو نیستی",
+                    "backDescription": "to nistī"
+                },
+                {
+                    "front": "er/sie ist nicht",
+                    "frontDescription": "",
+                    "back": "او نیست",
+                    "backDescription": "u nist"
+                },
+                {
+                    "front": "wir sind nicht",
+                    "frontDescription": "",
+                    "back": "ما نیستیم",
+                    "backDescription": "mā nistīm"
+                },
+                {
+                    "front": "ihr seid nicht",
+                    "frontDescription": "(auch höflich: \"Sie sind nicht\")",
+                    "back": "شما نیستید",
+                    "backDescription": "šomā nistīd"
+                },
+                {
+                    "front": "sie sind nicht",
+                    "frontDescription": "plural",
+                    "back": "آنها نیستند",
+                    "backDescription": "ānhā/unā nistand"
+                },
+                {
+                    "front": "ich habe nicht",
+                    "frontDescription": "",
+                    "back": "من ندارم",
+                    "backDescription": "man nadāram"
+                },
+                {
+                    "front": "du hast nicht",
+                    "frontDescription": "",
+                    "back": "تو نداری",
+                    "backDescription": "to nadārī"
+                },
+                {
+                    "front": "er/sie hat nicht",
+                    "frontDescription": "",
+                    "back": "او ندارد",
+                    "backDescription": "u nadārad (/ u nadāre)"
+                },
+                {
+                    "front": "wir haben nicht",
+                    "frontDescription": "",
+                    "back": "ما نداریم",
+                    "backDescription": "mā nadārīm"
+                },
+                {
+                    "front": "ihr habt nicht",
+                    "frontDescription": "(auch höflich: \"Sie haben nicht\")",
+                    "back": "شما ندارید",
+                    "backDescription": "šomā nadārīd"
+                },
+                {
+                    "front": "sie haben nicht",
+                    "frontDescription": "plural",
+                    "back": "آنها ندارند",
+                    "backDescription": "ānhā/unā nadārand"
+                }
+            ]
         }
     ]
 }
