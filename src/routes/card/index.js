@@ -56,20 +56,22 @@ export default class Card extends Component {
 		if (flipped) {
 			return (
 				<div class={style.spacing}>
-          <h2 class={style.setName}>{setName}</h2>
+					<h2 class={style.setName}>{setName}</h2>
 					<Box headline={ back } description={ backDescription }/>
 
-					<p>Did you know it?</p>
-					<button onClick={ this.handleKnownClick }>YES</button>
-					<button onClick={ this.handleNotKnowClick }>NO</button>
+					<h3>Did you know it?</h3>
+          <div class={ style.buttonWrap }>
+            <button class={style.button} onClick={ this.handleKnownClick }>YES</button>
+            <button class={style.button} onClick={ this.handleNotKnowClick }>NO</button>
+          </div>
 				</div>
 			)
 		} else {
 			return (
 				<div class={style.spacing}>
-          <h2 class={style.setName}>{setName}</h2>
+					<h2 class={style.setName}>{setName}</h2>
 					<Box headline={ front } description={ frontDescription }/>
-					<button onClick={ this.handleTurn }>Turn card!</button>
+					<button class={ style.turnButton } onClick={ this.handleTurn }>Turn card!</button>
 				</div>
 			)
 		}
