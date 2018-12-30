@@ -2,7 +2,7 @@
     "sets": [
         {
             "name": "Articles for German nouns",
-            "description": "Learn the correct article for German nouns.",
+            "description": "\"der, die, das?\" Learn the correct article for German nouns.",
             "cards": [
                 {
                     "front": "Schreibtisch",
@@ -12,7 +12,7 @@
                 },
                 {
                     "front": "Lampe",
-                    "frontDescription": "desk lamp",
+                    "frontDescription": "lamp",
                     "back": "die",
                     "backDescription": "die Lampe {f}"
                 },
@@ -24,7 +24,7 @@
                 },
                 {
                     "front": "Telefon",
-                    "frontDescription": "telefone",
+                    "frontDescription": "telephone",
                     "back": "das",
                     "backDescription": "das Telefon {n}"
                 }

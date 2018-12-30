@@ -1,6 +1,11 @@
 .spacing {
-	margin-top: 50px;
+	margin-top: 10px;
 	padding: 56px 20px;
 	min-height: 100%;
 	width: 100%;
+}
+
+.setName {
+	font-size: 15px;
+    color: #afafaf;
 }

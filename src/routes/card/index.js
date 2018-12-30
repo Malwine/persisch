@@ -46,14 +46,18 @@ export default class Card extends Component {
 	}
 
 	render({ data, set: setIndex, card: cardIndex  }) {
+    const setName = data.sets[setIndex].name;
 		const flipped = this.state.flipped;
 		const front = data.sets[setIndex].cards[cardIndex].front
 		const back = data.sets[setIndex].cards[cardIndex].back
+		const backDescription = data.sets[setIndex].cards[cardIndex].backDescription
+		const frontDescription = data.sets[setIndex].cards[cardIndex].frontDescription
 
 		if (flipped) {
 			return (
 				<div class={style.spacing}>
-					<Box headline={back} description={front}/>
+          <h2 class={style.setName}>{setName}</h2>
+					<Box headline={ back } description={ backDescription }/>
 
 					<p>Did you know it?</p>
 					<button onClick={ this.handleKnownClick }>YES</button>
@@ -63,7 +67,8 @@ export default class Card extends Component {
 		} else {
 			return (
 				<div class={style.spacing}>
-					<Box headline={front} />
+          <h2 class={style.setName}>{setName}</h2>
+					<Box headline={ front } description={ frontDescription }/>
 					<button onClick={ this.handleTurn }>Turn card!</button>
 				</div>
 			)
