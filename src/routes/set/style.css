@@ -1,5 +1,37 @@
-.profile {
+.spacing {
 	padding: 56px 20px;
 	min-height: 100%;
 	width: 100%;
+	text-align: center;
+}
+
+.subline {
+	font-size: 14px;
+	color: #656565;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 35px;
+  padding: 0 1.5rem;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
+  color: #FFF;
+  background-color: #09c4e4;
+}
+
+.button:hover { 
+	box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
+	background-color: #36d5f1;
 }
