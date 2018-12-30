@@ -623,7 +623,7 @@ var header_style_default = /*#__PURE__*/__webpack_require__.n(header_style);
 var header__ref = Object(preact_min["h"])(
 	'h1',
 	null,
-	'Preact App'
+	'Flashcards'
 );
 
 var header_Header = function Header() {
@@ -638,6 +638,11 @@ var header_Header = function Header() {
 				match["Link"],
 				{ activeClassName: header_style_default.a.active, href: '/' },
 				'Home'
+			),
+			Object(preact_min["h"])(
+				match["Link"],
+				{ activeClassName: header_style_default.a.active, href: '/sets' },
+				'Sets'
 			)
 		)
 	);
@@ -734,6 +739,42 @@ var learn_Learn = function (_Component) {
 var sets_style = __webpack_require__("jnUQ");
 var sets_style_default = /*#__PURE__*/__webpack_require__.n(sets_style);
 
+// EXTERNAL MODULE: ./components/box/style.css
+var box_style = __webpack_require__("ohqm");
+var box_style_default = /*#__PURE__*/__webpack_require__.n(box_style);
+
+// CONCATENATED MODULE: ./components/box/index.js
+
+
+
+
+
+var box_Box = function Box(_ref) {
+	var link = _ref.link,
+	    headline = _ref.headline,
+	    description = _ref.description;
+	return Object(preact_min["h"])(
+		'li',
+		{ 'class': box_style_default.a.box },
+		Object(preact_min["h"])(
+			'h2',
+			{ 'class': box_style_default.a.headline },
+			headline
+		),
+		description && Object(preact_min["h"])(
+			'p',
+			{ 'class': box_style_default.a.subline },
+			description
+		),
+		link && Object(preact_min["h"])(
+			'a',
+			{ 'class': box_style_default.a.button, href: link },
+			'LEARN'
+		)
+	);
+};
+
+/* harmony default export */ var box = (box_Box);
 // CONCATENATED MODULE: ./routes/sets/index.js
 
 
@@ -742,6 +783,7 @@ function sets__classCallCheck(instance, Constructor) { if (!(instance instanceof
 function sets__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function sets__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -764,29 +806,15 @@ var sets_Sets = function (_Component) {
 	Sets.prototype.render = function render(_ref) {
 		var data = _ref.data;
 
-		console.log(data);
 		return Object(preact_min["h"])(
 			'div',
 			{ 'class': sets_style_default.a.profile },
 			sets__ref2,
 			Object(preact_min["h"])(
 				'ul',
-				null,
+				{ 'class': sets_style_default.a.list },
 				data.sets.map(function (set, index) {
-					return Object(preact_min["h"])(
-						'li',
-						null,
-						Object(preact_min["h"])(
-							'a',
-							{ href: '/sets/' + index },
-							set.name
-						),
-						Object(preact_min["h"])(
-							'p',
-							null,
-							set.description
-						)
-					);
+					return Object(preact_min["h"])(box, { link: '/sets/' + index, headline: set.name, description: set.description });
 				})
 			)
 		);
@@ -839,15 +867,20 @@ var set_Set = function (_Component) {
 
 		return Object(preact_min["h"])(
 			'div',
-			{ 'class': set_style_default.a.profile },
+			{ 'class': set_style_default.a.spacing },
 			Object(preact_min["h"])(
 				'h3',
 				null,
 				data.sets[setIndex].name
 			),
 			Object(preact_min["h"])(
+				'p',
+				{ 'class': set_style_default.a.subline },
+				data.sets[setIndex].description
+			),
+			Object(preact_min["h"])(
 				'button',
-				{ onClick: this.handleStartClick },
+				{ 'class': set_style_default.a.button, onClick: this.handleStartClick },
 				'Start'
 			)
 		);
@@ -875,6 +908,7 @@ function card__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 
+
 var card__ref2 = Object(preact_min["h"])(
 	'p',
 	null,
@@ -893,7 +927,9 @@ var card_Card = function (_Component) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = card__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.allCards = function () {
+		return _ret = (_temp = (_this = card__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = {
+			flipped: false
+		}, _this.allCards = function () {
 			return _this.props.data.sets[_this.props.set].cards;
 		}, _this.currentCard = function () {
 			return _this.allCards()[_this.props.card];
@@ -905,10 +941,13 @@ var card_Card = function (_Component) {
 			} else {
 				Object(preact_router_es["route"])('/sets/' + _this.props.set + '/cards/' + nextCardIndex);
 			}
+			_this.setState({ flipped: false });
 		}, _this.handleKnownClick = function () {
 			_this.handleClick(1);
 		}, _this.handleNotKnowClick = function () {
 			_this.handleClick(-1);
+		}, _this.handleTurn = function () {
+			_this.setState({ flipped: true });
 		}, _temp), card__possibleConstructorReturn(_this, _ret);
 	}
 
@@ -921,37 +960,101 @@ var card_Card = function (_Component) {
 		    setIndex = _ref.set,
 		    cardIndex = _ref.card;
 
-		return Object(preact_min["h"])(
-			'div',
-			{ 'class': card_style_default.a.profile },
-			Object(preact_min["h"])(
-				'h1',
-				null,
-				data.sets[setIndex].cards[cardIndex].front
-			),
-			Object(preact_min["h"])(
-				'p',
-				null,
-				data.sets[setIndex].cards[cardIndex].back
-			),
-			card__ref2,
-			Object(preact_min["h"])(
-				'button',
-				{ onClick: this.handleKnownClick },
-				'YES'
-			),
-			Object(preact_min["h"])(
-				'button',
-				{ onClick: this.handleNotKnowClick },
-				'No'
-			)
-		);
+		var setName = data.sets[setIndex].name;
+		var flipped = this.state.flipped;
+		var front = data.sets[setIndex].cards[cardIndex].front;
+		var back = data.sets[setIndex].cards[cardIndex].back;
+		var backDescription = data.sets[setIndex].cards[cardIndex].backDescription;
+		var frontDescription = data.sets[setIndex].cards[cardIndex].frontDescription;
+
+		if (flipped) {
+			return Object(preact_min["h"])(
+				'div',
+				{ 'class': card_style_default.a.spacing },
+				Object(preact_min["h"])(
+					'h2',
+					{ 'class': card_style_default.a.setName },
+					setName
+				),
+				Object(preact_min["h"])(box, { headline: back, description: backDescription }),
+				card__ref2,
+				Object(preact_min["h"])(
+					'button',
+					{ onClick: this.handleKnownClick },
+					'YES'
+				),
+				Object(preact_min["h"])(
+					'button',
+					{ onClick: this.handleNotKnowClick },
+					'NO'
+				)
+			);
+		} else {
+			return Object(preact_min["h"])(
+				'div',
+				{ 'class': card_style_default.a.spacing },
+				Object(preact_min["h"])(
+					'h2',
+					{ 'class': card_style_default.a.setName },
+					setName
+				),
+				Object(preact_min["h"])(box, { headline: front, description: frontDescription }),
+				Object(preact_min["h"])(
+					'button',
+					{ onClick: this.handleTurn },
+					'Turn card!'
+				)
+			);
+		}
 	};
 
 	return Card;
 }(preact_min["Component"]);
 
 
+// EXTERNAL MODULE: ./routes/home/style.css
+var home_style = __webpack_require__("ZAL5");
+var home_style_default = /*#__PURE__*/__webpack_require__.n(home_style);
+
+// CONCATENATED MODULE: ./routes/home/index.js
+
+
+
+
+
+var home__ref = Object(preact_min["h"])(
+	'h1',
+	null,
+	'Flashcards'
+);
+
+var home__ref2 = Object(preact_min["h"])(
+	'p',
+	null,
+	'Learn anywhere anytime!'
+);
+
+var home_Home = function Home() {
+	return Object(preact_min["h"])(
+		'div',
+		{ 'class': home_style_default.a.home },
+		home__ref,
+		home__ref2,
+		Object(preact_min["h"])(
+			'p',
+			null,
+			'Check out some of the ',
+			Object(preact_min["h"])(
+				match["Link"],
+				{ activeClassName: home_style_default.a.active, href: '/sets' },
+				'sample sets'
+			),
+			'.'
+		)
+	);
+};
+
+/* harmony default export */ var home = (home_Home);
 // EXTERNAL MODULE: ./data.json
 var data_0 = __webpack_require__("wAIJ");
 var data_default = /*#__PURE__*/__webpack_require__.n(data_0);
@@ -979,9 +1082,12 @@ function app__inherits(subClass, superClass) { if (typeof superClass !== "functi
 
 
 
+
 var app__ref = Object(preact_min["h"])(header, null);
 
-var app__ref2 = Object(preact_min["h"])(learn_Learn, { path: '/learn' });
+var app__ref2 = Object(preact_min["h"])(home, { path: '/' });
+
+var app__ref3 = Object(preact_min["h"])(learn_Learn, { path: '/learn' });
 
 var app_App = function (_Component) {
 	app__inherits(App, _Component);
@@ -1019,6 +1125,7 @@ var app_App = function (_Component) {
 				preact_router_es["Router"],
 				{ onChange: this.handleRoute },
 				app__ref2,
+				app__ref3,
 				Object(preact_min["h"])(sets_Sets, { path: '/sets', data: state.data }),
 				Object(preact_min["h"])(set_Set, { path: '/sets/:set', data: state.data }),
 				Object(preact_min["h"])(card_Card, { path: '/sets/:set/cards/:card', data: state.data })
@@ -1242,11 +1349,19 @@ var app_App = function (_Component) {
 
 /***/ }),
 
+/***/ "ZAL5":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"home":"home__MseGd"};
+
+/***/ }),
+
 /***/ "jnUQ":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"profile":"profile__1n8CG"};
+module.exports = {"profile":"profile__1n8CG","list":"list__3QDQW"};
 
 /***/ }),
 
@@ -1254,7 +1369,15 @@ module.exports = {"profile":"profile__1n8CG"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"profile":"profile__A7uEb"};
+module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0"};
+
+/***/ }),
+
+/***/ "ohqm":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"box":"box__1bpQv","headline":"headline__1DObL","subline":"subline__2eJG4","button":"button__3nJCq"};
 
 /***/ }),
 
@@ -1262,7 +1385,7 @@ module.exports = {"profile":"profile__A7uEb"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"profile":"profile__2asxB"};
+module.exports = {"spacing":"spacing__2V6vn","subline":"subline__Xf72D","button":"button__fhbo7"};
 
 /***/ }),
 
@@ -1391,7 +1514,7 @@ module.exports = {"header":"header__3QGkI","active":"active__3gItZ"};
 /***/ "wAIJ":
 /***/ (function(module, exports) {
 
-module.exports = {"sets":[{"name":"Articles for German nouns","description":"Learn the correct article for German nouns.","cards":[{"front":"Schreibtisch","frontDescription":"desk","back":"der","backDescription":"der Schreibtisch {m}"},{"front":"Lampe","frontDescription":"desk lamp","back":"die","backDescription":"die Lampe {f}"},{"front":"Tastatur","frontDescription":"keyboard","back":"die","backDescription":"die Tastatur {f}"},{"front":"Telefon","frontDescription":"telefone","back":"das","backDescription":"das Telefon {n}"}]}]}
+module.exports = {"sets":[{"name":"Articles for German nouns","description":"\"der, die, das?\" Learn the correct article for German nouns.","cards":[{"front":"Schreibtisch","frontDescription":"desk","back":"der","backDescription":"der Schreibtisch {m}"},{"front":"Lampe","frontDescription":"lamp","back":"die","backDescription":"die Lampe {f}"},{"front":"Tastatur","frontDescription":"keyboard","back":"die","backDescription":"die Tastatur {f}"},{"front":"Telefon","frontDescription":"telephone","back":"das","backDescription":"das Telefon {n}"}]},{"name":"Persian numbers 1 - 10","description":"Learn counting to 10 in Persian.","cards":[{"front":"eins","frontDescription":"","back":"yek","backDescription":""},{"front":"zwei","frontDescription":"","back":"do","backDescription":""},{"front":"drei","frontDescription":"","back":"se","backDescription":""},{"front":"vier","frontDescription":"","back":"shahar","backDescription":""},{"front":"fünf","frontDescription":"","back":"panj","backDescription":""},{"front":"sechs","frontDescription":"","back":"shesh","backDescription":""},{"front":"sieben","frontDescription":"","back":"haft","backDescription":""},{"front":"acht","frontDescription":"","back":"hasht","backDescription":""},{"front":"neun","frontDescription":"","back":"noh","backDescription":""},{"front":"zehn","frontDescription":"","back":"dah","backDescription":""}]}]}
 
 /***/ }),
 
