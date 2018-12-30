@@ -2,11 +2,11 @@ import { h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style';
 
-const Box = ({ setLink, setName, setDesc }) => (
+const Box = ({ link, headline, description }) => (
 	<li class={style.box}>
-		<h2 class={style.headline}>{ setName }</h2>
-		<p class={style.subline}>{setDesc}</p>
-		{ setLink && <a class={style.button} href={ setLink }>LEARN</a>}
+		<h2 class={style.headline}>{ headline }</h2>
+		<p class={style.subline}>{description}</p>
+		{ link && <a class={style.button} href={ link }>LEARN</a>}
 	</li>
 );
 
