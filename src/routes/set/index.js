@@ -13,9 +13,10 @@ export default class Set extends Component {
 
 	render({ data, set: setIndex }) {
 		return (
-			<div class={style.profile}>
+			<div class={style.spacing}>
 				<h3>{data.sets[setIndex].name}</h3>
-				<button onClick={ this.handleStartClick }>Start</button>
+				<p class={style.subline}>{data.sets[setIndex].description}</p>
+				<button class={style.button} onClick={ this.handleStartClick }>Start</button>
 			</div>
 		);
 	}
