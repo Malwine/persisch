@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import style from './style';
 import { processAnswer, restoreState, saveProgress } from '../../lib/flashcards'
 import { route } from 'preact-router'
+import Box from '../../components/box'
 
 export default class Card extends Component {
 
@@ -51,20 +52,18 @@ export default class Card extends Component {
 
 		if (flipped) {
 			return (
-				<div class={style.profile}>
-	
-					<h1>{ back }</h1>
-					<p>{ front }</p>
-	
+				<div class={style.spacing}>
+					<Box headline={back} description={front}/>
+
 					<p>Did you know it?</p>
 					<button onClick={ this.handleKnownClick }>YES</button>
-					<button onClick={ this.handleNotKnowClick }>No</button>
+					<button onClick={ this.handleNotKnowClick }>NO</button>
 				</div>
 			)
 		} else {
 			return (
-				<div class={style.profile}>
-					<h1>{ front }</h1>
+				<div class={style.spacing}>
+					<Box headline={front} />
 					<button onClick={ this.handleTurn }>Turn card!</button>
 				</div>
 			)
