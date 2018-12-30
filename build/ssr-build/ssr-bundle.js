@@ -910,7 +910,7 @@ function card__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 var card__ref2 = Object(preact_min["h"])(
-	'p',
+	'h3',
 	null,
 	'Did you know it?'
 );
@@ -979,14 +979,18 @@ var card_Card = function (_Component) {
 				Object(preact_min["h"])(box, { headline: back, description: backDescription }),
 				card__ref2,
 				Object(preact_min["h"])(
-					'button',
-					{ onClick: this.handleKnownClick },
-					'YES'
-				),
-				Object(preact_min["h"])(
-					'button',
-					{ onClick: this.handleNotKnowClick },
-					'NO'
+					'div',
+					{ 'class': card_style_default.a.buttonWrap },
+					Object(preact_min["h"])(
+						'button',
+						{ 'class': card_style_default.a.button, onClick: this.handleKnownClick },
+						'YES'
+					),
+					Object(preact_min["h"])(
+						'button',
+						{ 'class': card_style_default.a.button, onClick: this.handleNotKnowClick },
+						'NO'
+					)
 				)
 			);
 		} else {
@@ -1001,7 +1005,7 @@ var card_Card = function (_Component) {
 				Object(preact_min["h"])(box, { headline: front, description: frontDescription }),
 				Object(preact_min["h"])(
 					'button',
-					{ onClick: this.handleTurn },
+					{ 'class': card_style_default.a.turnButton, onClick: this.handleTurn },
 					'Turn card!'
 				)
 			);
@@ -1369,7 +1373,7 @@ module.exports = {"profile":"profile__1n8CG","list":"list__3QDQW"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0"};
+module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0","turnButton":"turnButton__2q7I4","buttonWrap":"buttonWrap__3NNEf","button":"button__2TMpX"};
 
 /***/ }),
 
@@ -1514,7 +1518,7 @@ module.exports = {"header":"header__3QGkI","active":"active__3gItZ"};
 /***/ "wAIJ":
 /***/ (function(module, exports) {
 
-module.exports = {"sets":[{"name":"Articles for German nouns","description":"\"der, die, das?\" Learn the correct article for German nouns.","cards":[{"front":"Schreibtisch","frontDescription":"desk","back":"der","backDescription":"der Schreibtisch {m}"},{"front":"Lampe","frontDescription":"lamp","back":"die","backDescription":"die Lampe {f}"},{"front":"Tastatur","frontDescription":"keyboard","back":"die","backDescription":"die Tastatur {f}"},{"front":"Telefon","frontDescription":"telephone","back":"das","backDescription":"das Telefon {n}"}]},{"name":"Persian numbers 1 - 10","description":"Learn counting to 10 in Persian.","cards":[{"front":"eins","frontDescription":"","back":"yek","backDescription":""},{"front":"zwei","frontDescription":"","back":"do","backDescription":""},{"front":"drei","frontDescription":"","back":"se","backDescription":""},{"front":"vier","frontDescription":"","back":"shahar","backDescription":""},{"front":"fünf","frontDescription":"","back":"panj","backDescription":""},{"front":"sechs","frontDescription":"","back":"shesh","backDescription":""},{"front":"sieben","frontDescription":"","back":"haft","backDescription":""},{"front":"acht","frontDescription":"","back":"hasht","backDescription":""},{"front":"neun","frontDescription":"","back":"noh","backDescription":""},{"front":"zehn","frontDescription":"","back":"dah","backDescription":""}]}]}
+module.exports = {"sets":[{"name":"Articles for German nouns","description":"\"der, die, das?\" Learn the correct article for German nouns.","cards":[{"front":"Schreibtisch","frontDescription":"desk","back":"der","backDescription":"der Schreibtisch {m}"},{"front":"Lampe","frontDescription":"lamp","back":"die","backDescription":"die Lampe {f}"},{"front":"Tastatur","frontDescription":"keyboard","back":"die","backDescription":"die Tastatur {f}"},{"front":"Telefon","frontDescription":"telephone","back":"das","backDescription":"das Telefon {n}"},{"front":"Papier","frontDescription":"paper","back":"das","backDescription":"das Papier {n}"},{"front":"Vertrag","frontDescription":"contract","back":"der","backDescription":"der Vertrag {m}"},{"front":"Kopfhörer","frontDescription":"headphones","back":"die","backDescription":"die Kopfhörer {f}"},{"front":"E-Mail","frontDescription":"email","back":"die","backDescription":"die E-Mail {f}"}]},{"name":"Persian numbers 1 - 10","description":"Learn counting to 10 in Persian.","cards":[{"front":"one","frontDescription":"","back":"یک","backDescription":"(۱) yek"},{"front":"two","frontDescription":"","back":"دو","backDescription":"(۲) do"},{"front":"three","frontDescription":"","back":"سه","backDescription":"(۳) se"},{"front":"four","frontDescription":"","back":"چهار","backDescription":"(۴) shahar"},{"front":"five","frontDescription":"","back":"پنج","backDescription":"(۵) panj"},{"front":"six","frontDescription":"","back":"شش","backDescription":"(۶) shesh"},{"front":"seven","frontDescription":"","back":"هفت","backDescription":"(۷) haft"},{"front":"eight","frontDescription":"","back":"هشت","backDescription":"(۸) hasht"},{"front":"nine","frontDescription":"","back":"نه","backDescription":"(۹) noh"},{"front":"ten","frontDescription":"","back":"ده","backDescription":"(۱۰) dah"}]}]}
 
 /***/ }),
 
