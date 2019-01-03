@@ -60,10 +60,10 @@ export default class Card extends Component {
 					<Box headline={ back } description={ backDescription }/>
 
 					<h3>Did you know it?</h3>
-          <div class={ style.buttonWrap }>
-            <button class={style.button} onClick={ this.handleKnownClick }>YES</button>
-            <button class={style.button} onClick={ this.handleNotKnowClick }>NO</button>
-          </div>
+					<div class={ style.buttonWrap }>
+						<button class={style.button} onClick={ this.handleKnownClick }>YES</button>
+						<button class={style.button} onClick={ this.handleNotKnowClick }>NO</button>
+					</div>
 				</div>
 			)
 		} else {
@@ -71,6 +71,7 @@ export default class Card extends Component {
 				<div class={style.spacing}>
 					<h2 class={style.setName}>{setName}</h2>
 					<Box headline={ front } description={ frontDescription }/>
+          <h3>Think about it...</h3>
 					<button class={ style.turnButton } onClick={ this.handleTurn }>Turn card!</button>
 				</div>
 			)
