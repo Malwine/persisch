@@ -4,7 +4,7 @@ import style from './style';
 
 const Home = () => (
 	<div class={style.home}>
-		<h1>Flashcards</h1>
+		<h2>Flashcards</h2>
 		<p>Learn anywhere anytime!</p>
 		<p>Check out some of the <Link activeClassName={style.active} href="/sets">sample sets</Link>.</p>
 	</div>

@@ -7,7 +7,7 @@ export default class Sets extends Component {
 	render({ data }) {
 		return (
 			<div class={style.profile}>
-				<h1>Sets</h1>
+				<h2>Sets</h2>
 				<ul class={style.list}>	
 				{ data.sets.map((set, index) => {
 					return (

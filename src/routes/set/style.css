@@ -2,12 +2,19 @@
 	padding: 56px 20px;
 	min-height: 100%;
 	width: 100%;
-	text-align: center;
+}
+
+.spacing h3 {
+  margin: 50px 0 15px 0; 
+}
+
+.spacing p {
+  color: #656565;
 }
 
 .subline {
-	font-size: 14px;
-	color: #656565;
+  margin: 15px 0 15px 0;
+  line-height: 1.5;
 }
 
 .button {
@@ -29,9 +36,34 @@
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
   color: #FFF;
   background-color: #600060;
+
+
+  width: 100%;
+  margin: 15px 0 15px 0;
 }
 
 .button:hover { 
 	box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
 	background-color: #36d5f1;
+}
+
+.list {
+  list-style: none;
+  margin: 0 20px 0 20px;
+  padding: 0;
+}
+
+.cardWrap {
+  display: flex;
+	justify-content: space-between;
+}
+
+.cardWrap div {
+  width: 45%;
+  margin-bottom: 10px;
+  color: #656565;
+}
+
+.left {
+  text-align: right;
 }
