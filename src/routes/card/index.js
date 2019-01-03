@@ -38,7 +38,8 @@ export default class Card extends Component {
 	}
 	
 	handleNotKnowClick = () => {
-		this.handleClick(-1)
+    //Originally I substracted 1 but now I want to go with 0
+		this.handleClick(0)
 	}
 
 	handleTurn = () => {
@@ -46,18 +47,19 @@ export default class Card extends Component {
 	}
 
 	render({ data, set: setIndex, card: cardIndex  }) {
-    const setName = data.sets[setIndex].name;
+		const setName = data.sets[setIndex].name;
 		const flipped = this.state.flipped;
 		const front = data.sets[setIndex].cards[cardIndex].front
 		const back = data.sets[setIndex].cards[cardIndex].back
 		const backDescription = data.sets[setIndex].cards[cardIndex].backDescription
 		const frontDescription = data.sets[setIndex].cards[cardIndex].frontDescription
+		const learningRate = data.sets[setIndex].cards[cardIndex].memoryRate
 
 		if (flipped) {
 			return (
 				<div class={style.spacing}>
 					<h2 class={style.setName}>{setName}</h2>
-					<Box headline={ back } description={ backDescription }/>
+					<Box headline={ back } description={ backDescription } progress={ learningRate }/>
 
 					<h3>Did you know it?</h3>
 					<div class={ style.buttonWrap }>
@@ -70,7 +72,7 @@ export default class Card extends Component {
 			return (
 				<div class={style.spacing}>
 					<h2 class={style.setName}>{setName}</h2>
-					<Box headline={ front } description={ frontDescription }/>
+					<Box headline={ front } description={ frontDescription } progress={ learningRate }/>
           <h3>Think about it...</h3>
 					<button class={ style.turnButton } onClick={ this.handleTurn }>Turn card!</button>
 				</div>

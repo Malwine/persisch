@@ -37,3 +37,21 @@
 	position:absolute;
 	bottom: 15px;
 }
+
+.progress {
+	position: absolute;
+	bottom: 15px;
+}
+
+.progressWrap {
+	display: flex;
+	position: absolute;
+	bottom: 15px;
+}
+
+.bar {
+	height: 10px;
+	width: 30px;
+	background-color: #600060;
+	margin: 2px;
+}

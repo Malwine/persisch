@@ -11,8 +11,9 @@ export default class Sets extends Component {
 				<ul class={style.list}>	
 				{ data.sets.map((set, index) => {
 					return (
-						<Box link={`/sets/${index}`} headline={set.name} description={set.description}/>
-					)
+						<li>
+							<Box link={`/sets/${index}`} headline={set.name} description={set.description}/>
+						</li>					)
 				})}
 				</ul>
 			</div>
