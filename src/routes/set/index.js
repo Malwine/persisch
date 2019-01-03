@@ -26,11 +26,9 @@ export default class Set extends Component {
               <div>{ card.front }</div>
               <div class={ style.left }>{ card.back }</div>
             </li>
-            
 					)
 				})}
 				</ul>
-				
 			</div>
 		);
 	}
