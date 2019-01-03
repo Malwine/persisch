@@ -317,6 +317,24 @@
                     "backDescription": "ānhā/unā nadārand"
                 }
             ]
+        },
+        {
+            "name": "Short set",
+            "description": "Learn counting to 10 in Persian.",
+            "cards": [
+                {
+                    "front": "one",
+                    "frontDescription": "",
+                    "back": "یک",
+                    "backDescription": "(۱) yek"
+                },
+                {
+                    "front": "two",
+                    "frontDescription": "",
+                    "back": "دو",
+                    "backDescription": "(۲) do"
+                }
+            ]
         }
     ]
 }
