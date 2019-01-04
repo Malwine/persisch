@@ -1,6 +1,7 @@
 {
   "name": "Flashcards",
   "short_name": "Flashcards",
+  "description": "Learn vocabulary with flashcards.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
