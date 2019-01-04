@@ -471,7 +471,7 @@ var preact_router_es = __webpack_require__("/QC5");
 // CONCATENATED MODULE: ./lib/flashcards.js
 var flashcards_data = void 0;
 
-var currentSet = void 0;
+var flashcards_currentSet = void 0;
 var currentCard = void 0;
 var previousCardIndex = void 0;
 var randomCardIndex = void 0;
@@ -479,8 +479,8 @@ var maxMemoryRate = 3;
 
 function restoreState(currentSetIndex, currentCardIndex, currentData) {
   flashcards_data = currentData;
-  currentSet = flashcards_data.sets[currentSetIndex];
-  currentCard = currentSet.cards[currentCardIndex];
+  flashcards_currentSet = flashcards_data.sets[currentSetIndex];
+  currentCard = flashcards_currentSet.cards[currentCardIndex];
 }
 
 function saveProgress() {
@@ -515,7 +515,7 @@ function start(responseData, setIndex) {
 }
 
 function pickSet(index) {
-  currentSet = flashcards_data.sets[index];
+  flashcards_currentSet = flashcards_data.sets[index];
 }
 
 function hasValidMemoryRate(card) {
@@ -534,7 +534,7 @@ function processAnswer(answer, card, allCards) {
 }
 
 function pickCardRandom() {
-  var cards = currentSet.cards;
+  var cards = flashcards_currentSet.cards;
 
   // Choose one random card from the set
   randomCardIndex = getRandomInt(cards.length);
@@ -596,7 +596,7 @@ function checkRemainingCards(cards) {
 }
 
 function flashcards_reset(cards) {
-  currentSet.cards = cards.map(function (card) {
+  flashcards_currentSet.cards = cards.map(function (card) {
     card.memoryRate = 0;
     return card;
   });
@@ -605,6 +605,14 @@ function flashcards_reset(cards) {
 
   console.log("All reset! Let's go!");
   return pickCardRandom();
+}
+
+function resetSet(set) {
+  set.cards.map(function (card) {
+    card.memoryRate = 0;
+  });
+  alert("Set was reset! You can start learning again.");
+  return set;
 }
 // EXTERNAL MODULE: ../node_modules/preact-router/match.js
 var match = __webpack_require__("sw5u");
@@ -746,35 +754,79 @@ var box_style_default = /*#__PURE__*/__webpack_require__.n(box_style);
 // CONCATENATED MODULE: ./components/box/index.js
 
 
+function box__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function box__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function box__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
-var box_Box = function Box(_ref) {
-	var link = _ref.link,
-	    headline = _ref.headline,
-	    description = _ref.description;
-	return Object(preact_min["h"])(
-		'li',
-		{ 'class': box_style_default.a.box },
-		Object(preact_min["h"])(
-			'h2',
-			{ 'class': box_style_default.a.headline },
-			headline
-		),
-		description && Object(preact_min["h"])(
-			'p',
-			{ 'class': box_style_default.a.subline },
-			description
-		),
-		link && Object(preact_min["h"])(
-			'a',
-			{ 'class': box_style_default.a.button, href: link },
-			'LEARN'
-		)
-	);
-};
 
-/* harmony default export */ var box = (box_Box);
+
+var box__ref2 = Object(preact_min["h"])('div', null);
+
+var box_Box = function (_Component) {
+  box__inherits(Box, _Component);
+
+  function Box() {
+    var _temp, _this, _ret;
+
+    box__classCallCheck(this, Box);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = box__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.showProgress = function (progress) {
+      var progressBar = [];
+
+      {
+        for (var block = 1; block <= progress; block++) {
+          progressBar.push(Object(preact_min["h"])('div', { 'class': box_style_default.a.bar }));
+        }
+      }
+      return progressBar;
+    }, _temp), box__possibleConstructorReturn(_this, _ret);
+  }
+
+  Box.prototype.render = function render(_ref) {
+    var link = _ref.link,
+        headline = _ref.headline,
+        description = _ref.description,
+        progress = _ref.progress,
+        back = _ref.back;
+
+    return Object(preact_min["h"])(
+      'div',
+      { 'class': box_style_default.a.box },
+      headline && Object(preact_min["h"])(
+        'h2',
+        { 'class': box_style_default.a.headline },
+        headline
+      ),
+      description && Object(preact_min["h"])(
+        'p',
+        { 'class': box_style_default.a.subline },
+        description
+      ),
+      link && Object(preact_min["h"])(
+        'a',
+        { 'class': box_style_default.a.button, href: link },
+        'LEARN'
+      ),
+      back && progress !== null && progress !== undefined && progress !== 0 ? Object(preact_min["h"])(
+        'div',
+        { 'class': box_style_default.a.progressWrap },
+        this.showProgress(progress)
+      ) : box__ref2
+    );
+  };
+
+  return Box;
+}(preact_min["Component"]);
+
+
 // CONCATENATED MODULE: ./routes/sets/index.js
 
 
@@ -789,7 +841,7 @@ function sets__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 var sets__ref2 = Object(preact_min["h"])(
-	'h1',
+	'h2',
 	null,
 	'Sets'
 );
@@ -814,7 +866,11 @@ var sets_Sets = function (_Component) {
 				'ul',
 				{ 'class': sets_style_default.a.list },
 				data.sets.map(function (set, index) {
-					return Object(preact_min["h"])(box, { link: '/sets/' + index, headline: set.name, description: set.description });
+					return Object(preact_min["h"])(
+						'li',
+						null,
+						Object(preact_min["h"])(box_Box, { link: '/sets/' + index, headline: set.name, description: set.description })
+					);
 				})
 			)
 		);
@@ -842,6 +898,13 @@ function set__inherits(subClass, superClass) { if (typeof superClass !== "functi
 
 
 
+
+var set__ref2 = Object(preact_min["h"])(
+	'p',
+	null,
+	'Included words:'
+);
+
 var set_Set = function (_Component) {
 	set__inherits(Set, _Component);
 
@@ -858,6 +921,9 @@ var set_Set = function (_Component) {
 			console.log("start was clicked");
 			var cardIndex = start(_this.props.data, _this.props.set);
 			Object(preact_router_es["route"])('/sets/' + _this.props.set + '/cards/' + cardIndex);
+		}, _this.handleResetClick = function () {
+			var currentSet = _this.props.data.sets[_this.props.set];
+			currentSet = resetSet(_this.props.data.sets[_this.props.set]);
 		}, _temp), set__possibleConstructorReturn(_this, _ret);
 	}
 
@@ -869,7 +935,7 @@ var set_Set = function (_Component) {
 			'div',
 			{ 'class': set_style_default.a.spacing },
 			Object(preact_min["h"])(
-				'h3',
+				'h2',
 				null,
 				data.sets[setIndex].name
 			),
@@ -882,6 +948,32 @@ var set_Set = function (_Component) {
 				'button',
 				{ 'class': set_style_default.a.button, onClick: this.handleStartClick },
 				'Start'
+			),
+			set__ref2,
+			Object(preact_min["h"])(
+				'ul',
+				{ 'class': set_style_default.a.list },
+				data.sets[setIndex].cards.map(function (card, index) {
+					return Object(preact_min["h"])(
+						'li',
+						{ 'class': set_style_default.a.cardWrap },
+						Object(preact_min["h"])(
+							'div',
+							null,
+							card.front
+						),
+						Object(preact_min["h"])(
+							'div',
+							{ 'class': set_style_default.a.left },
+							card.back
+						)
+					);
+				})
+			),
+			Object(preact_min["h"])(
+				'button',
+				{ 'class': set_style_default.a.resetButton, onClick: this.handleResetClick },
+				'Reset progress'
 			)
 		);
 	};
@@ -915,6 +1007,12 @@ var card__ref2 = Object(preact_min["h"])(
 	'Did you know it?'
 );
 
+var card__ref3 = Object(preact_min["h"])(
+	'h3',
+	null,
+	'Think about it...'
+);
+
 var card_Card = function (_Component) {
 	card__inherits(Card, _Component);
 
@@ -945,7 +1043,8 @@ var card_Card = function (_Component) {
 		}, _this.handleKnownClick = function () {
 			_this.handleClick(1);
 		}, _this.handleNotKnowClick = function () {
-			_this.handleClick(-1);
+			//Originally I substracted 1 but now I want to go with 0
+			_this.handleClick(0);
 		}, _this.handleTurn = function () {
 			_this.setState({ flipped: true });
 		}, _temp), card__possibleConstructorReturn(_this, _ret);
@@ -966,6 +1065,7 @@ var card_Card = function (_Component) {
 		var back = data.sets[setIndex].cards[cardIndex].back;
 		var backDescription = data.sets[setIndex].cards[cardIndex].backDescription;
 		var frontDescription = data.sets[setIndex].cards[cardIndex].frontDescription;
+		var learningRate = data.sets[setIndex].cards[cardIndex].memoryRate;
 
 		if (flipped) {
 			return Object(preact_min["h"])(
@@ -976,7 +1076,7 @@ var card_Card = function (_Component) {
 					{ 'class': card_style_default.a.setName },
 					setName
 				),
-				Object(preact_min["h"])(box, { headline: back, description: backDescription }),
+				Object(preact_min["h"])(box_Box, { headline: back, description: backDescription, progress: learningRate, back: true }),
 				card__ref2,
 				Object(preact_min["h"])(
 					'div',
@@ -1002,7 +1102,8 @@ var card_Card = function (_Component) {
 					{ 'class': card_style_default.a.setName },
 					setName
 				),
-				Object(preact_min["h"])(box, { headline: front, description: frontDescription }),
+				Object(preact_min["h"])(box_Box, { headline: front, description: frontDescription, progress: learningRate }),
+				card__ref3,
 				Object(preact_min["h"])(
 					'button',
 					{ 'class': card_style_default.a.turnButton, onClick: this.handleTurn },
@@ -1027,7 +1128,7 @@ var home_style_default = /*#__PURE__*/__webpack_require__.n(home_style);
 
 
 var home__ref = Object(preact_min["h"])(
-	'h1',
+	'h2',
 	null,
 	'Flashcards'
 );
@@ -1381,7 +1482,7 @@ module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0","turnBut
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"box":"box__1bpQv","headline":"headline__1DObL","subline":"subline__2eJG4","button":"button__3nJCq"};
+module.exports = {"box":"box__1bpQv","headline":"headline__1DObL","subline":"subline__2eJG4","button":"button__3nJCq","progress":"progress__2syVq","progressWrap":"progressWrap__2-rBV","bar":"bar__3U8Or"};
 
 /***/ }),
 
@@ -1389,7 +1490,7 @@ module.exports = {"box":"box__1bpQv","headline":"headline__1DObL","subline":"sub
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"spacing":"spacing__2V6vn","subline":"subline__Xf72D","button":"button__fhbo7"};
+module.exports = {"spacing":"spacing__2V6vn","subline":"subline__Xf72D","button":"button__fhbo7","resetButton":"resetButton__16iSy","list":"list__2700y","cardWrap":"cardWrap__3k-xM","left":"left__dgfdH"};
 
 /***/ }),
 
@@ -1518,7 +1619,7 @@ module.exports = {"header":"header__3QGkI","active":"active__3gItZ"};
 /***/ "wAIJ":
 /***/ (function(module, exports) {
 
-module.exports = {"sets":[{"name":"Articles for German nouns","description":"\"der, die, das?\" Learn the correct article for German nouns.","cards":[{"front":"Schreibtisch","frontDescription":"desk","back":"der","backDescription":"der Schreibtisch {m}"},{"front":"Lampe","frontDescription":"lamp","back":"die","backDescription":"die Lampe {f}"},{"front":"Tastatur","frontDescription":"keyboard","back":"die","backDescription":"die Tastatur {f}"},{"front":"Telefon","frontDescription":"telephone","back":"das","backDescription":"das Telefon {n}"},{"front":"Papier","frontDescription":"paper","back":"das","backDescription":"das Papier {n}"},{"front":"Vertrag","frontDescription":"contract","back":"der","backDescription":"der Vertrag {m}"},{"front":"Kopfhörer","frontDescription":"headphones","back":"die","backDescription":"die Kopfhörer {f}"},{"front":"E-Mail","frontDescription":"email","back":"die","backDescription":"die E-Mail {f}"}]},{"name":"Persian numbers 1 - 10","description":"Learn counting to 10 in Persian.","cards":[{"front":"one","frontDescription":"","back":"یک","backDescription":"(۱) yek"},{"front":"two","frontDescription":"","back":"دو","backDescription":"(۲) do"},{"front":"three","frontDescription":"","back":"سه","backDescription":"(۳) se"},{"front":"four","frontDescription":"","back":"چهار","backDescription":"(۴) shahar"},{"front":"five","frontDescription":"","back":"پنج","backDescription":"(۵) panj"},{"front":"six","frontDescription":"","back":"شش","backDescription":"(۶) shesh"},{"front":"seven","frontDescription":"","back":"هفت","backDescription":"(۷) haft"},{"front":"eight","frontDescription":"","back":"هشت","backDescription":"(۸) hasht"},{"front":"nine","frontDescription":"","back":"نه","backDescription":"(۹) noh"},{"front":"ten","frontDescription":"","back":"ده","backDescription":"(۱۰) dah"}]},{"name":"Persisch A1 Vokabeln","description":"Die ersten Vokablen für Persisch A1.1 mit wissenschaftlicher Umschrift.","cards":[{"front":"Hallo","frontDescription":"","back":"سلام","backDescription":"Salam."},{"front":"Ich bin ...","frontDescription":"","back":"من ... هستم","backDescription":"Man ... hastam."},{"front":"Wer bist du?","frontDescription":"","back":"تو کی هستی؟","backDescription":"To kī hasti?"},{"front":"Wer sind Sie?","frontDescription":"","back":"شما کی هستید؟","backDescription":"Šoma ki hastīd?"},{"front":"Freut mich!","frontDescription":"","back":"خوشوَقتَم","backDescription":"Xošwaġtam."},{"front":"Wie geht's dir?","frontDescription":"","back":"چطوری؟","backDescription":"Četorī?"},{"front":"Es geht mir gut.","frontDescription":"","back":"من خوب هستم","backDescription":"Man xub hastam."}]},{"name":"Persisch A1 Verben","description":"Die Verben \"sein\", \"haben\" und ihre Verneinung mit wissenschaftlicher Umschrift.","cards":[{"front":"ich bin","frontDescription":"","back":"من هستم","backDescription":"man hastam"},{"front":"du bist","frontDescription":"","back":"تو هستی","backDescription":"to hasti"},{"front":"er/sie ist","frontDescription":"","back":"او هست","backDescription":"u ast"},{"front":"wir sind","frontDescription":"","back":"ما هستیم","backDescription":"mā hastīm"},{"front":"ihr seid","frontDescription":"(auch höflich: \"Sie sind\")","back":"شما هستید","backDescription":"šomā hastīd"},{"front":"sie sind","frontDescription":"plural","back":"آنها هستند","backDescription":"ānhā(unā) hastand"},{"front":"ich habe","frontDescription":"","back":"من دارم","backDescription":"man dāram"},{"front":"du hast","frontDescription":"","back":"تو داری","backDescription":"to dārī"},{"front":"er/sie hat","frontDescription":"","back":"او دارد","backDescription":"u dārad (/ u dāre)"},{"front":"wir haben","frontDescription":"","back":"ما داریم","backDescription":"mā dārīm"},{"front":"ihr habt","frontDescription":"(auch höflich: \"Sie haben\")","back":"شما دارید","backDescription":"šomā dārīd"},{"front":"sie haben","frontDescription":"plural","back":"دارند آنها","backDescription":"ānhā/unā dārand"},{"front":"ich bin nicht","frontDescription":"","back":"من نیستم","backDescription":"man nistam"},{"front":"du bist nicht","frontDescription":"","back":"تو نیستی","backDescription":"to nistī"},{"front":"er/sie ist nicht","frontDescription":"","back":"او نیست","backDescription":"u nist"},{"front":"wir sind nicht","frontDescription":"","back":"ما نیستیم","backDescription":"mā nistīm"},{"front":"ihr seid nicht","frontDescription":"(auch höflich: \"Sie sind nicht\")","back":"شما نیستید","backDescription":"šomā nistīd"},{"front":"sie sind nicht","frontDescription":"plural","back":"آنها نیستند","backDescription":"ānhā/unā nistand"},{"front":"ich habe nicht","frontDescription":"","back":"من ندارم","backDescription":"man nadāram"},{"front":"du hast nicht","frontDescription":"","back":"تو نداری","backDescription":"to nadārī"},{"front":"er/sie hat nicht","frontDescription":"","back":"او ندارد","backDescription":"u nadārad (/ u nadāre)"},{"front":"wir haben nicht","frontDescription":"","back":"ما نداریم","backDescription":"mā nadārīm"},{"front":"ihr habt nicht","frontDescription":"(auch höflich: \"Sie haben nicht\")","back":"شما ندارید","backDescription":"šomā nadārīd"},{"front":"sie haben nicht","frontDescription":"plural","back":"آنها ندارند","backDescription":"ānhā/unā nadārand"}]}]}
+module.exports = {"sets":[{"name":"Articles for German nouns","description":"\"der, die, das?\" Learn the correct article for German nouns.","cards":[{"front":"Schreibtisch","frontDescription":"desk","back":"der","backDescription":"der Schreibtisch {m}"},{"front":"Lampe","frontDescription":"lamp","back":"die","backDescription":"die Lampe {f}"},{"front":"Tastatur","frontDescription":"keyboard","back":"die","backDescription":"die Tastatur {f}"},{"front":"Telefon","frontDescription":"telephone","back":"das","backDescription":"das Telefon {n}"},{"front":"Papier","frontDescription":"paper","back":"das","backDescription":"das Papier {n}"},{"front":"Vertrag","frontDescription":"contract","back":"der","backDescription":"der Vertrag {m}"},{"front":"Kopfhörer","frontDescription":"headphones","back":"die","backDescription":"die Kopfhörer {f}"},{"front":"E-Mail","frontDescription":"email","back":"die","backDescription":"die E-Mail {f}"}]},{"name":"Persian numbers 1 - 10","description":"Learn counting to 10 in Persian.","cards":[{"front":"one","frontDescription":"","back":"یک","backDescription":"(۱) yek"},{"front":"two","frontDescription":"","back":"دو","backDescription":"(۲) do"},{"front":"three","frontDescription":"","back":"سه","backDescription":"(۳) se"},{"front":"four","frontDescription":"","back":"چهار","backDescription":"(۴) shahar"},{"front":"five","frontDescription":"","back":"پنج","backDescription":"(۵) panj"},{"front":"six","frontDescription":"","back":"شش","backDescription":"(۶) shesh"},{"front":"seven","frontDescription":"","back":"هفت","backDescription":"(۷) haft"},{"front":"eight","frontDescription":"","back":"هشت","backDescription":"(۸) hasht"},{"front":"nine","frontDescription":"","back":"نه","backDescription":"(۹) noh"},{"front":"ten","frontDescription":"","back":"ده","backDescription":"(۱۰) dah"}]},{"name":"Persisch A1 Vokabeln","description":"Die ersten Vokablen für Persisch A1.1 mit wissenschaftlicher Umschrift.","cards":[{"front":"Hallo","frontDescription":"","back":"سلام","backDescription":"Salam."},{"front":"Ich bin ...","frontDescription":"","back":"من ... هستم","backDescription":"Man ... hastam."},{"front":"Wer bist du?","frontDescription":"","back":"تو کی هستی؟","backDescription":"To kī hasti?"},{"front":"Wer sind Sie?","frontDescription":"","back":"شما کی هستید؟","backDescription":"Šoma ki hastīd?"},{"front":"Freut mich!","frontDescription":"","back":"خوشوَقتَم","backDescription":"Xošwaġtam."},{"front":"Wie geht's dir?","frontDescription":"","back":"چطوری؟","backDescription":"Četorī?"},{"front":"Es geht mir gut.","frontDescription":"","back":"من خوب هستم","backDescription":"Man xub hastam."}]},{"name":"Persisch A1 Verben","description":"Die Verben \"sein\", \"haben\" und ihre Verneinung mit wissenschaftlicher Umschrift.","cards":[{"front":"ich bin","frontDescription":"","back":"من هستم","backDescription":"man hastam"},{"front":"du bist","frontDescription":"","back":"تو هستی","backDescription":"to hasti"},{"front":"er/sie ist","frontDescription":"","back":"او هست","backDescription":"u ast"},{"front":"wir sind","frontDescription":"","back":"ما هستیم","backDescription":"mā hastīm"},{"front":"ihr seid","frontDescription":"(auch höflich: \"Sie sind\")","back":"شما هستید","backDescription":"šomā hastīd"},{"front":"sie sind","frontDescription":"plural","back":"آنها هستند","backDescription":"ānhā(unā) hastand"},{"front":"ich habe","frontDescription":"","back":"من دارم","backDescription":"man dāram"},{"front":"du hast","frontDescription":"","back":"تو داری","backDescription":"to dārī"},{"front":"er/sie hat","frontDescription":"","back":"او دارد","backDescription":"u dārad (/ u dāre)"},{"front":"wir haben","frontDescription":"","back":"ما داریم","backDescription":"mā dārīm"},{"front":"ihr habt","frontDescription":"(auch höflich: \"Sie haben\")","back":"شما دارید","backDescription":"šomā dārīd"},{"front":"sie haben","frontDescription":"plural","back":"دارند آنها","backDescription":"ānhā/unā dārand"},{"front":"ich bin nicht","frontDescription":"","back":"من نیستم","backDescription":"man nistam"},{"front":"du bist nicht","frontDescription":"","back":"تو نیستی","backDescription":"to nistī"},{"front":"er/sie ist nicht","frontDescription":"","back":"او نیست","backDescription":"u nist"},{"front":"wir sind nicht","frontDescription":"","back":"ما نیستیم","backDescription":"mā nistīm"},{"front":"ihr seid nicht","frontDescription":"(auch höflich: \"Sie sind nicht\")","back":"شما نیستید","backDescription":"šomā nistīd"},{"front":"sie sind nicht","frontDescription":"plural","back":"آنها نیستند","backDescription":"ānhā/unā nistand"},{"front":"ich habe nicht","frontDescription":"","back":"من ندارم","backDescription":"man nadāram"},{"front":"du hast nicht","frontDescription":"","back":"تو نداری","backDescription":"to nadārī"},{"front":"er/sie hat nicht","frontDescription":"","back":"او ندارد","backDescription":"u nadārad (/ u nadāre)"},{"front":"wir haben nicht","frontDescription":"","back":"ما نداریم","backDescription":"mā nadārīm"},{"front":"ihr habt nicht","frontDescription":"(auch höflich: \"Sie haben nicht\")","back":"شما ندارید","backDescription":"šomā nadārīd"},{"front":"sie haben nicht","frontDescription":"plural","back":"آنها ندارند","backDescription":"ānhā/unā nadārand"}]},{"name":"Short set","description":"Learn counting to 10 in Persian.","cards":[{"front":"one","frontDescription":"","back":"یک","backDescription":"(۱) yek"},{"front":"two","frontDescription":"","back":"دو","backDescription":"(۲) do"}]}]}
 
 /***/ }),
 

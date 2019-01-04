@@ -1,2 +1,0 @@
-webpackJsonp([4],{ZAL5:function(e){e.exports={home:"home__MseGd"}},"iOg+":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s=n("KM04"),a=(n.n(s),n("sw5u")),c=(n.n(a),n("ZAL5")),h=n.n(c),l=Object(s.h)("h1",null,"Flashcards"),o=Object(s.h)("p",null,"Learn anywhere anytime!");t.default=function(){return Object(s.h)("div",{class:h.a.home},l,o,Object(s.h)("p",null,"Check out some of the ",Object(s.h)(a.Link,{activeClassName:h.a.active,href:"/sets"},"sample sets"),"."))}}});
-//# sourceMappingURL=route-home.chunk.fbea6.js.map
