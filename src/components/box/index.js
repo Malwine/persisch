@@ -19,11 +19,10 @@ render({ link, headline, description, progress }) {
       { headline && <h2 class={style.headline}>{ headline }</h2>}
       { description && <p class={style.subline}>{description}</p>}
       { link && <a class={style.button} href={ link }>LEARN</a>}
-      
       {console.log(">>>>>>>>", progress)}
 
       {(progress !== null && progress !== undefined  && progress !== 0) ? 
-        <div class={ style.progressWrap }>{ x}</div> : <div></div> }
+        <div class={ style.progressWrap }>{ this.showProgress(progress) }</div> : <div></div> }
     </div>
     )
   }
