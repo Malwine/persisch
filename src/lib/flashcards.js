@@ -135,3 +135,11 @@ function reset(cards) {
   console.log("All reset! Let's go!")
   return pickCardRandom()
 }
+
+export function resetSet(set) {
+  set.cards.map( card => {
+    card.memoryRate = 0
+  })
+  alert("Set was reset! You can start learning again.");
+  return set
+}

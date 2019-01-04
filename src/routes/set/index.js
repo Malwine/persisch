@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import style from './style';
 import { start } from '../../lib/flashcards'
 import { route } from 'preact-router'
+import { resetSet } from '../../lib/flashcards'
 
 export default class Set extends Component {
 
@@ -9,6 +10,11 @@ export default class Set extends Component {
 		console.log("start was clicked")
 		let cardIndex = start(this.props.data, this.props.set)
 		route(`/sets/${this.props.set}/cards/${cardIndex}`)
+	}
+
+	handleResetClick = () => {
+		let currentSet = this.props.data.sets[this.props.set]
+		currentSet = resetSet(this.props.data.sets[this.props.set])
 	}
 
 	render({ data, set: setIndex }) {
@@ -29,6 +35,8 @@ export default class Set extends Component {
 					)
 				})}
 				</ul>
+
+				<button class={ style.resetButton } onClick={ this.handleResetClick }>Reset progress</button>
 			</div>
 		);
 	}
