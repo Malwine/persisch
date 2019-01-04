@@ -13,15 +13,14 @@ export default class Box extends Component {
       return progressBar
   }
 
-render({ link, headline, description, progress }) {
+render({ link, headline, description, progress, back }) {
   return (
     <div class={style.box}>
       { headline && <h2 class={style.headline}>{ headline }</h2>}
       { description && <p class={style.subline}>{description}</p>}
       { link && <a class={style.button} href={ link }>LEARN</a>}
-      {console.log(">>>>>>>>", progress)}
 
-      {(progress !== null && progress !== undefined  && progress !== 0) ? 
+      { back && (progress !== null && progress !== undefined  && progress !== 0) ? 
         <div class={ style.progressWrap }>{ this.showProgress(progress) }</div> : <div></div> }
     </div>
     )

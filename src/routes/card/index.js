@@ -59,7 +59,7 @@ export default class Card extends Component {
 			return (
 				<div class={style.spacing}>
 					<h2 class={style.setName}>{setName}</h2>
-					<Box headline={ back } description={ backDescription } progress={ learningRate }/>
+					<Box headline={ back } description={ backDescription } progress={ learningRate } back={ true } />
 
 					<h3>Did you know it?</h3>
 					<div class={ style.buttonWrap }>
