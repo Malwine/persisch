@@ -4,7 +4,7 @@ import style from './style';
 
 export default class Box extends Component {
 
-render({ link, headline, description, progress, back }) {
+render({ link, headline, description, back }) {
   return (
     <div class={ back ? [style.box, style.gray].join(' ') : style.box}>
       { headline && <h2 class={style.headline}>{ headline }</h2>}

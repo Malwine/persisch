@@ -46,45 +46,52 @@ export default class Card extends Component {
 		this.setState({ flipped: true });
 	}
 
+	renderBack = (back, backDescription) => {
+		return (
+			<div>
+				<Box headline={ back } description={ backDescription } back={ true } />
+				<h3>Did you know it?</h3>
+				<div class={ style.buttonWrap }>
+					<button 
+						class={style.button} 
+						onClick={ this.handleKnownClick }>YES</button>
+					<button 
+						class={style.button} 
+						onClick={ this.handleNotKnowClick }>NO</button>
+				</div>
+			</div>
+		)
+	}
+
+	renderFront = (front, frontDescription) => {
+		return (
+			<div>
+				<Box headline={ front } description={ frontDescription } />
+				<h3>Think about it...</h3>
+				<button 
+					class={[style.button, style.turnButton].join(' ')} 
+					onClick={ this.handleTurn }>
+					Turn card!
+				</button>
+			</div>
+		)
+	}
+
 	render({ data, set: setIndex, card: cardIndex  }) {
 		const setName = data.sets[setIndex].name;
 		const flipped = this.state.flipped;
-		const front = data.sets[setIndex].cards[cardIndex].front
-		const back = data.sets[setIndex].cards[cardIndex].back
-		const backDescription = data.sets[setIndex].cards[cardIndex].backDescription
-		const frontDescription = data.sets[setIndex].cards[cardIndex].frontDescription
-		const learningRate = data.sets[setIndex].cards[cardIndex].memoryRate
+		const card = data.sets[setIndex].cards[cardIndex];
+		const front = card.front;
+		const back = card.back;
+		const backDescription = card.backDescription;
+		const frontDescription = card.frontDescription;
 
-		if (flipped) {
-			return (
-				<div class={style.spacing}>
-					<h2 class={style.setName}>{setName}</h2>
-					<Box headline={ back } description={ backDescription } progress={ learningRate } back={ true } />
-
-					<h3>Did you know it?</h3>
-					<div class={ style.buttonWrap }>
-						<button 
-							class={style.button} 
-							onClick={ this.handleKnownClick }>YES</button>
-						<button 
-							class={style.button} 
-							onClick={ this.handleNotKnowClick }>NO</button>
-					</div>
-				</div>
-			)
-		} else {
-			return (
-				<div class={style.spacing}>
-					<h2 class={style.setName}>{setName}</h2>
-					<Box headline={ front } description={ frontDescription } progress={ learningRate }/>
-          <h3>Think about it...</h3>
-					<button 
-						class={[style.button, style.turnButton].join(' ')} 
-						onClick={ this.handleTurn }>
-						Turn card!
-					</button>
-				</div>
-			)
-		}
+		return (
+			<div class={style.spacing}>
+				<h2 class={style.setName}>{setName}</h2>
+				{ flipped && this.renderBack(back, backDescription) }
+				{ !flipped && this.renderFront(front, frontDescription)}		
+			</div>
+		)
 	}
 }
