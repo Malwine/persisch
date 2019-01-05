@@ -7,7 +7,8 @@ import Box from '../../components/box'
 export default class Card extends Component {
 
 	state = {
-		flipped: false
+		flipped: false,
+		progressRate: 0
 	};
 
 	componentDidMount() {
@@ -35,6 +36,7 @@ export default class Card extends Component {
 
 	handleKnownClick = () => {
 		this.handleClick(1)
+		this.state.progressRate += 1
 	}
 	
 	handleNotKnowClick = () => {
@@ -78,19 +80,24 @@ export default class Card extends Component {
 	}
 
 	render({ data, set: setIndex, card: cardIndex  }) {
-		const setName = data.sets[setIndex].name;
+		const set = data.sets[setIndex];
+		const setName = set.name;
 		const flipped = this.state.flipped;
-		const card = data.sets[setIndex].cards[cardIndex];
-		const front = card.front;
-		const back = card.back;
-		const backDescription = card.backDescription;
-		const frontDescription = card.frontDescription;
+		const card = set.cards[cardIndex];
+
+		const learningRateSum = set.cards.length * 3;
+		let progressInPercent =  (this.state.progressRate / learningRateSum) * 100;
+		set.progressInPercent = progressInPercent || 0
+		console.log(this.state.progressRate)
+		console.log(progressInPercent)
+		console.log(set)
 
 		return (
 			<div class={style.spacing}>
 				<h2 class={style.setName}>{setName}</h2>
-				{ flipped && this.renderBack(back, backDescription) }
-				{ !flipped && this.renderFront(front, frontDescription)}		
+				<progress max="100" value={ progressInPercent }></progress>
+				{ flipped && this.renderBack(card.back, card.backDescription) }
+				{ !flipped && this.renderFront(card.front, card.frontDescription)}		
 			</div>
 		)
 	}

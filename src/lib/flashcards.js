@@ -86,7 +86,6 @@ function pickCardRandom() {
 }
 
 function checkRemainingCards(cards) {
-  console.log(cards)
   console.log(currentCard.front, "MemoryRate is: ", currentCard.memoryRate)
 
   // Reset maxMemoryRate to enable last card to be chosen
