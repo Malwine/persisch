@@ -22,7 +22,11 @@ export default class Set extends Component {
 			<div class={style.spacing}>
 				<h2>{data.sets[setIndex].name}</h2>
 				<p class={style.subline}>{data.sets[setIndex].description}</p>
-				<button class={style.button} onClick={ this.handleStartClick }>Start</button>
+				<button 
+					class={[style.button, style.buttonPrimary].join(' ')} 
+					onClick={ this.handleStartClick }>
+					Start
+				</button>
         
         <p>Included words:</p>
         <ul class={style.list}>	
@@ -36,7 +40,11 @@ export default class Set extends Component {
 				})}
 				</ul>
 
-				<button class={ style.resetButton } onClick={ this.handleResetClick }>Reset progress</button>
+				<button 
+					class={[style.button, style.resetButton].join(' ')} 
+					onClick={ this.handleResetClick }>
+					Reset progress
+				</button>
 			</div>
 		);
 	}

@@ -35,45 +35,27 @@
   border-radius: 2px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
   color: #FFF;
-  background-color: #600060;
-
-
   width: 100%;
   margin: 15px 0 15px 0;
+}
+
+.buttonPrimary {
+  background-color: #600060;
 }
 
 .resetButton {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  height: 35px;
-  padding: 0 1.5rem;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: .8px;
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-  white-space: nowrap;
-  outline: none;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
-  color: black;
   background-color: #e8e8e8;
+  color: black;
+}
 
-
-  width: 100%;
-  margin: 15px 0 15px 0;
+.buttonPrimary:hover { 
+	box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
+	background-color: #842584;
 }
 
 .resetButton:hover {
+  box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
   background-color: #c8c8c8;
-}
-
-.button:hover { 
-	box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
-	background-color: #842584;
 }
 
 .list {
