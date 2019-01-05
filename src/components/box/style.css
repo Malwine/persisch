@@ -17,6 +17,10 @@
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
+.gray {
+	background-color: #f5f5f5;
+}
+
 .headline {
 	font-size: 18px;
   color: black;
