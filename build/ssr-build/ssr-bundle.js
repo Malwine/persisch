@@ -557,7 +557,6 @@ function pickCardRandom() {
 }
 
 function checkRemainingCards(cards) {
-  console.log(cards);
   console.log(currentCard.front, "MemoryRate is: ", currentCard.memoryRate);
 
   // Reset maxMemoryRate to enable last card to be chosen
@@ -675,7 +674,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var _ref3 = Object(preact_min["h"])(
+var learn__ref3 = Object(preact_min["h"])(
 	'h1',
 	null,
 	'Learn'
@@ -734,7 +733,7 @@ var learn_Learn = function (_Component) {
 		return Object(preact_min["h"])(
 			'div',
 			{ 'class': learn_style_default.a.profile },
-			_ref3,
+			learn__ref3,
 			_ref4
 		);
 	};
@@ -764,42 +763,24 @@ function box__inherits(subClass, superClass) { if (typeof superClass !== "functi
 
 
 
-var box__ref2 = Object(preact_min["h"])('div', null);
-
 var box_Box = function (_Component) {
   box__inherits(Box, _Component);
 
   function Box() {
-    var _temp, _this, _ret;
-
     box__classCallCheck(this, Box);
 
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _ret = (_temp = (_this = box__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.showProgress = function (progress) {
-      var progressBar = [];
-
-      {
-        for (var block = 1; block <= progress; block++) {
-          progressBar.push(Object(preact_min["h"])('div', { 'class': box_style_default.a.bar }));
-        }
-      }
-      return progressBar;
-    }, _temp), box__possibleConstructorReturn(_this, _ret);
+    return box__possibleConstructorReturn(this, _Component.apply(this, arguments));
   }
 
   Box.prototype.render = function render(_ref) {
     var link = _ref.link,
         headline = _ref.headline,
         description = _ref.description,
-        progress = _ref.progress,
         back = _ref.back;
 
     return Object(preact_min["h"])(
       'div',
-      { 'class': box_style_default.a.box },
+      { 'class': back ? [box_style_default.a.box, box_style_default.a.gray].join(' ') : box_style_default.a.box },
       headline && Object(preact_min["h"])(
         'h2',
         { 'class': box_style_default.a.headline },
@@ -814,12 +795,7 @@ var box_Box = function (_Component) {
         'a',
         { 'class': box_style_default.a.button, href: link },
         'LEARN'
-      ),
-      back && progress !== null && progress !== undefined && progress !== 0 ? Object(preact_min["h"])(
-        'div',
-        { 'class': box_style_default.a.progressWrap },
-        this.showProgress(progress)
-      ) : box__ref2
+      )
     );
   };
 
@@ -946,7 +922,9 @@ var set_Set = function (_Component) {
 			),
 			Object(preact_min["h"])(
 				'button',
-				{ 'class': set_style_default.a.button, onClick: this.handleStartClick },
+				{
+					'class': [set_style_default.a.button, set_style_default.a.buttonPrimary].join(' '),
+					onClick: this.handleStartClick },
 				'Start'
 			),
 			set__ref2,
@@ -972,7 +950,9 @@ var set_Set = function (_Component) {
 			),
 			Object(preact_min["h"])(
 				'button',
-				{ 'class': set_style_default.a.resetButton, onClick: this.handleResetClick },
+				{
+					'class': [set_style_default.a.button, set_style_default.a.resetButton].join(' '),
+					onClick: this.handleResetClick },
 				'Reset progress'
 			)
 		);
@@ -1001,13 +981,13 @@ function card__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 
-var card__ref2 = Object(preact_min["h"])(
+var card__ref = Object(preact_min["h"])(
 	'h3',
 	null,
 	'Did you know it?'
 );
 
-var card__ref3 = Object(preact_min["h"])(
+var card__ref2 = Object(preact_min["h"])(
 	'h3',
 	null,
 	'Think about it...'
@@ -1026,7 +1006,8 @@ var card_Card = function (_Component) {
 		}
 
 		return _ret = (_temp = (_this = card__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = {
-			flipped: false
+			flipped: false,
+			progressRate: 0
 		}, _this.allCards = function () {
 			return _this.props.data.sets[_this.props.set].cards;
 		}, _this.currentCard = function () {
@@ -1042,11 +1023,51 @@ var card_Card = function (_Component) {
 			_this.setState({ flipped: false });
 		}, _this.handleKnownClick = function () {
 			_this.handleClick(1);
+			_this.state.progressRate += 1;
 		}, _this.handleNotKnowClick = function () {
 			//Originally I substracted 1 but now I want to go with 0
 			_this.handleClick(0);
 		}, _this.handleTurn = function () {
 			_this.setState({ flipped: true });
+		}, _this.renderBack = function (back, backDescription) {
+			return Object(preact_min["h"])(
+				'div',
+				null,
+				Object(preact_min["h"])(box_Box, { headline: back, description: backDescription, back: true }),
+				card__ref,
+				Object(preact_min["h"])(
+					'div',
+					{ 'class': card_style_default.a.buttonWrap },
+					Object(preact_min["h"])(
+						'button',
+						{
+							'class': card_style_default.a.button,
+							onClick: _this.handleKnownClick },
+						'YES'
+					),
+					Object(preact_min["h"])(
+						'button',
+						{
+							'class': card_style_default.a.button,
+							onClick: _this.handleNotKnowClick },
+						'NO'
+					)
+				)
+			);
+		}, _this.renderFront = function (front, frontDescription) {
+			return Object(preact_min["h"])(
+				'div',
+				null,
+				Object(preact_min["h"])(box_Box, { headline: front, description: frontDescription }),
+				card__ref2,
+				Object(preact_min["h"])(
+					'button',
+					{
+						'class': [card_style_default.a.button, card_style_default.a.turnButton].join(' '),
+						onClick: _this.handleTurn },
+					'Turn card!'
+				)
+			);
 		}, _temp), card__possibleConstructorReturn(_this, _ret);
 	}
 
@@ -1054,63 +1075,35 @@ var card_Card = function (_Component) {
 		restoreState(this.props.set, this.props.card, this.props.data);
 	};
 
-	Card.prototype.render = function render(_ref) {
-		var data = _ref.data,
-		    setIndex = _ref.set,
-		    cardIndex = _ref.card;
+	Card.prototype.render = function render(_ref3) {
+		var data = _ref3.data,
+		    setIndex = _ref3.set,
+		    cardIndex = _ref3.card;
 
-		var setName = data.sets[setIndex].name;
+		var set = data.sets[setIndex];
+		var setName = set.name;
 		var flipped = this.state.flipped;
-		var front = data.sets[setIndex].cards[cardIndex].front;
-		var back = data.sets[setIndex].cards[cardIndex].back;
-		var backDescription = data.sets[setIndex].cards[cardIndex].backDescription;
-		var frontDescription = data.sets[setIndex].cards[cardIndex].frontDescription;
-		var learningRate = data.sets[setIndex].cards[cardIndex].memoryRate;
+		var card = set.cards[cardIndex];
 
-		if (flipped) {
-			return Object(preact_min["h"])(
-				'div',
-				{ 'class': card_style_default.a.spacing },
-				Object(preact_min["h"])(
-					'h2',
-					{ 'class': card_style_default.a.setName },
-					setName
-				),
-				Object(preact_min["h"])(box_Box, { headline: back, description: backDescription, progress: learningRate, back: true }),
-				card__ref2,
-				Object(preact_min["h"])(
-					'div',
-					{ 'class': card_style_default.a.buttonWrap },
-					Object(preact_min["h"])(
-						'button',
-						{ 'class': card_style_default.a.button, onClick: this.handleKnownClick },
-						'YES'
-					),
-					Object(preact_min["h"])(
-						'button',
-						{ 'class': card_style_default.a.button, onClick: this.handleNotKnowClick },
-						'NO'
-					)
-				)
-			);
-		} else {
-			return Object(preact_min["h"])(
-				'div',
-				{ 'class': card_style_default.a.spacing },
-				Object(preact_min["h"])(
-					'h2',
-					{ 'class': card_style_default.a.setName },
-					setName
-				),
-				Object(preact_min["h"])(box_Box, { headline: front, description: frontDescription, progress: learningRate }),
-				card__ref3,
-				Object(preact_min["h"])(
-					'button',
-					{ 'class': card_style_default.a.turnButton, onClick: this.handleTurn },
-					'Turn card!'
-				)
-			);
-		}
+		var learningRateSum = set.cards.length * 3;
+		var progressInPercent = this.state.progressRate / learningRateSum * 100;
+		set.progressInPercent = progressInPercent || 0;
+		console.log(this.state.progressRate);
+		console.log(progressInPercent);
+		console.log(set);
+
+		return Object(preact_min["h"])(
+			'div',
+			{ 'class': card_style_default.a.spacing },
+			Object(preact_min["h"])(
+				'h2',
+				{ 'class': card_style_default.a.setName },
+				setName
+			),
+			Object(preact_min["h"])('progress', { max: '100', value: progressInPercent }),
+			flipped && this.renderBack(card.back, card.backDescription),
+			!flipped && this.renderFront(card.front, card.frontDescription)
+		);
 	};
 
 	return Card;
@@ -1474,7 +1467,7 @@ module.exports = {"profile":"profile__1n8CG","list":"list__3QDQW"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0","turnButton":"turnButton__2q7I4","buttonWrap":"buttonWrap__3NNEf","button":"button__2TMpX"};
+module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0","buttonWrap":"buttonWrap__3NNEf","button":"button__2TMpX","turnButton":"turnButton__2q7I4"};
 
 /***/ }),
 
@@ -1482,7 +1475,7 @@ module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0","turnBut
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"box":"box__1bpQv","headline":"headline__1DObL","subline":"subline__2eJG4","button":"button__3nJCq","progress":"progress__2syVq","progressWrap":"progressWrap__2-rBV","bar":"bar__3U8Or"};
+module.exports = {"box":"box__1bpQv","gray":"gray__UwoHf","headline":"headline__1DObL","subline":"subline__2eJG4","button":"button__3nJCq","progress":"progress__2syVq","progressWrap":"progressWrap__2-rBV","bar":"bar__3U8Or"};
 
 /***/ }),
 
@@ -1490,7 +1483,7 @@ module.exports = {"box":"box__1bpQv","headline":"headline__1DObL","subline":"sub
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"spacing":"spacing__2V6vn","subline":"subline__Xf72D","button":"button__fhbo7","resetButton":"resetButton__16iSy","list":"list__2700y","cardWrap":"cardWrap__3k-xM","left":"left__dgfdH"};
+module.exports = {"spacing":"spacing__2V6vn","subline":"subline__Xf72D","button":"button__fhbo7","buttonPrimary":"buttonPrimary__1RrKf","resetButton":"resetButton__16iSy","list":"list__2700y","cardWrap":"cardWrap__3k-xM","left":"left__dgfdH"};
 
 /***/ }),
 
