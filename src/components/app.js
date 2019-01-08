@@ -5,7 +5,6 @@ import { restoreProgress } from '../lib/flashcards'
 import Header from './header';
 
 // Code-splitting is automated for routes
-import Learn from '../routes/learn';
 import Sets from '../routes/sets';
 import Set from '../routes/set';
 import Card from '../routes/card';
