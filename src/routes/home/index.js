@@ -15,9 +15,12 @@ const Home = () => (
 		<Box headline={ "four" } description={ "in Persian" } />
 
 		<div class={style.belowBox}>
-			<p>Add the app to your home screen and start learning.</p>
-			<p>Check out some of the <Link class={style.link} href="/sets">sample sets</Link>.</p>
-			<p>This app was built by <Link class={style.link} href="https://twitter.com/malweene">Malwine</Link></p>
+			<p>
+				Add the app to your home screen and start learning
+				Soon you will be able to create your own sets.
+				Meanwhile, check out some of the <Link class={style.link} href="/sets">sample sets</Link>.
+			</p>
+			<p>This app was built by <a class={style.link} href="https://twitter.com/malweene">Malwine</a>.</p>
 		</div>
 	</div>
 );

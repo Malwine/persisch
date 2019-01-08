@@ -5,12 +5,12 @@
 }
 
 .home p {
-	line-height: 1.5;
+	line-height: 1.8;
 }
 
 @media (min-width: 768px) {
 	.home {
-		margin: 0 auto;
+		margin: 30px auto;
     width: 600px;
 	}
 }
