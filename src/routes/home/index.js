@@ -12,13 +12,13 @@ const Home = () => (
 			your internet connection.</p>
 		</div>
 
-		<Box headline={ "four" } description={ "in Persian" } />
+		<Box headline={ "four" } smaller />
+		<Box headline={ "چهار" } description={ "(۴) shahar" } back={ true } smaller/>
 
 		<div class={style.belowBox}>
 			<p>
-				Add the app to your home screen and start learning
-				Soon you will be able to create your own sets.
-				Meanwhile, check out some of the <Link class={style.link} href="/sets">sample sets</Link>.
+				Check out the <Link class={style.link} href="/sets">sample sets</Link>.
+				Soon you will be able to create your own. Add the app to your home screen and start learning.
 			</p>
 			<p>This app was built by <a class={style.link} href="https://twitter.com/malweene">Malwine</a>.</p>
 		</div>
