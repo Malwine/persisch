@@ -4,6 +4,13 @@
 	width: 100%;
 }
 
+@media (min-width: 768px) {
+	.spacing{
+		margin: 30px auto;
+    width: 600px;
+	}
+}
+
 .spacing h3 {
   margin: 50px 0 15px 0; 
 }

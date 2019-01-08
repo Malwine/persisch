@@ -3,3 +3,36 @@
 	min-height: 100%;
 	width: 100%;
 }
+
+.home p {
+	line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+	.home {
+		margin: 30px auto;
+    width: 600px;
+	}
+
+	.belowBox {
+		margin-top: 10px;
+	}
+}
+
+.belowBox {
+	display: inline-block;
+}
+
+.link, .link:visited {
+	color: #600060;
+	border-bottom: solid 3px #600060;
+}
+
+.link:hover {
+	color: #656565;
+	border-bottom: solid 3px #656565;
+}
+
+.smaller {
+	height: 100px;
+}

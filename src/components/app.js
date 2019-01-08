@@ -32,8 +32,7 @@ export default class App extends Component {
 			<div id="app">
 				<Header />
 				<Router onChange={this.handleRoute}>
-          			<Home path="/" />
-					<Learn path="/learn" />
+          <Home default path="/" />
 					<Sets path="/sets" data={ state.data } />
 					<Set path="/sets/:set" data={ state.data } />
 					<Card path="/sets/:set/cards/:card" data={ state.data } />
