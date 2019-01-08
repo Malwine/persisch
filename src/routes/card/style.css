@@ -5,6 +5,13 @@
 	width: 100%;
 }
 
+@media (min-width: 768px) {
+	.spacing{
+		margin: 0 auto;
+    width: 600px;
+	}
+}
+
 .setName {
 	font-size: 15px;
     color: #afafaf;

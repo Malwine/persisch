@@ -1,4 +1,4 @@
-.profile {
+.sets {
 	padding: 56px 20px;
 	min-height: 100%;
 	width: 100%;
@@ -8,3 +8,11 @@
 	padding: 0;
 	list-style: none;
 }
+
+@media (min-width: 768px) {
+	.sets{
+		margin: 0 auto;
+    width: 600px;
+	}
+}
+
