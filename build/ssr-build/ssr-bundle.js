@@ -872,7 +872,7 @@ var set_Set = function (_Component) {
 			progress >= 100 ? Object(preact_min["h"])(
 				'div',
 				{ 'class': set_style_default.a.finished },
-				'\u2714\uFE0E Completed'
+				'\u2713 Completed'
 			) : progress > 0 ? Object(preact_min["h"])(
 				'button',
 				{ 'class': [set_style_default.a.button, set_style_default.a.buttonPrimary].join(' '),
