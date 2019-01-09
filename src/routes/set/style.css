@@ -43,7 +43,6 @@
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
   color: #FFF;
   width: 100%;
-  margin: 15px 0 15px 0;
 }
 
 .buttonPrimary {
@@ -58,6 +57,20 @@
 .buttonPrimary:hover { 
 	box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
 	background-color: #842584;
+}
+
+.finished {
+    border: dotted 2px #600060;
+    color: #600060;
+    height: 35px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .8px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-top: 5px;
 }
 
 .resetButton:hover {

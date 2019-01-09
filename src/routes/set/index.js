@@ -26,17 +26,11 @@ export default class Set extends Component {
 			<div class={style.spacing}>
 				<h2>{set.name}</h2>
 				<p class={style.subline}>{set.description}</p>
-				{ progress }
-				{ progress >= 100 ? <div>Finished</div> : (
-					<button 
-					class={[style.button, style.buttonPrimary].join(' ')} 
-					onClick={ this.handleStartClick }>
-					Start
-					</button> 
-				) 
+				{ progress >= 100 ? 
+					( <div class={style.finished}>✔︎ Finished</div> ) : 
+					( <button class={[style.button, style.buttonPrimary].join(' ')} 
+							onClick={ this.handleStartClick }>Start</button> ) 
 				}
-				
-        
         <p>Included words:</p>
         <ul class={style.list}>	
 				{ set.cards.map((card, index) => {
