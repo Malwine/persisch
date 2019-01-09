@@ -1,14 +1,13 @@
 import { h, Component } from 'preact';
 import style from './style';
-import { processAnswer, restoreState, saveProgress } from '../../lib/flashcards'
+import { processAnswer, restoreState, saveProgress, getProgressForSet } from '../../lib/flashcards'
 import { route } from 'preact-router'
 import Box from '../../components/box'
 
 export default class Card extends Component {
 
 	state = {
-		flipped: false,
-		progressRate: 0
+		flipped: false
 	};
 
 	componentDidMount() {
@@ -23,8 +22,12 @@ export default class Card extends Component {
 		return this.allCards()[this.props.card]
 	}
 
+	currentSet = () => {
+		return this.props.data.sets[this.props.set]
+	}
+
 	handleClick = (memoryRateChange) => {
-		let nextCardIndex = processAnswer(memoryRateChange, this.currentCard(), this.allCards())
+		let nextCardIndex = processAnswer(memoryRateChange, this.currentCard(), this.currentSet())
 		saveProgress()
 		if (nextCardIndex === undefined) {
 			route(`/sets`)
@@ -36,7 +39,6 @@ export default class Card extends Component {
 
 	handleKnownClick = () => {
 		this.handleClick(1)
-		this.state.progressRate += 1
 	}
 	
 	handleNotKnowClick = () => {
@@ -84,18 +86,11 @@ export default class Card extends Component {
 		const setName = set.name;
 		const flipped = this.state.flipped;
 		const card = set.cards[cardIndex];
-
-		const learningRateSum = set.cards.length * 3;
-		let progressInPercent =  (this.state.progressRate / learningRateSum) * 100;
-		set.progressInPercent = progressInPercent || 0
-		console.log(this.state.progressRate)
-		console.log(progressInPercent)
-		console.log(set)
-
+		
 		return (
 			<div class={style.spacing}>
 				<h2 class={style.setName}>{setName}</h2>
-				<progress max="100" value={ progressInPercent }></progress>
+				<progress max="100" value={ getProgressForSet(this.currentSet()) }></progress>
 				{ flipped && this.renderBack(card.back, card.backDescription) }
 				{ !flipped && this.renderFront(card.front, card.frontDescription)}		
 			</div>

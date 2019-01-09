@@ -57,9 +57,12 @@ function checkPreviousAndMemoryRate(index, currentCard) {
   return cardValid
 }
 
-export function processAnswer(answer, card, allCards) {
+export function processAnswer(answer, card, set) {
   card.memoryRate += answer
-  return checkRemainingCards(allCards)
+    if (answer === 1) {
+      set.progressRate += 1
+    }
+  return checkRemainingCards(set)
 }
 
 function pickCardRandom() {
@@ -85,7 +88,8 @@ function pickCardRandom() {
   }
 }
 
-function checkRemainingCards(cards) {
+function checkRemainingCards(set) {
+  const cards = set.cards;
   console.log(currentCard.front, "MemoryRate is: ", currentCard.memoryRate)
 
   // Reset maxMemoryRate to enable last card to be chosen
@@ -115,30 +119,26 @@ function checkRemainingCards(cards) {
     return pickCardRandom()
   } else {
     // Case 2: no cards left, user may reset
-    if (confirm("You learned everything? Do you want to reset your progress to start again?")) {
-      return reset(cards)
-    } else {
-      console.log("Ok, see you another time!")
-    }
+    alert("Congrats! you learned everything!")
+    // if (confirm("You learned everything? Do you want to reset your progress to start again?")) {
+    //   reset(set)
+    // } else {
+    //   console.log("Ok, see you another time!")
+    // }
   }
 }
 
-function reset(cards) {
-  currentSet.cards = cards.map(card => {
+export function getProgressForSet(set) {
+  set.progressRate = set.progressRate || 0
+  const learningRateSum = set.cards.length * 3;
+	return (set.progressRate / learningRateSum) * 100;
+}
+
+export function reset(set) {
+  set.cards.forEach( card => {
     card.memoryRate = 0
-    return card
   })
   previousCardIndex = undefined
   maxMemoryRate = 3
-
-  console.log("All reset! Let's go!")
-  return pickCardRandom()
-}
-
-export function resetSet(set) {
-  set.cards.map( card => {
-    card.memoryRate = 0
-  })
-  alert("Set was reset! You can start learning again.");
-  return set
+  set.progressRate = 0
 }

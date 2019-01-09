@@ -33,12 +33,25 @@
 }
 
 .button {
-	color: #600060;
-	font-weight: 500;
-	letter-spacing: 1px;
-	display: block;
-	font-size: 15px;
-	position:absolute;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 35px;
+  padding: 0 1.5rem;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  color: black;
+  width: 100%;
+	background-color: #d4b0d4;
+	width: 90%;
+	position: absolute;
 	bottom: 15px;
 }
 

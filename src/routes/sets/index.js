@@ -1,8 +1,19 @@
 import { h, Component } from 'preact';
 import style from './style';
 import Box from '../../components/box'
+import { getProgressForSet } from '../../lib/flashcards'
 
 export default class Sets extends Component {
+
+	progressForSet = (set) => {
+		const progress = getProgressForSet(set)
+		console.log(progress)
+		if (progress === undefined || progress === 0) {
+			return "0"
+		} else {
+			return progress
+		}
+	}
 
 	render({ data }) {
 		return (
@@ -12,8 +23,9 @@ export default class Sets extends Component {
 				{ data.sets.map((set, index) => {
 					return (
 						<li>
-							<Box link={`/sets/${index}`} headline={set.name} description={set.description}/>
-						</li>					)
+							<Box link={`/sets/${index}`} headline={set.name} description={set.description} progressStatus={ this.progressForSet(set) } />
+						</li>	
+					)
 				})}
 				</ul>
 			</div>
