@@ -48,11 +48,16 @@
   border: none;
   border-radius: 2px;
   color: black;
-  width: 100%;
 	background-color: #d4b0d4;
-	width: 90%;
+	width: 91%;
 	position: absolute;
 	bottom: 15px;
+}
+
+@media (min-width: 570px) {
+	.button{
+    width: 94%;
+	}
 }
 
 .progress {
