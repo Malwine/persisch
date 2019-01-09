@@ -26,8 +26,11 @@ export default class Set extends Component {
 			<div class={style.spacing}>
 				<h2>{set.name}</h2>
 				<p class={style.subline}>{set.description}</p>
-				{ progress >= 100 ? 
-					( <div class={style.finished}>✔︎ Finished</div> ) : 
+				{ progress >= 100 ?	
+					( <div class={style.finished}>✔︎ Completed</div> ) : 
+					progress > 0 ?
+					( <button class={[style.button, style.buttonPrimary].join(' ')} 
+							onClick={ this.handleStartClick }>Resume</button>) :
 					( <button class={[style.button, style.buttonPrimary].join(' ')} 
 							onClick={ this.handleStartClick }>Start</button> ) 
 				}
