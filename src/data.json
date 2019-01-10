@@ -1,8 +1,8 @@
 {
     "sets": [
         {
-            "name": "Persisch A1 Vokabeln",
-            "description": "Die ersten Vokablen für Persisch A1.1 mit wissenschaftlicher Umschrift.",
+            "name": "Persisch A1: Begrüßung",
+            "description": "Die ersten Vokablen zur Begrüßung mit Umschrift.",
             "cards": [
                 {
                     "front": "Hallo",
@@ -49,8 +49,8 @@
             ]
         },
         {
-            "name": "Persisch A1 Verben",
-            "description": "Die Verben \"sein\", \"haben\" und ihre Verneinung mit wissenschaftlicher Umschrift.",
+            "name": "Persisch A1: sein & haben",
+            "description": "Die Verben \"sein\", \"haben\" und ihre Verneinung.",
             "cards": [
                 {
                     "front": "ich bin",
@@ -195,6 +195,240 @@
                     "frontDescription": "plural",
                     "back": "آنها ندارند",
                     "backDescription": "ānhā/unā nadārand"
+                }
+            ]
+        },
+        {
+            "name": "Persisch A1: Familie",
+            "description": "Vokabeln mit Umschrift zur Beschreibung der Familie.",
+            "cards": [
+                {
+                    "front": "Familie",
+                    "frontDescription": "",
+                    "back": "خانواده",
+                    "backDescription": "xānevādeh"
+                },
+                {
+                    "front": "Mutter",
+                    "frontDescription": "",
+                    "back": "مادر",
+                    "backDescription": "mādar"
+                },
+                {
+                    "front": "Vater",
+                    "frontDescription": "",
+                    "back": "پدر",
+                    "backDescription": "pedar"
+                },
+                {
+                    "front": "Tochter",
+                    "frontDescription": "",
+                    "back": "دختر",
+                    "backDescription": "doxtar"
+                },
+                {
+                    "front": "Sohn",
+                    "frontDescription": "",
+                    "back": "پسر",
+                    "backDescription": "pesar"
+                },
+                {
+                    "front": "Schwester",
+                    "frontDescription": "",
+                    "back": "خواهر",
+                    "backDescription": "xāhar"
+                },
+                {
+                    "front": "Bruder",
+                    "frontDescription": "",
+                    "back": "برادر",
+                    "backDescription": "barādar"
+                },
+                {
+                    "front": "Großmutter",
+                    "frontDescription": "",
+                    "back": "مادربزرگ",
+                    "backDescription": "mādarbozorg"
+                },
+                {
+                    "front": "Großvater",
+                    "frontDescription": "",
+                    "back": "پدربزرگ",
+                    "backDescription": "pedarbozorg"
+                },
+                {
+                    "front": "Enkel",
+                    "frontDescription": "",
+                    "back": "نوه",
+                    "backDescription": "nawe"
+                },
+                {
+                    "front": "Tante",
+                    "frontDescription": "(mütterlicherseits)",
+                    "back": "خاله",
+                    "backDescription": "xâle"
+                },
+                {
+                    "front": "Tante",
+                    "frontDescription": "(väterlicherseits)",
+                    "back": "عمه",
+                    "backDescription": "amme"
+                },
+                {
+                    "front": "Onkel",
+                    "frontDescription": "(mütterlicherseits)",
+                    "back": "دایی",
+                    "backDescription": "dāyi"
+                },
+                {
+                    "front": "Onkel",
+                    "frontDescription": "(väterlicherseits)",
+                    "back": "عمو",
+                    "backDescription": "amu"
+                },
+                {
+                    "front": "Ehepartner",
+                    "frontDescription": "",
+                    "back": "همسر",
+                    "backDescription": "hamsar"
+                },
+                {
+                    "front": "Frau",
+                    "frontDescription": "",
+                    "back": "زن",
+                    "backDescription": "zan"
+                },
+                {
+                    "front": "Mann",
+                    "frontDescription": "",
+                    "back": "مرد",
+                    "backDescription": "mard"
+                },
+                {
+                    "front": "Kind",
+                    "frontDescription": "",
+                    "back": "بچه",
+                    "backDescription": "bačče"
+                }
+            ]
+        },
+        {
+            "name": "Persisch A1: Zeit",
+            "description": "Vokabeln mit Umschrift für Zeit, Wochentage und Jahreszeiten.",
+            "cards": [
+                {
+                    "front": "Samstag",
+                    "frontDescription": "An diesem Tag beginnt die Woche.",
+                    "back": "شنبه",
+                    "backDescription": "Šanbe"
+                },
+                {
+                    "front": "Sonntag",
+                    "frontDescription": "",
+                    "back": "یکشنبه",
+                    "backDescription": "Yekšanbe"
+                },
+                {
+                    "front": "Montag",
+                    "frontDescription": "",
+                    "back": "دوشنبه",
+                    "backDescription": "Došanbe"
+                },
+                {
+                    "front": "Dienstag",
+                    "frontDescription": "",
+                    "back": "سه‌شنبه",
+                    "backDescription": "Sešanbe"
+                },
+                {
+                    "front": "Mittwoch",
+                    "frontDescription": "",
+                    "back": "چهارشنبه",
+                    "backDescription": "Čāhāršanbe"
+                },
+                {
+                    "front": "Donnerstag",
+                    "frontDescription": "",
+                    "back": "پنجشنبه",
+                    "backDescription": "Panğšanbe"
+                },
+                {
+                    "front": "Freitag",
+                    "frontDescription": "",
+                    "back": "جمعه",
+                    "backDescription": "Ğom'e"
+                },
+                {
+                    "front": "Woche",
+                    "frontDescription": "",
+                    "back": "هفته",
+                    "backDescription": "Haft'e"
+                },
+                {
+                    "front": "Tag",
+                    "frontDescription": "",
+                    "back": "روز",
+                    "backDescription": "ruz"
+                },
+                {
+                    "front": "Guten Tag!",
+                    "frontDescription": "",
+                    "back": "روز بخیر",
+                    "backDescription": "Ruz bexeyr!"
+                },
+                {
+                    "front": "Guten Abend!",
+                    "frontDescription": "",
+                    "back": "عصر بخیر",
+                    "backDescription": "Asr bexeyr!"
+                },
+                {
+                    "front": "Guten Morgen!",
+                    "frontDescription": "",
+                    "back": "صبح بخیر",
+                    "backDescription": "Sobh bexeyr!"
+                },
+                {
+                    "front": "Monat",
+                    "frontDescription": "(auch: Mond)",
+                    "back": "ماه",
+                    "backDescription": "mah"
+                },
+                {
+                    "front": "Jahr",
+                    "frontDescription": "",
+                    "back": "سال",
+                    "backDescription": "sal"
+                },
+                {
+                    "front": "Jahreszeit",
+                    "frontDescription": "(auch: Trennung)",
+                    "back": "فصل",
+                    "backDescription": "fasl"
+                },
+                {
+                    "front": "Frühling",
+                    "frontDescription": "",
+                    "back": "بهار",
+                    "backDescription": "bahār"
+                },
+                {
+                    "front": "Sommer",
+                    "frontDescription": "",
+                    "back": "تابستان",
+                    "backDescription": "tabestan"
+                },
+                {
+                    "front": "Herbst",
+                    "frontDescription": "",
+                    "back": "پاییز",
+                    "backDescription": "pāyiz"
+                },
+                {
+                    "front": "Winter",
+                    "frontDescription": "",
+                    "back": "زمستان",
+                    "backDescription": "zemestan"
                 }
             ]
         },
