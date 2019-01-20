@@ -17,15 +17,10 @@
     color: #afafaf;
 }
 
-.buttonWrap {
-	display: flex;
-	justify-content: space-between;
-}
-
 .button {
 	cursor: pointer;
 	height: 35px;
-	width: 48%;
+	width: 100%;
 	font-size: 15px;
 	font-weight: 600;
 	letter-spacing: .8px;
@@ -39,6 +34,12 @@
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
 	color: #FFF;
 	background-color: #600060;
+	margin-bottom: 15px;
+}
+
+.button:hover { 
+	box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
+	background-color: #842584;
 }
 
 .turnButton {
@@ -63,4 +64,8 @@ progress::-webkit-progress-value {
 
 progress::-webkit-progress-bar { 
 	background: #e8e8e8; 
+}
+
+.hint {
+	margin-top: 0;
 }

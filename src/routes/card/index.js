@@ -40,6 +40,7 @@ export default class Card extends Component {
 
 	handleKnownClick = () => {
 		this.handleClick(1)
+		this.setState({ solutionSeen: false });
 	}
 	
 	handleNotKnowClick = () => {
@@ -71,7 +72,7 @@ export default class Card extends Component {
 		return (
 			<div>
 				<Box headline={ front } description={ frontDescription } handleClick={ this.handleTurn }/>
-				{!solutionSeen && <p>Think about it and tap on the card to flip it.</p>}
+				{!solutionSeen && <p class={style.hint}>Think about it and tap on the card to flip it.</p>}
 			</div>
 		)
 	}
@@ -80,7 +81,7 @@ export default class Card extends Component {
 		return (
 			<div>
 				<h3>Did you know it?</h3>
-				<div class={ style.buttonWrap }>
+				<div>
 					<button 
 						class={style.button} 
 						onClick={ this.handleKnownClick }>YES</button>
