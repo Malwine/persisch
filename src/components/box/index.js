@@ -7,7 +7,7 @@ export default class Box extends Component {
 
 handleStartClick = () => {
 	route(this.props.link)
-	}
+}
 
 render({ link, headline, description, back, smaller, progressStatus, handleClick }) {
 
