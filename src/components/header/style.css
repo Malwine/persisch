@@ -46,3 +46,8 @@
 .header nav a.active {
 	background: rgba(0,0,0,0.4);
 }
+
+.arrow {
+	font-size: 20px;
+	color: white;
+}

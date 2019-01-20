@@ -20,6 +20,24 @@ export default class App extends Component {
 	 */
 	handleRoute = e => {
 		this.currentUrl = e.url;
+		switch(e.url) {
+			case "/" : 
+				this.setState({previousUrl: null});
+				break;
+			case "/sets" :
+				this.setState({previousUrl: "/"});
+				break;
+			default : {
+				const setUrl = e.url.match(/\/sets\/\d/)[0]
+				if (e.url.match(/\/sets\/\d+$/)) {
+					this.setState({previousUrl: "/sets"});
+				} else if (e.url.match(/\/sets\/\d+\/cards\/\d+/)) {
+					this.setState({previousUrl: setUrl});
+				} else {
+					this.setState({previousUrl: null});
+				}
+			}
+		}
 	};
 
 	componentWillMount() {
@@ -29,8 +47,8 @@ export default class App extends Component {
 	render(props, state) {
 		return (
 			<div id="app">
-				<Header />
-				<Router onChange={this.handleRoute}>
+				<Header backButtonLocation={ this.state.previousUrl } />
+				<Router onChange={ this.handleRoute }>
           <Home default path="/" />
 					<Sets path="/sets" data={ state.data } />
 					<Set path="/sets/:set" data={ state.data } />
