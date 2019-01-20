@@ -7,7 +7,8 @@ import Box from '../../components/box'
 export default class Card extends Component {
 
 	state = {
-		flipped: false
+		flipped: false,
+		solutionSeen: false
 	};
 
 	componentDidMount() {
@@ -47,13 +48,37 @@ export default class Card extends Component {
 	}
 
 	handleTurn = () => {
-		this.setState({ flipped: true });
+		const { flipped } = this.state;
+		this.setState({ 
+			flipped: !flipped,
+			solutionSeen: true });
 	}
 
 	renderBack = (back, backDescription) => {
 		return (
 			<div>
-				<Box headline={ back } description={ backDescription } back={ true } />
+				<Box headline={ back } 
+					description={ backDescription } 
+					back={ true }
+					handleClick={ this.handleTurn } />
+			</div>
+		)
+	}
+
+	renderFront = (front, frontDescription) => {
+		const solutionSeen = this.state.solutionSeen;
+		
+		return (
+			<div>
+				<Box headline={ front } description={ frontDescription } handleClick={ this.handleTurn }/>
+				{!solutionSeen && <p>Think about it and tap on the card to flip it.</p>}
+			</div>
+		)
+	}
+
+	renderButtons = () => {
+		return (
+			<div>
 				<h3>Did you know it?</h3>
 				<div class={ style.buttonWrap }>
 					<button 
@@ -67,32 +92,20 @@ export default class Card extends Component {
 		)
 	}
 
-	renderFront = (front, frontDescription) => {
-		return (
-			<div>
-				<Box headline={ front } description={ frontDescription } />
-				<h3>Think about it...</h3>
-				<button 
-					class={[style.button, style.turnButton].join(' ')} 
-					onClick={ this.handleTurn }>
-					Turn card!
-				</button>
-			</div>
-		)
-	}
-
 	render({ data, set: setIndex, card: cardIndex  }) {
 		const set = data.sets[setIndex];
 		const setName = set.name;
 		const flipped = this.state.flipped;
 		const card = set.cards[cardIndex];
+		const solutionSeen = this.state.solutionSeen;
 		
 		return (
 			<div class={style.spacing}>
 				<h2 class={style.setName}>{setName}</h2>
 				<progress max="100" value={ getProgressForSet(this.currentSet()) }></progress>
 				{ flipped && this.renderBack(card.back, card.backDescription) }
-				{ !flipped && this.renderFront(card.front, card.frontDescription)}		
+				{ !flipped && this.renderFront(card.front, card.frontDescription)}	
+				{ solutionSeen && this.renderButtons() }
 			</div>
 		)
 	}

@@ -9,7 +9,7 @@ handleStartClick = () => {
 	route(this.props.link)
 	}
 
-render({ link, headline, description, back, smaller, progressStatus}) {
+render({ link, headline, description, back, smaller, progressStatus, handleClick }) {
 
   const buttonText = (progressStatus >= 100) ? "COMPLETED " :
                      (progressStatus > 0)   ? `RESUME (${ Number((progressStatus).toFixed(1))} %)` : "LEARN"
@@ -18,7 +18,8 @@ render({ link, headline, description, back, smaller, progressStatus}) {
     <div class={  smaller && back ? [style.box, style.smaller, style.gray].join(' ') :
                   smaller ?  [style.box, style.smaller].join(' ') : 
                   back ? [style.box, style.gray].join(' ') : 
-                  style.box }>
+                  style.box }
+        onClick={ handleClick }>
       { headline && <h2 class={style.headline}>{ headline }</h2>}
       { description && <p class={style.subline}>{description}</p>}
   
