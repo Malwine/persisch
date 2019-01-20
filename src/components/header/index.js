@@ -4,12 +4,17 @@ import style from './style';
 
 const Header = ({backButtonLocation}) => (
 	<header class={style.header}>
-		{ backButtonLocation && <Link class={style.arrow} href={backButtonLocation}>&lt;=</Link> }
-		{/* <h1>Flashcards</h1> */}
-		<nav>
-			<Link activeClassName={style.active} href="/">Home</Link>
-			<Link activeClassName={style.active} href="/sets">Sets</Link>
-		</nav>
+		{ backButtonLocation ? (
+				<Link class={style.arrow} href={backButtonLocation}>
+					<img class={style.arrow} src="../../assets/icons/arrow.png"></img>
+				</Link> 
+			) : (
+			<div class={style.space}></div>
+			)
+		}
+		<Link class={style.name} href="/"><h1>Flashcards</h1></Link>
+		<Link activeClassName={style.active} href="/sets">Sets</Link>
+
 	</header>
 );
 
