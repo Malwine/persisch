@@ -18,13 +18,16 @@ export function saveProgress() {
   }
 }
 
+export function resetAllData() {
+  localStorage.removeItem('progress')
+}
+
 export function restoreProgress(defaultData) {
   if(typeof window !== "undefined" && window.localStorage){
-    if(localStorage.getItem('progress')) {
-      return JSON.parse(localStorage.getItem('progress'))
-    } else {
-      return defaultData
+    if(!localStorage.getItem('progress')) {
+      localStorage.setItem('progress', JSON.stringify(defaultData));
     }
+    return JSON.parse(localStorage.getItem('progress'))
   }
 }
 
@@ -119,7 +122,7 @@ function checkRemainingCards(set) {
     return pickCardRandom()
   } else {
     // Case 2: no cards left, user may reset
-    alert("Congrats! you learned everything!")
+    alert("Congrats! You learned everything!")
     // if (confirm("You learned everything? Do you want to reset your progress to start again?")) {
     //   reset(set)
     // } else {

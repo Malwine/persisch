@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
-import { restoreProgress } from '../lib/flashcards'
+import { restoreProgress, resetAllData } from '../lib/flashcards'
 
 import Header from './header';
 
@@ -40,16 +40,27 @@ export default class App extends Component {
 		}
 	};
 
+	restoreData = () => {
+		this.setState({data: restoreProgress(data)})		
+	}
+
+	handleResetAllDataClick = () => {
+		resetAllData()
+		this.setState({data: null})
+		this.restoreData()
+	}
+
 	componentWillMount() {
-		this.setState({data: restoreProgress(data)})
+		this.restoreData()
 	}
 
 	render(props, state) {
+		console.log(this.state.data)
 		return (
 			<div id="app">
 				<Header backButtonLocation={ this.state.previousUrl } />
 				<Router onChange={ this.handleRoute }>
-          <Home default path="/" />
+          <Home default path="/" handleResetAllDataClick={ this.handleResetAllDataClick } />
 					<Sets path="/sets" data={ state.data } />
 					<Set path="/sets/:set" data={ state.data } />
 					<Card path="/sets/:set/cards/:card" data={ state.data } />

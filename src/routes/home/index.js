@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import style from './style';
 import Box from '../../components/box'
 
-const Home = () => (
+const Home = ({ handleResetAllDataClick }) => (
 	<div class={style.home}>
 		<h2>Learn wherever you go!</h2>
 		<div class={style.aboveBox}>
@@ -22,6 +22,11 @@ const Home = () => (
 			</p>
 			<p>This app was built by <a class={style.link} href="https://twitter.com/malweene">Malwine</a>.</p>
 		</div>
+		<button 
+					class={style.button} 
+					onClick={ handleResetAllDataClick }>
+					Reset all data.
+		</button>
 	</div>
 );
 
