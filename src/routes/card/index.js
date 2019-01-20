@@ -46,6 +46,7 @@ export default class Card extends Component {
 	handleNotKnowClick = () => {
     //Originally I substracted 1 but now I want to go with 0
 		this.handleClick(0)
+		this.setState({ solutionSeen: false });
 	}
 
 	handleTurn = () => {

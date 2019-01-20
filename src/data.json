@@ -50,8 +50,8 @@
             ]
         },
         {
-            "name": "Persisch A1: sein & haben",
-            "description": "Die Verben \"sein\", \"haben\" und ihre Verneinung.",
+            "name": "Persisch A1: sein",
+            "description": "Das Verb \"sein\" und seine Verneinung.",
             "cards": [
                 {
                     "front": "ich bin",
@@ -90,42 +90,6 @@
                     "backDescription": "ānhā(unā) hastand"
                 },
                 {
-                    "front": "ich habe",
-                    "frontDescription": "",
-                    "back": "من دارم",
-                    "backDescription": "man dāram"
-                },
-                {
-                    "front": "du hast",
-                    "frontDescription": "",
-                    "back": "تو داری",
-                    "backDescription": "to dārī"
-                },
-                {
-                    "front": "er/sie hat",
-                    "frontDescription": "",
-                    "back": "او دارد",
-                    "backDescription": "u dārad (/ u dāre)"
-                },
-                {
-                    "front": "wir haben",
-                    "frontDescription": "",
-                    "back": "ما داریم",
-                    "backDescription": "mā dārīm"
-                },
-                {
-                    "front": "ihr habt",
-                    "frontDescription": "(auch höflich: \"Sie haben\")",
-                    "back": "شما دارید",
-                    "backDescription": "šomā dārīd"
-                },
-                {
-                    "front": "sie haben",
-                    "frontDescription": "plural",
-                    "back": "دارند آنها",
-                    "backDescription": "ānhā/unā dārand"
-                },
-                {
                     "front": "ich bin nicht",
                     "frontDescription": "",
                     "back": "من نیستم",
@@ -160,6 +124,48 @@
                     "frontDescription": "plural",
                     "back": "آنها نیستند",
                     "backDescription": "ānhā/unā nistand"
+                }
+            ]
+        },
+        {
+            "name": "Persisch A1: haben",
+            "description": "Das Verb \"haben\" und seine Verneinung.",
+            "cards": [
+                {
+                    "front": "ich habe",
+                    "frontDescription": "",
+                    "back": "من دارم",
+                    "backDescription": "man dāram"
+                },
+                {
+                    "front": "du hast",
+                    "frontDescription": "",
+                    "back": "تو داری",
+                    "backDescription": "to dārī"
+                },
+                {
+                    "front": "er/sie hat",
+                    "frontDescription": "",
+                    "back": "او دارد",
+                    "backDescription": "u dārad (/ u dāre)"
+                },
+                {
+                    "front": "wir haben",
+                    "frontDescription": "",
+                    "back": "ما داریم",
+                    "backDescription": "mā dārīm"
+                },
+                {
+                    "front": "ihr habt",
+                    "frontDescription": "(auch höflich: \"Sie haben\")",
+                    "back": "شما دارید",
+                    "backDescription": "šomā dārīd"
+                },
+                {
+                    "front": "sie haben",
+                    "frontDescription": "plural",
+                    "back": "آنها دارند", 
+                    "backDescription": "ānhā/unā dārand"
                 },
                 {
                     "front": "ich habe nicht",
