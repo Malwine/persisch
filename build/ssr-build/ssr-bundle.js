@@ -1141,7 +1141,7 @@ var home_Home = function Home(_ref) {
 			{
 				'class': home_style_default.a.button,
 				onClick: handleResetAllDataClick },
-			'Reset all data.'
+			'Reset all data'
 		)
 	);
 };
@@ -1210,9 +1210,11 @@ var app_App = function (_Component) {
 		}, _this.restoreData = function () {
 			_this.setState({ data: restoreProgress(data_default.a) });
 		}, _this.handleResetAllDataClick = function () {
-			resetAllData();
-			_this.setState({ data: null });
-			_this.restoreData();
+			if (confirm("Do you want to reset all data?")) {
+				resetAllData();
+				_this.setState({ data: null });
+				_this.restoreData();
+			}
 		}, _temp), app__possibleConstructorReturn(_this, _ret);
 	}
 
@@ -1462,7 +1464,7 @@ var app_App = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"home":"home__MseGd","belowBox":"belowBox__1wO-9","link":"link___iLpK","smaller":"smaller__136FF"};
+module.exports = {"home":"home__MseGd","belowBox":"belowBox__1wO-9","link":"link___iLpK","smaller":"smaller__136FF","button":"button__2cB2u"};
 
 /***/ }),
 
