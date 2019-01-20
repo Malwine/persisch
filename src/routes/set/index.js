@@ -14,7 +14,9 @@ export default class Set extends Component {
 
 	handleResetClick = () => {
 		let currentSet = this.props.data.sets[this.props.set]
-		reset(currentSet)
+		if (confirm("Do you want to reset your progress?")) {
+      reset(currentSet)
+    }
 		this.forceUpdate()
 	}
 

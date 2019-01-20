@@ -123,11 +123,6 @@ function checkRemainingCards(set) {
   } else {
     // Case 2: no cards left, user may reset
     alert("Congrats! You learned everything!")
-    // if (confirm("You learned everything? Do you want to reset your progress to start again?")) {
-    //   reset(set)
-    // } else {
-    //   console.log("Ok, see you another time!")
-    // }
   }
 }
 
