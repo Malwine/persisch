@@ -7,7 +7,6 @@ import { reset, getProgressForSet } from '../../lib/flashcards'
 export default class Set extends Component {
 
 	handleStartClick = () => {
-		console.log("start was clicked")
 		let cardIndex = start(this.props.data, this.props.set)
 		route(`/sets/${this.props.set}/cards/${cardIndex}`)
 	}

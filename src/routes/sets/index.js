@@ -7,7 +7,6 @@ export default class Sets extends Component {
 
 	progressForSet = (set) => {
 		const progress = getProgressForSet(set)
-		console.log(progress)
 		if (progress === undefined || progress === 0) {
 			return "0"
 		} else {

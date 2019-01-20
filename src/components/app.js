@@ -55,7 +55,6 @@ export default class App extends Component {
 	}
 
 	render(props, state) {
-		console.log(this.state.data)
 		return (
 			<div id="app">
 				<Header backButtonLocation={ this.state.previousUrl } />
