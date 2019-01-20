@@ -619,7 +619,12 @@ var match_default = /*#__PURE__*/__webpack_require__.n(match);
 var header_style = __webpack_require__("u3et");
 var header_style_default = /*#__PURE__*/__webpack_require__.n(header_style);
 
+// EXTERNAL MODULE: ./assets/icons/arrow.png
+var arrow = __webpack_require__("p+Mb");
+var arrow_default = /*#__PURE__*/__webpack_require__.n(arrow);
+
 // CONCATENATED MODULE: ./components/header/index.js
+
 
 
 
@@ -639,7 +644,7 @@ var header_Header = function Header(_ref) {
 		backButtonLocation ? Object(preact_min["h"])(
 			match["Link"],
 			{ 'class': header_style_default.a.arrow, href: backButtonLocation },
-			Object(preact_min["h"])('img', { 'class': header_style_default.a.arrow, src: '../../assets/icons/arrow.png' })
+			Object(preact_min["h"])('img', { 'class': header_style_default.a.arrow, src: arrow_default.a })
 		) : Object(preact_min["h"])('div', { 'class': header_style_default.a.space }),
 		Object(preact_min["h"])(
 			match["Link"],
@@ -1081,65 +1086,78 @@ var home_style_default = /*#__PURE__*/__webpack_require__.n(home_style);
 
 
 
+
 var home__ref2 = Object(preact_min["h"])(
-	'h2',
+	'p',
 	null,
-	'Learn wherever you go!'
+	Object(preact_min["h"])(
+		'b',
+		null,
+		'Welcome!'
+	),
+	' Flashcards is a web app that helps you practice your vocabulary wherever you go.'
 );
 
 var _ref3 = Object(preact_min["h"])(
 	'p',
 	null,
-	'Flashcards is a web app that helps you practice your vocabulary wherever you go. Learn on your way to school or work. The app will be available independent of your internet connection.'
+	'This app is work in progress. Future features include making your own sets and learning with spaced repetition.'
 );
 
-var _ref4 = Object(preact_min["h"])(box_Box, { headline: "four", smaller: true });
-
-var _ref5 = Object(preact_min["h"])(box_Box, { headline: "چهار", description: "(۴) shahar", back: true, smaller: true });
+var _ref4 = Object(preact_min["h"])(
+	'p',
+	null,
+	'If you want to reset and update the sample data tap on the button below.'
+);
 
 var home_Home = function Home(_ref) {
 	var handleResetAllDataClick = _ref.handleResetAllDataClick;
 	return Object(preact_min["h"])(
 		'div',
 		{ 'class': home_style_default.a.home },
+		Object(preact_min["h"])(
+			'h2',
+			{ 'class': home_style_default.a.headline },
+			'\u0641'
+		),
 		home__ref2,
 		Object(preact_min["h"])(
-			'div',
-			{ 'class': home_style_default.a.aboveBox },
-			_ref3
-		),
-		_ref4,
-		_ref5,
-		Object(preact_min["h"])(
-			'div',
-			{ 'class': home_style_default.a.belowBox },
+			match["Link"],
+			{ href: '/sets' },
 			Object(preact_min["h"])(
-				'p',
-				null,
-				'Check out the ',
-				Object(preact_min["h"])(
-					match["Link"],
-					{ 'class': home_style_default.a.link, href: '/sets' },
-					'sample sets'
-				),
-				'. Soon you will be able to create your own. Add the app to your home screen and start learning.'
-			),
-			Object(preact_min["h"])(
-				'p',
-				null,
-				'This app was built by ',
-				Object(preact_min["h"])(
-					'a',
-					{ 'class': home_style_default.a.link, href: 'https://twitter.com/malweene' },
-					'Malwine'
-				),
-				'.'
+				'button',
+				{ 'class': [home_style_default.a.button, home_style_default.a.buttonPrimary].join(' ') },
+				'Start learning'
 			)
 		),
 		Object(preact_min["h"])(
+			'p',
+			null,
+			'On recent phones the app will be  available offline. So you can learn on your way to school or work. Check out the ',
+			Object(preact_min["h"])(
+				match["Link"],
+				{ 'class': home_style_default.a.link, href: '/sets' },
+				'sample sets'
+			),
+			' and add the app to your home screen to start learning.'
+		),
+		_ref3,
+		Object(preact_min["h"])(
+			'p',
+			null,
+			'This app was built by ',
+			Object(preact_min["h"])(
+				'a',
+				{ 'class': home_style_default.a.link, href: 'https://twitter.com/malweene' },
+				'Malwine'
+			),
+			'.'
+		),
+		_ref4,
+		Object(preact_min["h"])(
 			'button',
 			{
-				'class': home_style_default.a.button,
+				'class': [home_style_default.a.button, home_style_default.a.resetButton].join(' '),
 				onClick: handleResetAllDataClick },
 			'Reset all data'
 		)
@@ -1464,7 +1482,7 @@ var app_App = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"home":"home__MseGd","belowBox":"belowBox__1wO-9","link":"link___iLpK","smaller":"smaller__136FF","button":"button__2cB2u"};
+module.exports = {"home":"home__MseGd","headline":"headline__3LSrq","belowBox":"belowBox__1wO-9","link":"link___iLpK","smaller":"smaller__136FF","button":"button__2cB2u","buttonPrimary":"buttonPrimary__y0rpe","resetButton":"resetButton__1f2Ho"};
 
 /***/ }),
 
@@ -1489,6 +1507,13 @@ module.exports = {"spacing":"spacing__2AWhY","setName":"setName__8crQ0","button"
 
 // removed by extract-text-webpack-plugin
 module.exports = {"box":"box__1bpQv","gray":"gray__UwoHf","headline":"headline__1DObL","subline":"subline__2eJG4","button":"button__3nJCq","progress":"progress__2syVq","progressWrap":"progressWrap__2-rBV","bar":"bar__3U8Or","smaller":"smaller__6R01b"};
+
+/***/ }),
+
+/***/ "p+Mb":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "71c6d7d97b2fb084b4f368d50a4fb01e.png";
 
 /***/ }),
 
