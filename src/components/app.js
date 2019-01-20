@@ -45,9 +45,11 @@ export default class App extends Component {
 	}
 
 	handleResetAllDataClick = () => {
-		resetAllData()
-		this.setState({data: null})
-		this.restoreData()
+		if (confirm("Do you want to reset all data?")) {
+			resetAllData()
+			this.setState({data: null})
+			this.restoreData()
+		}
 	}
 
 	componentWillMount() {

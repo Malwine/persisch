@@ -25,7 +25,7 @@ const Home = ({ handleResetAllDataClick }) => (
 		<button 
 					class={style.button} 
 					onClick={ handleResetAllDataClick }>
-					Reset all data.
+					Reset all data
 		</button>
 	</div>
 );
