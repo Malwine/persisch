@@ -1,9 +1,6 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
-import { route } from 'preact-router'
 import style from './style';
-import Box from '../../components/box'
-
 
 const Home = ({ handleResetAllDataClick }) => (
 	<div class={style.home}>

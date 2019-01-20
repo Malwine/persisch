@@ -1086,8 +1086,6 @@ var home_style_default = /*#__PURE__*/__webpack_require__.n(home_style);
 
 
 
-
-
 var home__ref2 = Object(preact_min["h"])(
 	'p',
 	null,
