@@ -1203,28 +1203,29 @@ var app_App = function (_Component) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = app__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.setShit = function (whatever) {
+		return _ret = (_temp = (_this = app__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.setCustomState = function (newState) {
+			// https://github.com/developit/preact-cli/issues/677
 			setTimeout(function () {
-				_this.setState(whatever);
+				_this.setState(newState);
 			}, 100);
 		}, _this.handleRoute = function (e) {
 			_this.currentUrl = e.url;
 			switch (e.url) {
 				case "/":
-					_this.setShit({ previousUrl: null });
+					_this.setCustomState({ previousUrl: null });
 					break;
 				case "/sets":
-					_this.setShit({ previousUrl: "/" });
+					_this.setCustomState({ previousUrl: "/" });
 					break;
 				default:
 					{
 						var setUrl = e.url.match(/\/sets\/\d/)[0];
 						if (e.url.match(/\/sets\/\d+$/)) {
-							_this.setShit({ previousUrl: "/sets" });
+							_this.setCustomState({ previousUrl: "/sets" });
 						} else if (e.url.match(/\/sets\/\d+\/cards\/\d+/)) {
-							_this.setShit({ previousUrl: setUrl });
+							_this.setCustomState({ previousUrl: setUrl });
 						} else {
-							_this.setShit({ previousUrl: null });
+							_this.setCustomState({ previousUrl: null });
 						}
 					}
 			}
