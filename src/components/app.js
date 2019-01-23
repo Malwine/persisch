@@ -18,26 +18,33 @@ export default class App extends Component {
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
 	 */
+
+	setCustomState = whatever => {
+		// https://github.com/developit/preact-cli/issues/677
+		setTimeout(() => {
+			this.setState(whatever)
+		}, 100)
+	}
 	handleRoute = e => {
-		this.currentUrl = e.url;
-		switch(e.url) {
-			case "/" : 
-				this.setState({previousUrl: null});
-				break;
-			case "/sets" :
-				this.setState({previousUrl: "/"});
-				break;
-			default : {
-				const setUrl = e.url.match(/\/sets\/\d/)[0]
-				if (e.url.match(/\/sets\/\d+$/)) {
-					this.setState({previousUrl: "/sets"});
-				} else if (e.url.match(/\/sets\/\d+\/cards\/\d+/)) {
-					this.setState({previousUrl: setUrl});
-				} else {
-					this.setState({previousUrl: null});
+			this.currentUrl = e.url;
+			switch(e.url) {
+				case "/" : 
+					this.setCustomState({previousUrl: null});
+					break;
+				case "/sets" :
+					this.setCustomState({previousUrl: "/"});
+					break;
+				default : {
+					const setUrl = e.url.match(/\/sets\/\d/)[0]
+					if (e.url.match(/\/sets\/\d+$/)) {
+						this.setCustomState({previousUrl: "/sets"});
+					} else if (e.url.match(/\/sets\/\d+\/cards\/\d+/)) {
+						this.setCustomState({previousUrl: setUrl});
+					} else {
+						this.setCustomState({previousUrl: null});
+					}
 				}
 			}
-		}
 	};
 
 	restoreData = () => {
@@ -59,7 +66,7 @@ export default class App extends Component {
 	render(props, state) {
 		return (
 			<div id="app">
-				<Header backButtonLocation={ this.state.previousUrl } />
+				<Header backButtonLocation={ state.previousUrl } />
 				<Router onChange={ this.handleRoute }>
           <Home default path="/" handleResetAllDataClick={ this.handleResetAllDataClick } />
 					<Sets path="/sets" data={ state.data } />
