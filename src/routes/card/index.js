@@ -1,8 +1,9 @@
 import { h, Component } from 'preact';
 import style from './style';
-import { processAnswer, restoreState, saveProgress, getProgressForSet } from '../../lib/flashcards'
+import { processAnswer, restoreState, saveProgress } from '../../lib/flashcards'
 import { route } from 'preact-router'
 import Box from '../../components/box'
+import Progress from '../../components/progress'
 
 export default class Card extends Component {
 
@@ -104,7 +105,7 @@ export default class Card extends Component {
 		return (
 			<div class={style.spacing}>
 				<h2 class={style.setName}>{setName}</h2>
-				<progress max="100" value={ getProgressForSet(this.currentSet()) }></progress>
+				<Progress currentSet={ this.currentSet() } />
 				{ flipped && this.renderBack(card.back, card.backDescription) }
 				{ !flipped && this.renderFront(card.front, card.frontDescription)}	
 				{ solutionSeen && this.renderButtons() }

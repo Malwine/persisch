@@ -68,7 +68,9 @@ export default class App extends Component {
 			<div id="app">
 				<Header backButtonLocation={ state.previousUrl } />
 				<Router onChange={ this.handleRoute }>
-          <Home default path="/" handleResetAllDataClick={ this.handleResetAllDataClick } />
+					<Home default path="/" 
+						handleResetAllDataClick={ this.handleResetAllDataClick } 
+						data={ state.data } />
 					<Sets path="/sets" data={ state.data } />
 					<Set path="/sets/:set" data={ state.data } />
 					<Card path="/sets/:set/cards/:card" data={ state.data } />

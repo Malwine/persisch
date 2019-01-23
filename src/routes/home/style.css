@@ -4,7 +4,7 @@
 	width: 100%;
 }
 
-.home p {
+.texts{
   line-height: 1.4;
   text-align: justify;
 }
@@ -21,17 +21,29 @@
 }
 
 .progressSpace {
-  height: 100px;
   background-color: #e8e8e8;
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
-  display: flex;
 }
 
-.hint {
-  text-align: center;
+.progressSpace p {
+  margin-left: 20px;
+  padding: 10px 0 10px 0;
+  display: block;
+}
+
+.chooseSetHint{
   margin: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: block;
+  text-align: center;
+}
+
+.setLink {
+  font-weight: 400;
+  color: black;
 }
 
 @media (min-width: 768px) {
