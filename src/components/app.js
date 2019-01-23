@@ -19,10 +19,10 @@ export default class App extends Component {
 	 *	@param {string} event.url	The newly routed URL
 	 */
 
-	setCustomState = whatever => {
+	setCustomState = newState => {
 		// https://github.com/developit/preact-cli/issues/677
 		setTimeout(() => {
-			this.setState(whatever)
+			this.setState(newState)
 		}, 100)
 	}
 	handleRoute = e => {
