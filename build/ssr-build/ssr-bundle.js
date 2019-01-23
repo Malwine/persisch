@@ -1203,24 +1203,28 @@ var app_App = function (_Component) {
 			args[_key] = arguments[_key];
 		}
 
-		return _ret = (_temp = (_this = app__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.handleRoute = function (e) {
+		return _ret = (_temp = (_this = app__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.setShit = function (whatever) {
+			setTimeout(function () {
+				_this.setState(whatever);
+			}, 100);
+		}, _this.handleRoute = function (e) {
 			_this.currentUrl = e.url;
 			switch (e.url) {
 				case "/":
-					_this.setState({ previousUrl: null });
+					_this.setShit({ previousUrl: null });
 					break;
 				case "/sets":
-					_this.setState({ previousUrl: "/" });
+					_this.setShit({ previousUrl: "/" });
 					break;
 				default:
 					{
 						var setUrl = e.url.match(/\/sets\/\d/)[0];
 						if (e.url.match(/\/sets\/\d+$/)) {
-							_this.setState({ previousUrl: "/sets" });
+							_this.setShit({ previousUrl: "/sets" });
 						} else if (e.url.match(/\/sets\/\d+\/cards\/\d+/)) {
-							_this.setState({ previousUrl: setUrl });
+							_this.setShit({ previousUrl: setUrl });
 						} else {
-							_this.setState({ previousUrl: null });
+							_this.setShit({ previousUrl: null });
 						}
 					}
 			}
@@ -1240,7 +1244,6 @@ var app_App = function (_Component) {
   *	@param {string} event.url	The newly routed URL
   */
 
-
 	App.prototype.componentWillMount = function componentWillMount() {
 		this.restoreData();
 	};
@@ -1249,7 +1252,7 @@ var app_App = function (_Component) {
 		return Object(preact_min["h"])(
 			'div',
 			{ id: 'app' },
-			Object(preact_min["h"])(header, { backButtonLocation: this.state.previousUrl }),
+			Object(preact_min["h"])(header, { backButtonLocation: state.previousUrl }),
 			Object(preact_min["h"])(
 				preact_router_es["Router"],
 				{ onChange: this.handleRoute },
