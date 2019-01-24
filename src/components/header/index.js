@@ -14,7 +14,7 @@ const Header = ({backButtonLocation}) => (
 			)
 		}
 		<Link class={style.name} href="/"><h1>Flashcards</h1></Link>
-		<Link activeClassName={style.active} href="/sets">Sets</Link>
+		<Link activeClassName={style.active} href="/info">Info</Link>
 	</header>
 );
 

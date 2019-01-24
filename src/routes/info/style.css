@@ -1,0 +1,92 @@
+.home {
+	padding: 56px 20px;
+	min-height: 100%;
+	width: 100%;
+}
+
+.texts{
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.home h3 {
+  margin-bottom: 3px;
+}
+
+.headline {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-family: Verdana, Helvetica;
+}
+
+@media (min-width: 768px) {
+	.home {
+		margin: 30px auto;
+    width: 600px;
+  }
+  
+  .home p {
+    line-height: 1.8;
+    text-align: left;
+  }
+
+	.belowBox {
+		margin-top: 10px;
+	}
+}
+
+.belowBox {
+	display: inline-block;
+}
+
+.link, .link:visited {
+	color: #600060;
+	border-bottom: solid 3px #600060;
+}
+
+.link:hover {
+	color: #656565;
+	border-bottom: solid 3px #656565;
+}
+
+.smaller {
+	height: 100px;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 35px;
+  padding: 0 1.5rem;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.225);
+  color: #FFF;
+  width: 100%;
+}
+
+.buttonPrimary {
+	background-color: #600060;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.resetButton {
+  background-color: #e8e8e8;
+  color: black;
+}
+
+.buttonPrimary:hover { 
+	box-shadow: 0 4px 10px 0px rgba(0,0,0,0.225);
+	background-color: #842584;
+}
