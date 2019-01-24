@@ -14,10 +14,11 @@ export default class Home extends Component  {
 				.filter(set => set.progressRate > 0)
 				.map((set, index) => {
 					return (
-						<p>
-							<Link class={style.setLink} href={`/sets/${index}`}>{ set.name } <span>CONTINUE</span></Link>
+						<div>
+							<Link class={style.setLink} 
+										href={`/sets/${index}`}>{ set.name }</Link>
 							<Progress currentSet={ set} />
-						</p>			
+						</div>			
 					)
 				})
 		} else {
@@ -35,6 +36,7 @@ export default class Home extends Component  {
 					Flashcards is a web app that helps you practice 
 					your vocabulary wherever you go.
 				</p>
+				<h3>Your sets</h3>
 				<div class={style.progressSpace}>
 					{ this.showChosenSets(data) }
 				</div>

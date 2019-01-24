@@ -25,12 +25,11 @@
   margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
+  padding: 20px;
 }
 
-.progressSpace p {
-  margin-left: 20px;
-  padding: 10px 0 10px 0;
-  display: block;
+.progressSpace div {
+  margin-bottom: 20px;
 }
 
 .chooseSetHint{
