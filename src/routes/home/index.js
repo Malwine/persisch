@@ -7,7 +7,7 @@ import Progress from '../../components/progress'
 export default class Home extends Component  {
 
 	showChosenSets = (data) => {
-		const learningStarted = !!data.sets.find(set => set.progressRate > 0)
+		const learningStarted = !!(data.sets.find(set => set.progressRate > 0))
 
 		if (learningStarted) {
 			return data.sets
@@ -28,7 +28,7 @@ export default class Home extends Component  {
 		}
 	}
 	
-	render ({ handleResetAllDataClick, data }) {
+	render ({ data }) {
 		return (
 			<div class={style.home}>
 				<h2 class={style.headline}>Welcome :)</h2>
