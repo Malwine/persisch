@@ -10,16 +10,16 @@ export default class Home extends Component  {
 		const learningStarted = !!(data.sets.find(set => set.progressRate > 0))
 
 		if (learningStarted) {
-			return data.sets
-				.filter(set => set.progressRate > 0)
-				.map((set, index) => {
-					return (
-						<div>
-							<Link class={style.setLink} 
-										href={`/sets/${index}`}>{ set.name }</Link>
-							<Progress currentSet={ set} />
-						</div>			
-					)
+			return data.sets.map((set, index) => {
+					if (set.progressRate > 0) {
+						return (
+							<div>
+								<Link class={style.setLink} 
+											href={`/sets/${index}`}>{ set.name }</Link>
+								<Progress currentSet={ set} />
+							</div>			
+						)
+					}
 				})
 		} else {
 			return (
