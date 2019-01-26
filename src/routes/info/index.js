@@ -12,13 +12,13 @@ export default class Info extends Component  {
         </p>
 
         <p class={style.texts}>
+          <h3>Install the app</h3>
+          You can add the app to your home screen on Andoid and iPhone.
+        </p>
+        <p class={style.texts}>
           <h3>Offline</h3>
           On recent phones the app will be  available offline.
           So you can learn on your way to school or work.
-        </p>
-        <p class={style.texts}>
-          <h3>Install the app</h3>
-          You can add the app to your home screen on Andoid and iPhone. 
         </p>
         <p class={style.texts}>
         <h3>Future plans</h3>

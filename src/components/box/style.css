@@ -1,35 +1,36 @@
 .box {
   background: #fff;
-	border-radius: 2px;
-	display: block;
-	float: left;
-	height: 150px;
-	position: relative;
-	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding: 15px;
-	
-	-webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	-moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	-ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	-o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 2px;
+  display: block;
+  float: left;
+  height: 185px;
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .gray {
-	background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 .headline {
-	font-size: 18px;
+  font-size: 24px;
   color: black;
   margin: 0;
 }
 
 .subline {
-	font-size: 14px;
-	color: #656565;
+  font-size: 18px;
+  color: #656565;
+  margin-bottom: 20px;
 }
 
 .button {
@@ -48,36 +49,36 @@
   border: none;
   border-radius: 2px;
   color: black;
-	background-color: #d4b0d4;
-	width: 91%;
-	position: absolute;
-	bottom: 15px;
+  background-color: #d4b0d4;
+  width: 91%;
+  position: absolute;
+  bottom: 15px;
 }
 
 @media (min-width: 570px) {
-	.button{
+  .button{
     width: 94%;
-	}
+  }
 }
 
 .progress {
-	position: absolute;
-	bottom: 15px;
+  position: absolute;
+  bottom: 15px;
 }
 
 .progressWrap {
-	display: flex;
-	position: absolute;
-	bottom: 15px;
+  display: flex;
+  position: absolute;
+  bottom: 15px;
 }
 
 .bar {
-	height: 10px;
-	width: 30px;
-	background-color: #cca3cc;
-	margin: 2px;
+  height: 10px;
+  width: 30px;
+  background-color: #cca3cc;
+  margin: 2px;
 }
 
 .smaller {
-	height: 100px;
+  height: 100px;
 }
