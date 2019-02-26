@@ -45,6 +45,11 @@ export default class Home extends Component  {
             Entdecke alle Sets
           </button>
         </Link>
+        <Link href="/newSet">
+          <button class={[style.button, style.buttonPrimary].join(' ')}>
+            Erstelle ein Set
+          </button>
+        </Link>
       </div>
     )
   }

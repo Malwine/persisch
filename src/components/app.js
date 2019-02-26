@@ -10,6 +10,7 @@ import Set from '../routes/set';
 import Card from '../routes/card';
 import Home from '../routes/home';
 import Info from '../routes/info';
+import NewSet from '../routes/newSet';
 
 import data from '../data.json'
 
@@ -33,6 +34,9 @@ export default class App extends Component {
 					this.setCustomState({previousUrl: null});
 					break;
 				case "/sets" :
+					this.setCustomState({previousUrl: "/"});
+					break;
+				case "/newSet" :
 					this.setCustomState({previousUrl: "/"});
 					break;
 				case "/info" :
@@ -75,6 +79,7 @@ export default class App extends Component {
 					<Home default path="/" data={ state.data } />
 					<Sets path="/sets" data={ state.data } />
 					<Set path="/sets/:set" data={ state.data } />
+					<NewSet path="/newSet" data={ state.data } />
 					<Card path="/sets/:set/cards/:card" data={ state.data } />
 					<Info path="/info" handleResetAllDataClick={ this.handleResetAllDataClick }  />
 				</Router>
