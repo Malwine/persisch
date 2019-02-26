@@ -23,7 +23,7 @@ export default class Home extends Component  {
         })
     } else {
       return (
-        <Link class={style.chooseSetHint} href="/sets">Choose a set!</Link>
+        <Link class={style.chooseSetHint} href="/sets">Wähle ein Set!</Link>
       )
     }
   }
@@ -31,18 +31,18 @@ export default class Home extends Component  {
   render ({ data }) {
     return (
       <div class={style.home}>
-        <h2 class={style.headline}>Welcome :)</h2>
+        <h2 class={style.headline}>Willkommen!</h2>
         <p class={style.texts}>
-          Flashcards is a web app that helps you practice
-          your vocabulary wherever you go.
+          Mit dieser App kannst du Vokabeln für deinen Persisch Kurs lernen oder
+          deine eigenen Vokabel-Sets anlegen.
         </p>
-        <h3>Your sets</h3>
+        <h3>Deine Sets</h3>
         <div class={style.progressSpace}>
           { this.showChosenSets(data) }
         </div>
         <Link href="/sets">
           <button class={[style.button, style.buttonPrimary].join(' ')}>
-            Explore all sets
+            Entdecke alle Sets
           </button>
         </Link>
       </div>

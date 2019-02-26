@@ -13,7 +13,7 @@ const Header = ({backButtonLocation}) => (
       <Link class={style.arrow} href="/info">Info</Link>
       )
     }
-    <Link class={style.name} href="/"><h1>Flashcards</h1></Link>
+    <Link class={style.name} href="/"><h1>Persisch</h1></Link>
     <div class={style.space}></div>
   </header>
 );
