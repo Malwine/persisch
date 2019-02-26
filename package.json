@@ -3,6 +3,7 @@
   "name": "flashcards",
   "version": "0.0.0",
   "license": "MIT",
+  "homepage": "https://persisch.github.io",
   "scripts": {
     "start": "per-env",
     "start:production": "npm run -s serve",
@@ -11,7 +12,9 @@
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "preact build --no-prerender --template src/index.html",
+    "deploy": "gh-pages -d build" 
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
@@ -29,6 +32,7 @@
     "preact-render-spy": "^1.2.1"
   },
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.5.7"
