@@ -50,7 +50,7 @@ export default class Set extends Component {
 				<button 
 					class={[style.button, style.resetButton].join(' ')} 
 					onClick={ this.handleResetClick }>
-					Reset progress
+					zurücksetzen
 				</button>
 			</div>
 		);

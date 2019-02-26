@@ -440,65 +440,65 @@
             ]
         },
         {
-            "name": "Persian numbers 1 - 10",
-            "description": "Learn counting to 10 in Persian.",
+            "name": "Persche Zahlen 1 - 10",
+            "description": "Lerne bis 10 zählen.",
             "cards": [
                 {
-                    "front": "one",
+                    "front": "eins",
                     "frontDescription": "",
                     "back": "یک",
                     "backDescription": "(۱) yek"
                 },
                 {
-                    "front": "two",
+                    "front": "zwei",
                     "frontDescription": "",
                     "back": "دو",
                     "backDescription": "(۲) do"
                 },
                 {
-                    "front": "three",
+                    "front": "drei",
                     "frontDescription": "",
                     "back": "سه",
                     "backDescription": "(۳) se"
                 },
                 {
-                    "front": "four",
+                    "front": "vier",
                     "frontDescription": "",
                     "back": "چهار",
                     "backDescription": "(۴) shahar"
                 },
                 {
-                    "front": "five",
+                    "front": "fünf",
                     "frontDescription": "",
                     "back": "پنج",
                     "backDescription": "(۵) panj"
                 },
                 {
-                    "front": "six",
+                    "front": "sechs",
                     "frontDescription": "",
                     "back": "شش",
                     "backDescription": "(۶) shesh"
                 },
                 {
-                    "front": "seven",
+                    "front": "sieben",
                     "frontDescription": "",
                     "back": "هفت",
                     "backDescription": "(۷) haft"
                 },
                 {
-                    "front": "eight",
+                    "front": "acht",
                     "frontDescription": "",
                     "back": "هشت",
                     "backDescription": "(۸) hasht"
                 },
                 {
-                    "front": "nine",
+                    "front": "neun",
                     "frontDescription": "",
                     "back": "نه",
                     "backDescription": "(۹) noh"
                 },
                 {
-                    "front": "ten",
+                    "front": "zehn",
                     "frontDescription": "",
                     "back": "ده",
                     "backDescription": "(۱۰) dah"

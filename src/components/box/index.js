@@ -11,8 +11,8 @@ handleStartClick = () => {
 
 render({ link, headline, description, back, smaller, progressStatus, handleClick }) {
 
-  const buttonText = (progressStatus >= 100) ? "COMPLETED " :
-                     (progressStatus > 0)   ? `RESUME (${ Number((progressStatus).toFixed(1))} %)` : "LEARN"
+  const buttonText = (progressStatus >= 100) ? "VOLLENDET " :
+                     (progressStatus > 0)   ? `WEITERLERNEN (${ Number((progressStatus).toFixed(1))} %)` : "LERNEN"
 
   return (
     <div class={  smaller && back ? [style.box, style.smaller, style.gray].join(' ') :
