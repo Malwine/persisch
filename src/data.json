@@ -506,62 +506,8 @@
             ]
         },
         {
-            "name": "Articles for German nouns",
-            "description": "\"der, die, das?\" Learn the correct article for German nouns.",
-            "cards": [
-                {
-                    "front": "Schreibtisch",
-                    "frontDescription": "desk",
-                    "back": "der",
-                    "backDescription": "der Schreibtisch {m}"
-                },
-                {
-                    "front": "Lampe",
-                    "frontDescription": "lamp",
-                    "back": "die",
-                    "backDescription": "die Lampe {f}"
-                },
-                {
-                    "front": "Tastatur",
-                    "frontDescription": "keyboard",
-                    "back": "die",
-                    "backDescription": "die Tastatur {f}"
-                },
-                {
-                    "front": "Telefon",
-                    "frontDescription": "telephone",
-                    "back": "das",
-                    "backDescription": "das Telefon {n}"
-                },
-                {
-                    "front": "Papier",
-                    "frontDescription": "paper",
-                    "back": "das",
-                    "backDescription": "das Papier {n}"
-                },
-                {
-                    "front": "Vertrag",
-                    "frontDescription": "contract",
-                    "back": "der",
-                    "backDescription": "der Vertrag {m}"
-                },
-                {
-                    "front": "Kopfhörer",
-                    "frontDescription": "headphones",
-                    "back": "die",
-                    "backDescription": "die Kopfhörer {f}"
-                },
-                {
-                    "front": "E-Mail",
-                    "frontDescription": "email",
-                    "back": "die",
-                    "backDescription": "die E-Mail {f}"
-                }
-            ]
-        },
-        {
             "name": "Short set",
-            "description": "For testing.",
+            "description": "Testset",
             "cards": [
                 {
                     "front": "one",
