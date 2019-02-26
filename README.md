@@ -1,8 +1,7 @@
-# Flashcards
+# Persisch
 
-This is the repository for my bachelor thesis. I am building a vocabulary learning app with [preact-cli](https://github.com/developit/preact-cli).
+"Persisch" is a vocabulary learning app built with [preact-cli](https://github.com/developit/preact-cli).
 
-The app is deployed at [glitch](https://flashcards-pwa.glitch.me/).
 
 ## How to get started
 Requirements: [node](https://nodejs.org/en/) must be installed.
