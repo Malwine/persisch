@@ -16,7 +16,7 @@
 .header h1 {
   font-size: 20px;
   color: #FFF;
-  margin: 0 auto;
+  margin-left: -17%;
 }
 
 .header a {
@@ -24,8 +24,16 @@
 }
 
 .arrow {
-  width: 20px;
-  vertical-align: middle;
+  width: 50px;
+  padding-top: 10px;
+  margin-left: -15px;
+  height: 56px;
+}
+
+.icon {
+  padding-left: 15px;
+  height: 20px;
+  margin-top: 8px;
 }
 
 .space {

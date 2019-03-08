@@ -7,10 +7,10 @@ const Header = ({backButtonLocation}) => (
   <header class={style.header}>
     { backButtonLocation ? (
         <Link class={style.arrow} href={backButtonLocation}>
-          <img class={style.arrow} src={ arrow }></img>
+          <img class={style.icon} src={ arrow }></img>
         </Link>
       ) : (
-      <Link class={style.arrow} href="/info">Info</Link>
+      <Link class={style.icon} href="/info">Info</Link>
       )
     }
     <Link class={style.name} href="/"><h1>Persisch</h1></Link>
