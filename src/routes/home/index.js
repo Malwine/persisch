@@ -37,9 +37,7 @@ export default class Home extends Component  {
           deine eigenen Vokabel-Sets anlegen.
         </p>
         <h3>Deine Sets</h3>
-        <div class={style.progressSpace}>
-          { this.showChosenSets(data) }
-        </div>
+
         <Link href="/sets">
           <button class={[style.button, style.buttonPrimary].join(' ')}>
             Entdecke alle Sets
