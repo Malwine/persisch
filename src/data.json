@@ -2,7 +2,7 @@
     "version": 1,
     "sets": [
         {
-            "name": "Persisch A1: Begrüßung",
+            "name": "Begrüßung",
             "description": "Die ersten Vokablen zur Begrüßung mit Umschrift.",
             "cards": [
                 {
@@ -50,7 +50,7 @@
             ]
         },
         {
-            "name": "Persisch A1: sein",
+            "name": "Verb: sein",
             "description": "Das Verb \"sein\" und seine Verneinung.",
             "cards": [
                 {
@@ -128,7 +128,7 @@
             ]
         },
         {
-            "name": "Persisch A1: haben",
+            "name": "Verb: haben",
             "description": "Das Verb \"haben\" und seine Verneinung.",
             "cards": [
                 {
@@ -164,7 +164,7 @@
                 {
                     "front": "sie haben",
                     "frontDescription": "plural",
-                    "back": "آنها دارند", 
+                    "back": "آنها دارند",
                     "backDescription": "ānhā/unā dārand"
                 },
                 {
@@ -206,7 +206,109 @@
             ]
         },
         {
-            "name": "Persisch A1: Familie",
+            "name": "Verb: machen",
+            "description": "Das Verb \"machen\" und einige zusammengesetzte Formen.",
+            "cards": [
+                {
+                    "front": "ich mache",
+                    "frontDescription": "",
+                    "back": "من می کنم",
+                    "backDescription": "man mikonam"
+                },
+                {
+                    "front": "du machst",
+                    "frontDescription": "",
+                    "back": "تو می کنی",
+                    "backDescription": "to mikoni"
+                },
+                {
+                    "front": "er/sie macht",
+                    "frontDescription": "",
+                    "back": "او می کند",
+                    "backDescription": "u mikonad"
+                },
+                {
+                    "front": "wir machen",
+                    "frontDescription": "",
+                    "back": "ما می کنید",
+                    "backDescription": "mā mikonīm"
+                },
+                {
+                    "front": "ihr macht",
+                    "frontDescription": "",
+                    "back": "شما می کنید",
+                    "backDescription": "šomā mikonīd"
+                },
+                {
+                    "front": "sie machen",
+                    "frontDescription": "plural",
+                    "back": "آنها می کنند",
+                    "backDescription": "ānhā/unā mikonand"
+                },
+                {
+                    "front": "ich spiele",
+                    "frontDescription": "(bazi)",
+                    "back": "من بازی می کنم",
+                    "backDescription": "man bāzi mikonam"
+                },
+                {
+                    "front": "du arbeitest",
+                    "frontDescription": "(kar)",
+                    "back": "تو کار می کنی",
+                    "backDescription": "to kar mikonī"
+                },
+                {
+                    "front": "er kocht",
+                    "frontDescription": "(āšpaz)",
+                    "back": "او آشپز می کند",
+                    "backDescription": "u āšpazi mikonad"
+                }
+            ]
+        },
+        {
+            "name": "Verb: sehen",
+            "description": "Das Verb \"sehen\".",
+            "cards": [
+                {
+                    "front": "ich sehe",
+                    "frontDescription": "",
+                    "back": "من می بینم",
+                    "backDescription": "man mibinam"
+                },
+                {
+                    "front": "du siehst",
+                    "frontDescription": "",
+                    "back": "تو می بینی",
+                    "backDescription": "to mibinī"
+                },
+                {
+                    "front": "er/sie sieht",
+                    "frontDescription": "",
+                    "back": "او می بیند",
+                    "backDescription": "u minidad"
+                },
+                {
+                    "front": "wir sehen",
+                    "frontDescription": "",
+                    "back": "ما می بینیم",
+                    "backDescription": "mā mibinim"
+                },
+                {
+                    "front": "ihr seht",
+                    "frontDescription": "",
+                    "back": "شما می بینید",
+                    "backDescription": "šomā mibinīd"
+                },
+                {
+                    "front": "sie sehen",
+                    "frontDescription": "plural",
+                    "back": "آنها می بینند",
+                    "backDescription": "ānhā/unā mibinand"
+                }
+            ]
+        },
+        {
+            "name": "Familie",
             "description": "Vokabeln mit Umschrift zur Beschreibung der Familie.",
             "cards": [
                 {
@@ -320,7 +422,7 @@
             ]
         },
         {
-            "name": "Persisch A1: Zeit",
+            "name": "Zeit",
             "description": "Vokabeln mit Umschrift für Zeit, Wochentage und Jahreszeiten.",
             "cards": [
                 {
@@ -440,68 +542,188 @@
             ]
         },
         {
-            "name": "Persche Zahlen 1 - 10",
+            "name": "Zahlen 1 - 10",
             "description": "Lerne bis 10 zählen.",
             "cards": [
                 {
-                    "front": "eins",
+                    "front": "1",
                     "frontDescription": "",
                     "back": "یک",
                     "backDescription": "(۱) yek"
                 },
                 {
-                    "front": "zwei",
+                    "front": "2",
                     "frontDescription": "",
                     "back": "دو",
                     "backDescription": "(۲) do"
                 },
                 {
-                    "front": "drei",
+                    "front": "3",
                     "frontDescription": "",
                     "back": "سه",
                     "backDescription": "(۳) se"
                 },
                 {
-                    "front": "vier",
+                    "front": "4",
                     "frontDescription": "",
                     "back": "چهار",
                     "backDescription": "(۴) shahar"
                 },
                 {
-                    "front": "fünf",
+                    "front": "5",
                     "frontDescription": "",
                     "back": "پنج",
                     "backDescription": "(۵) panj"
                 },
                 {
-                    "front": "sechs",
+                    "front": "6",
                     "frontDescription": "",
                     "back": "شش",
                     "backDescription": "(۶) shesh"
                 },
                 {
-                    "front": "sieben",
+                    "front": "7",
                     "frontDescription": "",
                     "back": "هفت",
                     "backDescription": "(۷) haft"
                 },
                 {
-                    "front": "acht",
+                    "front": "8",
                     "frontDescription": "",
                     "back": "هشت",
                     "backDescription": "(۸) hasht"
                 },
                 {
-                    "front": "neun",
+                    "front": "9",
                     "frontDescription": "",
                     "back": "نه",
                     "backDescription": "(۹) noh"
                 },
                 {
-                    "front": "zehn",
+                    "front": "10",
                     "frontDescription": "",
                     "back": "ده",
                     "backDescription": "(۱۰) dah"
+                }
+            ]
+        },
+        {
+            "name": "Zahlen 11 bis 100",
+            "description": "11-20 und Zehnerschritte bis 100.",
+            "cards": [
+                {
+                    "front": "11",
+                    "frontDescription": "",
+                    "back": "۱۱",
+                    "backDescription": "yazdah"
+                },
+                {
+                    "front": "12",
+                    "frontDescription": "",
+                    "back": "۱۲",
+                    "backDescription": "dawāzdah"
+                },
+                {
+                    "front": "13",
+                    "frontDescription": "",
+                    "back": "۱۳",
+                    "backDescription": "sizdah"
+                },
+                {
+                    "front": "14",
+                    "frontDescription": "",
+                    "back": "۱۴",
+                    "backDescription": "čāhārdah"
+                },
+                {
+                    "front": "15",
+                    "frontDescription": "",
+                    "back": "۱۵",
+                    "backDescription": "pānzdah"
+                },
+                {
+                    "front": "16",
+                    "frontDescription": "",
+                    "back": "۱۶",
+                    "backDescription": "šānzdah"
+                },
+                {
+                    "front": "17",
+                    "frontDescription": "",
+                    "back": "۱۷",
+                    "backDescription": "heftdah"
+                },
+                {
+                    "front": "18",
+                    "frontDescription": "",
+                    "back": "۱۸",
+                    "backDescription": "heğdah"
+                },
+                {
+                    "front": "19",
+                    "frontDescription": "",
+                    "back": "۱۹",
+                    "backDescription": "nuzdah"
+                },
+                {
+                    "front": "20",
+                    "frontDescription": "",
+                    "back": "۲۰",
+                    "backDescription": "bist"
+                },
+                {
+                    "front": "21",
+                    "frontDescription": "",
+                    "back": "۲۱",
+                    "backDescription": "bist o yek"
+                },
+                {
+                    "front": "30",
+                    "frontDescription": "",
+                    "back": "۳۰",
+                    "backDescription": "si"
+                },
+                {
+                    "front": "40",
+                    "frontDescription": "",
+                    "back": "۴۰",
+                    "backDescription": "čehel"
+                },
+                {
+                    "front": "50",
+                    "frontDescription": "",
+                    "back": "۵۰",
+                    "backDescription": "panğāh"
+                },
+                {
+                    "front": "60",
+                    "frontDescription": "",
+                    "back": "۶۰",
+                    "backDescription": "šast"
+                },
+                {
+                    "front": "70",
+                    "frontDescription": "",
+                    "back": "۷۰",
+                    "backDescription": "haftād"
+                },
+                {
+                    "front": "80",
+                    "frontDescription": "",
+                    "back": "۸۰",
+                    "backDescription": "haštād"
+                },
+                {
+                    "front": "90",
+                    "frontDescription": "",
+                    "back": "۹۰",
+                    "backDescription": "nawad"
+                },
+                {
+                    "front": "100",
+                    "frontDescription": "",
+                    "back": "۱۰۰",
+                    "backDescription": "sad"
                 }
             ]
         },
