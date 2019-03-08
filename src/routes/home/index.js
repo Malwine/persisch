@@ -7,30 +7,25 @@ import Progress from '../../components/progress'
 export default class Home extends Component  {
 
   showChosenSets = (data) => {
-    if (data) {
-      const learningStarted = !!(data.sets.find(set => set.progressRate > 0))
+    const learningStarted = !!(data.sets.find(set => set.progressRate > 0))
 
-      if (learningStarted) {
-        return data.sets.map((set, index) => {
-            if (set.progressRate > 0) {
-              return (
-                <div>
-                  <Link class={style.setLink}
-                        href={`/sets/${index}`}>{ set.name }</Link>
-                  <Progress currentSet={ set} />
-                </div>
-              )
-            }
-          })
-      } else {
-        return (
-          <Link class={style.chooseSetHint} href="/sets">Wähle ein Set!</Link>
-        )
-      }
-    } else {
-      <Link class={style.chooseSetHint} href="/sets">Wähle ein Set!</Link>
-    }
-
+    // if (learningStarted) {
+    //   return data.sets.map((set, index) => {
+    //       if (set.progressRate > 0) {
+    //         return (
+    //           <div>
+    //             <Link class={style.setLink}
+    //                   href={`/sets/${index}`}>{ set.name }</Link>
+    //             <Progress currentSet={ set} />
+    //           </div>
+    //         )
+    //       }
+    //     })
+    // } else {
+       return (
+        <Link class={style.chooseSetHint} href="/sets">Wähle ein Set!</Link>
+       )
+    // }
   }
 
   render ({ data }) {
