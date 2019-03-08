@@ -7,25 +7,30 @@ import Progress from '../../components/progress'
 export default class Home extends Component  {
 
   showChosenSets = (data) => {
-    const learningStarted = !!(data.sets.find(set => set.progressRate > 0))
+    if (data) {
+      const learningStarted = !!(data.sets.find(set => set.progressRate > 0))
 
-    if (learningStarted) {
-      return data.sets.map((set, index) => {
-          if (set.progressRate > 0) {
-            return (
-              <div>
-                <Link class={style.setLink}
-                      href={`/sets/${index}`}>{ set.name }</Link>
-                <Progress currentSet={ set} />
-              </div>
-            )
-          }
-        })
+      if (learningStarted) {
+        return data.sets.map((set, index) => {
+            if (set.progressRate > 0) {
+              return (
+                <div>
+                  <Link class={style.setLink}
+                        href={`/sets/${index}`}>{ set.name }</Link>
+                  <Progress currentSet={ set} />
+                </div>
+              )
+            }
+          })
+      } else {
+        return (
+          <Link class={style.chooseSetHint} href="/sets">Wähle ein Set!</Link>
+        )
+      }
     } else {
-      return (
-        <Link class={style.chooseSetHint} href="/sets">Wähle ein Set!</Link>
-      )
+      <Link class={style.chooseSetHint} href="/sets">Wähle ein Set!</Link>
     }
+
   }
 
   render ({ data }) {
@@ -37,7 +42,9 @@ export default class Home extends Component  {
           deine eigenen Vokabel-Sets anlegen.
         </p>
         <h3>Deine Sets</h3>
-
+        <div class={style.progressSpace}>
+          { this.showChosenSets(data) }
+        </div>
         <Link href="/sets">
           <button class={[style.button, style.buttonPrimary].join(' ')}>
             Entdecke alle Sets
