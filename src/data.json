@@ -51,7 +51,7 @@
         },
         {
             "name": "Verb: sein",
-            "description": "Das Verb \"sein\" und seine Verneinung.",
+            "description": "(budan - بودن) Bildung: hast + Personalendung",
             "cards": [
                 {
                     "front": "ich bin",
@@ -129,7 +129,7 @@
         },
         {
             "name": "Verb: haben",
-            "description": "Das Verb \"haben\" und seine Verneinung.",
+            "description": "(dāštan - داشتن) Bildung: dār + Personalendung",
             "cards": [
                 {
                     "front": "ich habe",
@@ -207,7 +207,7 @@
         },
         {
             "name": "Verb: machen",
-            "description": "Das Verb \"machen\" und einige zusammengesetzte Formen.",
+            "description": "(kardan - كردن) Bildung: mi + kon + Personalendung",
             "cards": [
                 {
                     "front": "ich mache",
@@ -247,27 +247,33 @@
                 },
                 {
                     "front": "ich spiele",
-                    "frontDescription": "(bazi)",
+                    "frontDescription": "bazi + kardan",
                     "back": "من بازی می کنم",
                     "backDescription": "man bāzi mikonam"
                 },
                 {
                     "front": "du arbeitest",
-                    "frontDescription": "(kar)",
+                    "frontDescription": "kar + kardan",
                     "back": "تو کار می کنی",
                     "backDescription": "to kar mikonī"
                 },
                 {
                     "front": "er kocht",
-                    "frontDescription": "(āšpaz)",
+                    "frontDescription": "āšpazi + kardan",
                     "back": "او آشپز می کند",
                     "backDescription": "u āšpazi mikonad"
+                },
+                {
+                    "front": "leben",
+                    "frontDescription": "zendegi + kardan",
+                    "back": "زندگی كردن",
+                    "backDescription": "zendegi kardan"
                 }
             ]
         },
         {
             "name": "Verb: sehen",
-            "description": "Das Verb \"sehen\".",
+            "description": "(didan - دیدن) Bildung: mi + bin + Personalendung",
             "cards": [
                 {
                     "front": "ich sehe",
@@ -285,13 +291,13 @@
                     "front": "er/sie sieht",
                     "frontDescription": "",
                     "back": "او می بیند",
-                    "backDescription": "u minidad"
+                    "backDescription": "u mibinad"
                 },
                 {
                     "front": "wir sehen",
                     "frontDescription": "",
                     "back": "ما می بینیم",
-                    "backDescription": "mā mibinim"
+                    "backDescription": "mā mibinīm"
                 },
                 {
                     "front": "ihr seht",
