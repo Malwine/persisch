@@ -14,7 +14,7 @@
     "lint": "eslint src",
     "test": "jest",
     "predeploy": "preact build --no-prerender --template src/index.html",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"
