@@ -750,6 +750,108 @@
                     "backDescription": "(۲) do"
                 }
             ]
+        },
+        {
+            "name": "Essen",
+            "description": "Lebensmittel und Worte rund ums Essen",
+            "cards": [
+                {
+                    "front": "one",
+                    "frontDescription": "",
+                    "back": "یک",
+                    "backDescription": "(۱) yek"
+                },
+                {
+                    "front": "two",
+                    "frontDescription": "",
+                    "back": "دو",
+                    "backDescription": "(۲) do"
+                }
+            ]
+        },
+        {
+            "name": "Zahlen 100 bis Tausende",
+            "description": "",
+            "cards": [
+                {
+                    "front": "100",
+                    "frontDescription": "",
+                    "back": "صد",
+                    "backDescription": "sad"
+                },
+                {
+                    "front": "200",
+                    "frontDescription": "",
+                    "back": "دویست",
+                    "backDescription": "dewist"
+                },
+                {
+                    "front": "300",
+                    "frontDescription": "",
+                    "back": "سیصد",
+                    "backDescription": "si-sad"
+                },
+                {
+                    "front": "400",
+                    "frontDescription": "",
+                    "back": "چهارصد",
+                    "backDescription": "čahār-sad"
+                },
+                {
+                    "front": "500",
+                    "frontDescription": "",
+                    "back": "پانصد",
+                    "backDescription": "pān-sad"
+                },
+                {
+                    "front": "600",
+                    "frontDescription": "",
+                    "back": "ششصد",
+                    "backDescription": "šeš-sad"
+                },
+                {
+                    "front": "700",
+                    "frontDescription": "",
+                    "back": "هفت‌صد",
+                    "backDescription": "haft-sad"
+                },
+                {
+                    "front": "800",
+                    "frontDescription": "",
+                    "back": "هشتصد",
+                    "backDescription": "haštsad"
+                },
+                {
+                    "front": "900",
+                    "frontDescription": "",
+                    "back": "نهصد",
+                    "backDescription": "noh-sad"
+                },
+                {
+                    "front": "1000",
+                    "frontDescription": "",
+                    "back": "هزار",
+                    "backDescription": "hezār"
+                }
+            ]
+        },
+        {
+            "name": "Short set",
+            "description": "Testset",
+            "cards": [
+                {
+                    "front": "one",
+                    "frontDescription": "",
+                    "back": "یک",
+                    "backDescription": "(۱) yek"
+                },
+                {
+                    "front": "two",
+                    "frontDescription": "",
+                    "back": "دو",
+                    "backDescription": "(۲) do"
+                }
+            ]
         }
     ]
 }
