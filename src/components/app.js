@@ -14,71 +14,71 @@ import Info from '../routes/info';
 import data from '../data.json'
 
 export default class App extends Component {
-	
-	/** Gets fired when the route changes.
-	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
-	 *	@param {string} event.url	The newly routed URL
-	 */
 
-	setCustomState = newState => {
-		// https://github.com/developit/preact-cli/issues/677
-		setTimeout(() => {
-			this.setState(newState)
-		}, 100)
-	}
-	handleRoute = e => {
-			this.currentUrl = e.url;
-			switch(e.url) {
-				case "/" : 
-					this.setCustomState({previousUrl: null});
-					break;
-				case "/sets" :
-					this.setCustomState({previousUrl: "/"});
-					break;
-				case "/info" :
-					this.setCustomState({previousUrl: "/"});
-					break;
-				default : {
-					const setUrl = e.url.match(/\/sets\/\d/)[0]
-					if (e.url.match(/\/sets\/\d+$/)) {
-						this.setCustomState({previousUrl: "/sets"});
-					} else if (e.url.match(/\/sets\/\d+\/cards\/\d+/)) {
-						this.setCustomState({previousUrl: setUrl});
-					} else {
-						this.setCustomState({previousUrl: null});
-					}
-				}
-			}
-	};
+  /** Gets fired when the route changes.
+   *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
+   *	@param {string} event.url	The newly routed URL
+   */
 
-	restoreData = () => {
-		this.setState({data: restoreProgress(data)})		
-	}
+  setCustomState = newState => {
+    // https://github.com/developit/preact-cli/issues/677
+    setTimeout(() => {
+      this.setState(newState)
+    }, 100)
+  }
+  handleRoute = e => {
+      this.currentUrl = e.url;
+      switch(e.url) {
+        case "/" :
+          this.setCustomState({previousUrl: null});
+          break;
+        case "/sets" :
+          this.setCustomState({previousUrl: "/"});
+          break;
+        case "/info" :
+          this.setCustomState({previousUrl: "/"});
+          break;
+        default : {
+          const setUrl = e.url.match(/\/sets\/\d/)[0]
+          if (e.url.match(/\/sets\/\d+$/)) {
+            this.setCustomState({previousUrl: "/sets"});
+          } else if (e.url.match(/\/sets\/\d+\/cards\/\d+/)) {
+            this.setCustomState({previousUrl: setUrl});
+          } else {
+            this.setCustomState({previousUrl: null});
+          }
+        }
+      }
+  };
 
-	handleResetAllDataClick = () => {
-		if (confirm("Do you want to reset all data?")) {
-			resetAllData()
-			this.setState({data: null})
-			this.restoreData()
-		}
-	}
+  restoreData = () => {
+    this.setState({data: restoreProgress(data)})
+  }
 
-	componentWillMount() {
-		this.restoreData()
-	}
+  handleResetAllDataClick = () => {
+    if (confirm("Möchtest du die Vokabeln updaten? (Fortschritt wird zurückgesetzt.) ")) {
+      resetAllData()
+      this.setState({data: null})
+      this.restoreData()
+    }
+  }
 
-	render(props, state) {
-		return (
-			<div id="app">
-				<Header backButtonLocation={ state.previousUrl } />
-				<Router onChange={ this.handleRoute }>
-					<Home default path="/" data={ state.data } />
-					<Sets path="/sets" data={ state.data } />
-					<Set path="/sets/:set" data={ state.data } />
-					<Card path="/sets/:set/cards/:card" data={ state.data } />
-					<Info path="/info" handleResetAllDataClick={ this.handleResetAllDataClick }  />
-				</Router>
-			</div>
-		);
-	}
+  componentWillMount() {
+    this.restoreData()
+  }
+
+  render(props, state) {
+    return (
+      <div id="app">
+        <Header backButtonLocation={ state.previousUrl } />
+        <Router onChange={ this.handleRoute }>
+          <Home default path="/" data={ state.data } handleResetAllDataClick={ this.handleResetAllDataClick } />
+          <Sets path="/sets" data={ state.data } />
+          <Set path="/sets/:set" data={ state.data } />
+          <Card path="/sets/:set/cards/:card" data={ state.data } />
+          <Info path="/info" handleResetAllDataClick={ this.handleResetAllDataClick }  />
+        </Router>
+      </div>
+    );
+  }
 }

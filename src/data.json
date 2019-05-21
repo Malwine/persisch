@@ -2,6 +2,498 @@
     "version": 1,
     "sets": [
         {
+            "name": "Zahlen 1 - 10",
+            "description": "Lerne bis 10 zählen.",
+            "cards": [
+                {
+                    "front": "1",
+                    "frontDescription": "",
+                    "back": "یک",
+                    "backDescription": "(۱) yek"
+                },
+                {
+                    "front": "2",
+                    "frontDescription": "",
+                    "back": "دو",
+                    "backDescription": "(۲) do"
+                },
+                {
+                    "front": "3",
+                    "frontDescription": "",
+                    "back": "سه",
+                    "backDescription": "(۳) se"
+                },
+                {
+                    "front": "4",
+                    "frontDescription": "",
+                    "back": "چهار",
+                    "backDescription": "(۴) shahar"
+                },
+                {
+                    "front": "5",
+                    "frontDescription": "",
+                    "back": "پنج",
+                    "backDescription": "(۵) panj"
+                },
+                {
+                    "front": "6",
+                    "frontDescription": "",
+                    "back": "شش",
+                    "backDescription": "(۶) shesh"
+                },
+                {
+                    "front": "7",
+                    "frontDescription": "",
+                    "back": "هفت",
+                    "backDescription": "(۷) haft"
+                },
+                {
+                    "front": "8",
+                    "frontDescription": "",
+                    "back": "هشت",
+                    "backDescription": "(۸) hasht"
+                },
+                {
+                    "front": "9",
+                    "frontDescription": "",
+                    "back": "نه",
+                    "backDescription": "(۹) noh"
+                },
+                {
+                    "front": "10",
+                    "frontDescription": "",
+                    "back": "ده",
+                    "backDescription": "(۱۰) dah"
+                }
+            ]
+        },
+        {
+            "name": "Zahlen 11 bis 100",
+            "description": "11-20 und Zehnerschritte bis 100.",
+            "cards": [
+                {
+                    "front": "11",
+                    "frontDescription": "",
+                    "back": "۱۱",
+                    "backDescription": "yazdah"
+                },
+                {
+                    "front": "12",
+                    "frontDescription": "",
+                    "back": "۱۲",
+                    "backDescription": "dawāzdah"
+                },
+                {
+                    "front": "13",
+                    "frontDescription": "",
+                    "back": "۱۳",
+                    "backDescription": "sizdah"
+                },
+                {
+                    "front": "14",
+                    "frontDescription": "",
+                    "back": "۱۴",
+                    "backDescription": "čāhārdah"
+                },
+                {
+                    "front": "15",
+                    "frontDescription": "",
+                    "back": "۱۵",
+                    "backDescription": "pānzdah"
+                },
+                {
+                    "front": "16",
+                    "frontDescription": "",
+                    "back": "۱۶",
+                    "backDescription": "šānzdah"
+                },
+                {
+                    "front": "17",
+                    "frontDescription": "",
+                    "back": "۱۷",
+                    "backDescription": "heftdah"
+                },
+                {
+                    "front": "18",
+                    "frontDescription": "",
+                    "back": "۱۸",
+                    "backDescription": "heğdah"
+                },
+                {
+                    "front": "19",
+                    "frontDescription": "",
+                    "back": "۱۹",
+                    "backDescription": "nuzdah"
+                },
+                {
+                    "front": "20",
+                    "frontDescription": "",
+                    "back": "۲۰",
+                    "backDescription": "bist"
+                },
+                {
+                    "front": "21",
+                    "frontDescription": "",
+                    "back": "۲۱",
+                    "backDescription": "bist o yek"
+                },
+                {
+                    "front": "30",
+                    "frontDescription": "",
+                    "back": "۳۰",
+                    "backDescription": "si"
+                },
+                {
+                    "front": "40",
+                    "frontDescription": "",
+                    "back": "۴۰",
+                    "backDescription": "čehel"
+                },
+                {
+                    "front": "50",
+                    "frontDescription": "",
+                    "back": "۵۰",
+                    "backDescription": "panğāh"
+                },
+                {
+                    "front": "60",
+                    "frontDescription": "",
+                    "back": "۶۰",
+                    "backDescription": "šast"
+                },
+                {
+                    "front": "70",
+                    "frontDescription": "",
+                    "back": "۷۰",
+                    "backDescription": "haftād"
+                },
+                {
+                    "front": "80",
+                    "frontDescription": "",
+                    "back": "۸۰",
+                    "backDescription": "haštād"
+                },
+                {
+                    "front": "90",
+                    "frontDescription": "",
+                    "back": "۹۰",
+                    "backDescription": "nawad"
+                },
+                {
+                    "front": "100",
+                    "frontDescription": "",
+                    "back": "۱۰۰",
+                    "backDescription": "sad"
+                }
+            ]
+        },
+        {
+            "name": "Zahlen 100 bis Tausend",
+            "description": "",
+            "cards": [
+                {
+                    "front": "100",
+                    "frontDescription": "",
+                    "back": "صد",
+                    "backDescription": "sad"
+                },
+                {
+                    "front": "200",
+                    "frontDescription": "",
+                    "back": "دویست",
+                    "backDescription": "dewist"
+                },
+                {
+                    "front": "300",
+                    "frontDescription": "",
+                    "back": "سیصد",
+                    "backDescription": "si-sad"
+                },
+                {
+                    "front": "400",
+                    "frontDescription": "",
+                    "back": "چهارصد",
+                    "backDescription": "čahār-sad"
+                },
+                {
+                    "front": "500",
+                    "frontDescription": "",
+                    "back": "پانصد",
+                    "backDescription": "pān-sad"
+                },
+                {
+                    "front": "600",
+                    "frontDescription": "",
+                    "back": "ششصد",
+                    "backDescription": "šeš-sad"
+                },
+                {
+                    "front": "700",
+                    "frontDescription": "",
+                    "back": "هفت‌صد",
+                    "backDescription": "haft-sad"
+                },
+                {
+                    "front": "800",
+                    "frontDescription": "",
+                    "back": "هشتصد",
+                    "backDescription": "haštsad"
+                },
+                {
+                    "front": "900",
+                    "frontDescription": "",
+                    "back": "نهصد",
+                    "backDescription": "noh-sad"
+                },
+                {
+                    "front": "1000",
+                    "frontDescription": "",
+                    "back": "هزار",
+                    "backDescription": "hezār"
+                }
+            ]
+        },
+        {
+            "name": "Worte rund ums Essen",
+            "description": "Geschäfte, Geschmack, Essen zu verschiedenen Tageszeiten.",
+            "cards": [
+                {
+                    "front": "Essen",
+                    "frontDescription": "",
+                    "back": "غذا",
+                    "backDescription": "ġazā"
+                },
+                {
+                    "front": "süß",
+                    "frontDescription": "",
+                    "back": "شیرین",
+                    "backDescription": "širin"
+                },
+                {
+                    "front": "scharf",
+                    "frontDescription": "",
+                    "back": "تند",
+                    "backDescription": "tond"
+                },
+                {
+                    "front": "sauer",
+                    "frontDescription": "",
+                    "back": "ترش",
+                    "backDescription": "torš"
+                },
+                {
+                    "front": "Frühstück",
+                    "frontDescription": "",
+                    "back": "صبحانه",
+                    "backDescription": "sobhāne"
+                },
+                {
+                    "front": "frühstücken",
+                    "frontDescription": "",
+                    "back": "صبحانه خوردن",
+                    "backDescription": "sobhāne xordan"
+                },
+                {
+                    "front": "Mittagessen",
+                    "frontDescription": "",
+                    "back": "ناهار",
+                    "backDescription": "nāhār"
+                },
+                {
+                    "front": "Abendessen/-brot",
+                    "frontDescription": "",
+                    "back": "شام",
+                    "backDescription": "šām"
+                },
+                {
+                    "front": "Markt",
+                    "frontDescription": "",
+                    "back": "بازار",
+                    "backDescription": "bāzār"
+                },
+                {
+                    "front": "Konditorei",
+                    "frontDescription": "",
+                    "back": "قنادی",
+                    "backDescription": "ġannādi"
+                },
+                {
+                    "front": "Süßwarengeschäft",
+                    "frontDescription": "",
+                    "back": "شیرینی‌فروشی",
+                    "backDescription": "širini-foruši"
+                },
+                {
+                    "front": "Gewürzhandel",
+                    "frontDescription": "",
+                    "back": "ادویه فروشی",
+                    "backDescription": "adwije-foruši"
+                },
+                {
+                    "front": "Nussladen",
+                    "frontDescription": "",
+                    "back": "خشکبار فروشی",
+                    "backDescription": "xoškbār-foruši"
+                },
+                {
+                    "front": "Obstgeschäft",
+                    "frontDescription": "",
+                    "back": "میوه‌فروشی",
+                    "backDescription": "mive-foruši"
+                },
+                {
+                    "front": "Duft",
+                    "frontDescription": "",
+                    "back": "عطر",
+                    "backDescription": "atr"
+                }
+            ]
+        },
+        {
+            "name": "Lebensmittel",
+            "description": "Reis, Zwiebeln, Tomaten...",
+            "cards": [
+                {
+                    "front": "Honig",
+                    "frontDescription": "",
+                    "back": "عسل",
+                    "backDescription": "assal"
+                },
+                {
+                    "front": "Butter",
+                    "frontDescription": "",
+                    "back": "کره",
+                    "backDescription": "kare"
+                },
+                {
+                    "front": "Brot",
+                    "frontDescription": "",
+                    "back": "نان",
+                    "backDescription": "nān"
+                },
+                {
+                    "front": "Kurkuma",
+                    "frontDescription": "",
+                    "back": "زردچوبه",
+                    "backDescription": "zard-čube"
+                },
+                {
+                    "front": "Fleisch",
+                    "frontDescription": "",
+                    "back": "گوشت",
+                    "backDescription": "gušt"
+                },
+                {
+                    "front": "Kürbis/Zuchini",
+                    "frontDescription": "",
+                    "back": "كدو",
+                    "backDescription": "kadu"
+                },
+                {
+                    "front": "Rosenwasser",
+                    "frontDescription": "",
+                    "back": "گلاب",
+                    "backDescription": "golāb"
+                },
+                {
+                    "front": "Joghurt",
+                    "frontDescription": "",
+                    "back": "ماست",
+                    "backDescription": "māst"
+                },
+                {
+                    "front": "Reis",
+                    "frontDescription": "",
+                    "back": "برنج",
+                    "backDescription": "berenğ"
+                },
+                {
+                    "front": "gekochter Reis",
+                    "frontDescription": "",
+                    "back": "پلو / چلو",
+                    "backDescription": "polo / čelo"
+                },
+                {
+                    "front": "Kartoffel",
+                    "frontDescription": "",
+                    "back": "سیب‌زمینی",
+                    "backDescription": "sib-zamini"
+                },
+                {
+                    "front": "Zwiebel",
+                    "frontDescription": "",
+                    "back": "پیاز",
+                    "backDescription": "pijāz"
+                },
+                {
+                    "front": "Pistazie",
+                    "frontDescription": "",
+                    "back": "پسته",
+                    "backDescription": "peste"
+                },
+                {
+                    "front": "Mandel",
+                    "frontDescription": "",
+                    "back": "بادام",
+                    "backDescription": "bādām"
+                },
+                {
+                    "front": "Erdbeere",
+                    "frontDescription": "",
+                    "back": "توت‌فرنگی",
+                    "backDescription": "tut-farangi"
+                },
+                {
+                    "front": "Tomate",
+                    "frontDescription": "",
+                    "back": "گوجه‌فرنگی",
+                    "backDescription": "gouğe-farangi"
+                },
+                {
+                    "front": "Aubergine",
+                    "frontDescription": "",
+                    "back": "بادمجان",
+                    "backDescription": "bādemğān"
+                },
+                {
+                    "front": "Möhre",
+                    "frontDescription": "",
+                    "back": "هویج",
+                    "backDescription": "hawiğ"
+                },
+                {
+                    "front": "Kebab",
+                    "frontDescription": "",
+                    "back": "كباب",
+                    "backDescription": "kabāb"
+                },
+                {
+                    "front": "Milch",
+                    "frontDescription": "",
+                    "back": "شیر",
+                    "backDescription": "šir"
+                },
+                {
+                    "front": "Ayran",
+                    "frontDescription": "",
+                    "back": "دوغ",
+                    "backDescription": "duġ"
+                },
+                {
+                    "front": "Hähnchen",
+                    "frontDescription": "",
+                    "back": "جوجه / مرغ",
+                    "backDescription": "morġ / ğuğe"
+                },
+                {
+                    "front": "Tee",
+                    "frontDescription": "",
+                    "back": "چای",
+                    "backDescription": "čāj"
+                }
+            ]
+        },
+        {
             "name": "Begrüßung",
             "description": "Die ersten Vokablen zur Begrüßung mit Umschrift.",
             "cards": [
@@ -544,294 +1036,6 @@
                     "frontDescription": "",
                     "back": "زمستان",
                     "backDescription": "zemestan"
-                }
-            ]
-        },
-        {
-            "name": "Zahlen 1 - 10",
-            "description": "Lerne bis 10 zählen.",
-            "cards": [
-                {
-                    "front": "1",
-                    "frontDescription": "",
-                    "back": "یک",
-                    "backDescription": "(۱) yek"
-                },
-                {
-                    "front": "2",
-                    "frontDescription": "",
-                    "back": "دو",
-                    "backDescription": "(۲) do"
-                },
-                {
-                    "front": "3",
-                    "frontDescription": "",
-                    "back": "سه",
-                    "backDescription": "(۳) se"
-                },
-                {
-                    "front": "4",
-                    "frontDescription": "",
-                    "back": "چهار",
-                    "backDescription": "(۴) shahar"
-                },
-                {
-                    "front": "5",
-                    "frontDescription": "",
-                    "back": "پنج",
-                    "backDescription": "(۵) panj"
-                },
-                {
-                    "front": "6",
-                    "frontDescription": "",
-                    "back": "شش",
-                    "backDescription": "(۶) shesh"
-                },
-                {
-                    "front": "7",
-                    "frontDescription": "",
-                    "back": "هفت",
-                    "backDescription": "(۷) haft"
-                },
-                {
-                    "front": "8",
-                    "frontDescription": "",
-                    "back": "هشت",
-                    "backDescription": "(۸) hasht"
-                },
-                {
-                    "front": "9",
-                    "frontDescription": "",
-                    "back": "نه",
-                    "backDescription": "(۹) noh"
-                },
-                {
-                    "front": "10",
-                    "frontDescription": "",
-                    "back": "ده",
-                    "backDescription": "(۱۰) dah"
-                }
-            ]
-        },
-        {
-            "name": "Zahlen 11 bis 100",
-            "description": "11-20 und Zehnerschritte bis 100.",
-            "cards": [
-                {
-                    "front": "11",
-                    "frontDescription": "",
-                    "back": "۱۱",
-                    "backDescription": "yazdah"
-                },
-                {
-                    "front": "12",
-                    "frontDescription": "",
-                    "back": "۱۲",
-                    "backDescription": "dawāzdah"
-                },
-                {
-                    "front": "13",
-                    "frontDescription": "",
-                    "back": "۱۳",
-                    "backDescription": "sizdah"
-                },
-                {
-                    "front": "14",
-                    "frontDescription": "",
-                    "back": "۱۴",
-                    "backDescription": "čāhārdah"
-                },
-                {
-                    "front": "15",
-                    "frontDescription": "",
-                    "back": "۱۵",
-                    "backDescription": "pānzdah"
-                },
-                {
-                    "front": "16",
-                    "frontDescription": "",
-                    "back": "۱۶",
-                    "backDescription": "šānzdah"
-                },
-                {
-                    "front": "17",
-                    "frontDescription": "",
-                    "back": "۱۷",
-                    "backDescription": "heftdah"
-                },
-                {
-                    "front": "18",
-                    "frontDescription": "",
-                    "back": "۱۸",
-                    "backDescription": "heğdah"
-                },
-                {
-                    "front": "19",
-                    "frontDescription": "",
-                    "back": "۱۹",
-                    "backDescription": "nuzdah"
-                },
-                {
-                    "front": "20",
-                    "frontDescription": "",
-                    "back": "۲۰",
-                    "backDescription": "bist"
-                },
-                {
-                    "front": "21",
-                    "frontDescription": "",
-                    "back": "۲۱",
-                    "backDescription": "bist o yek"
-                },
-                {
-                    "front": "30",
-                    "frontDescription": "",
-                    "back": "۳۰",
-                    "backDescription": "si"
-                },
-                {
-                    "front": "40",
-                    "frontDescription": "",
-                    "back": "۴۰",
-                    "backDescription": "čehel"
-                },
-                {
-                    "front": "50",
-                    "frontDescription": "",
-                    "back": "۵۰",
-                    "backDescription": "panğāh"
-                },
-                {
-                    "front": "60",
-                    "frontDescription": "",
-                    "back": "۶۰",
-                    "backDescription": "šast"
-                },
-                {
-                    "front": "70",
-                    "frontDescription": "",
-                    "back": "۷۰",
-                    "backDescription": "haftād"
-                },
-                {
-                    "front": "80",
-                    "frontDescription": "",
-                    "back": "۸۰",
-                    "backDescription": "haštād"
-                },
-                {
-                    "front": "90",
-                    "frontDescription": "",
-                    "back": "۹۰",
-                    "backDescription": "nawad"
-                },
-                {
-                    "front": "100",
-                    "frontDescription": "",
-                    "back": "۱۰۰",
-                    "backDescription": "sad"
-                }
-            ]
-        },
-        {
-            "name": "Short set",
-            "description": "Testset",
-            "cards": [
-                {
-                    "front": "one",
-                    "frontDescription": "",
-                    "back": "یک",
-                    "backDescription": "(۱) yek"
-                },
-                {
-                    "front": "two",
-                    "frontDescription": "",
-                    "back": "دو",
-                    "backDescription": "(۲) do"
-                }
-            ]
-        },
-        {
-            "name": "Essen",
-            "description": "Lebensmittel und Worte rund ums Essen",
-            "cards": [
-                {
-                    "front": "one",
-                    "frontDescription": "",
-                    "back": "یک",
-                    "backDescription": "(۱) yek"
-                },
-                {
-                    "front": "two",
-                    "frontDescription": "",
-                    "back": "دو",
-                    "backDescription": "(۲) do"
-                }
-            ]
-        },
-        {
-            "name": "Zahlen 100 bis Tausende",
-            "description": "",
-            "cards": [
-                {
-                    "front": "100",
-                    "frontDescription": "",
-                    "back": "صد",
-                    "backDescription": "sad"
-                },
-                {
-                    "front": "200",
-                    "frontDescription": "",
-                    "back": "دویست",
-                    "backDescription": "dewist"
-                },
-                {
-                    "front": "300",
-                    "frontDescription": "",
-                    "back": "سیصد",
-                    "backDescription": "si-sad"
-                },
-                {
-                    "front": "400",
-                    "frontDescription": "",
-                    "back": "چهارصد",
-                    "backDescription": "čahār-sad"
-                },
-                {
-                    "front": "500",
-                    "frontDescription": "",
-                    "back": "پانصد",
-                    "backDescription": "pān-sad"
-                },
-                {
-                    "front": "600",
-                    "frontDescription": "",
-                    "back": "ششصد",
-                    "backDescription": "šeš-sad"
-                },
-                {
-                    "front": "700",
-                    "frontDescription": "",
-                    "back": "هفت‌صد",
-                    "backDescription": "haft-sad"
-                },
-                {
-                    "front": "800",
-                    "frontDescription": "",
-                    "back": "هشتصد",
-                    "backDescription": "haštsad"
-                },
-                {
-                    "front": "900",
-                    "frontDescription": "",
-                    "back": "نهصد",
-                    "backDescription": "noh-sad"
-                },
-                {
-                    "front": "1000",
-                    "frontDescription": "",
-                    "back": "هزار",
-                    "backDescription": "hezār"
                 }
             ]
         },

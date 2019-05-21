@@ -20,7 +20,7 @@ export default class Home extends Component  {
     })
   }
 
-  render ({ data }) {
+  render ({ data, handleResetAllDataClick }) {
     return (
       <div class={style.home}>
         <h2 class={style.headline}>Willkommen!</h2>
@@ -35,6 +35,11 @@ export default class Home extends Component  {
         <Link href="/sets">
           <button class={[style.button, style.buttonPrimary].join(' ')}>
             Entdecke alle Sets
+          </button>
+          <button
+            class={[style.button, style.resetButton].join(' ')}
+            onClick={ handleResetAllDataClick }>
+            Vokabel Update
           </button>
         </Link>
       </div>
