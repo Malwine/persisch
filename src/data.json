@@ -282,6 +282,30 @@
                     "backDescription": "torš"
                 },
                 {
+                    "front": "salzig",
+                    "frontDescription": "",
+                    "back": "شور",
+                    "backDescription": "šur"
+                },
+                {
+                    "front": "bitter",
+                    "frontDescription": "",
+                    "back": "تلخ",
+                    "backDescription": "talx"
+                },
+                {
+                    "front": "süßsauer",
+                    "frontDescription": "",
+                    "back": "ملس",
+                    "backDescription": "malas"
+                },
+                {
+                    "front": "geschmacklos",
+                    "frontDescription": "(Speise)",
+                    "back": "بی‌مزه",
+                    "backDescription": "bi-mazze"
+                },
+                {
                     "front": "Frühstück",
                     "frontDescription": "",
                     "back": "صبحانه",
@@ -490,6 +514,42 @@
                     "frontDescription": "",
                     "back": "چای",
                     "backDescription": "čāj"
+                },
+                {
+                    "front": "Salz",
+                    "frontDescription": "",
+                    "back": "نمك",
+                    "backDescription": "namak"
+                },
+                {
+                    "front": "Pfeffer",
+                    "frontDescription": "",
+                    "back": "فلفل",
+                    "backDescription": "felfel"
+                },
+                {
+                    "front": "Zitrone",
+                    "frontDescription": "",
+                    "back": "لیمو",
+                    "backDescription": "limu"
+                },
+                {
+                    "front": "Dattel",
+                    "frontDescription": "",
+                    "back": "خرما",
+                    "backDescription": "xormā"
+                },
+                {
+                    "front": "Mandel",
+                    "frontDescription": "",
+                    "back": "بادام",
+                    "backDescription": "bādām"
+                },
+                {
+                    "front": "Olive",
+                    "frontDescription": "",
+                    "back": "زیتون",
+                    "backDescription": "zejtun"
                 }
             ]
         },
