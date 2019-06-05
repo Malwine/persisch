@@ -16,6 +16,7 @@ npm run dev
 
 # To build for production with minification and own index.html template run:
 preact build --template src/index.html
+preact build --no-prerender --template src/index.html
 
 # To test the production build locally run:
 npm run serve
